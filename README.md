@@ -2,7 +2,7 @@
 
 ## Administration
 
-* Espace de partage : https://www.dropbox.com/home/Stage%20M1%20-%20Pr%C3%A9carit%C3%A9%20%C3%A9nerg%C3%A9tique
+* Dropbox : https://www.dropbox.com/home/Stage%20M1%20-%20Pr%C3%A9carit%C3%A9%20%C3%A9nerg%C3%A9tique
 * Github : https://github.com/Psqrt/stage_crem
 * Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit#
 
