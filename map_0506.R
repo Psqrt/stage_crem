@@ -11,7 +11,7 @@ library(tidyverse)
 ###################################################################################################
 
 nuts = 2
-annee_enquete = 2012
+annee_enquete = 2013
 if (annee_enquete < 2006){
     annee_carte = 2003
 } else if (annee_enquete >= 2006 & annee_enquete < 2010){
@@ -291,7 +291,7 @@ moyenne_region = liste_ids %>%
 # Gestion du cas de Londres en 2013 (2 valeurs pour 5 régions)
 ###################################################################################################
 
-if (nuts == 2 & annee_carte >= 2013){
+if (nuts == 2 & annee_carte >= 2010){
     print("XX8")
     liste_ids_londres = liste_ids %>% 
         data.frame %>% 
@@ -384,7 +384,7 @@ leaflet(get(choix_carte)) %>%
     addPolygons(color = "black",
                 weight = 1,
                 smoothFactor = 0,
-                label = paste0(~moyenne_region$region, " : ", ~moyenne_region$warm),
+                label = ~paste0(moyenne_region$region, " : ", round(moyenne_region$warm, 2)),
                 fillOpacity = 0.8,
                 fillColor = ~pal(moyenne_region$warm),
                 highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
