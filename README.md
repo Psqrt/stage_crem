@@ -23,3 +23,5 @@
 * Carte Europe avec ISO2 : https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/media/File:Europe_ISO_3166-1.svg
 * Liste pays de l'UE : https://fr.wikipedia.org/wiki/%C3%89tats_membres_de_l%27Union_europ%C3%A9enne
 
+## Coloration
+* Choix des palettes : http://colorbrewer2.org/

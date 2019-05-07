@@ -10,8 +10,8 @@ library(tidyverse)
 # Importations
 ###################################################################################################
 
-nuts = 0
-annee_enquete = 2005
+nuts = 2
+annee_enquete = 2012
 if (annee_enquete < 2006){
     annee_carte = 2003
 } else if (annee_enquete >= 2006 & annee_enquete < 2010){
@@ -130,6 +130,17 @@ dico_enquete_uk_apres_2013 = setNames(dico_enquete_uk_apres_2013$code_carte,
 df_t = df_h %>% 
     inner_join(df_d, by = c("HB030" = "DB030", "HB020" = "DB020"))
 
+###################################################################################################
+# Gestion des cas sans region (DE, SI, NL)
+###################################################################################################
+if (nuts == 0){
+    moy_sans_region = df_t %>%
+        filter(DB040 == "") %>% 
+        mutate(DB040 = HB020)
+    
+    df_t = df_t %>% 
+        bind_rows(moy_sans_region)
+}
 
 ### Recodage des regions pour etre conforme a la norme en vigueur #################################
 if (nuts == 2){
@@ -306,6 +317,11 @@ if (nuts == 2 & annee_carte >= 2013){
         select(-rowname)
 }
 
+
+
+
+
+
 ###################################################################################################
 # Gestion des cas NUTS1
 ###################################################################################################
@@ -360,17 +376,20 @@ if (nuts == 2 & annee_carte >= 2013){
 ###################################################################################################
 
 # Choix de la palette
-pal <- colorNumeric("viridis", NULL, na.color = "red", alpha = T)
-
+pal <- colorNumeric("YlOrRd", NULL, na.color = "#F0F0F0", alpha = T)
+# base-light-nolabels
 # Carte leaflet
 leaflet(get(choix_carte)) %>% 
-    addTiles(urlTemplate = "//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png") %>% 
-    addPolygons(stroke = FALSE,
-                smoothFactor = 0.3,
-                fillOpacity = 0.5,
-                fillColor = ~pal(moyenne_region$leaking)) %>% 
+    addTiles(urlTemplate = "//{s}.api.cartocdn.com/base-light-nolabels/{z}/{x}/{y}.png") %>% 
+    addPolygons(color = "black",
+                weight = 1,
+                smoothFactor = 0,
+                label = paste0(~moyenne_region$region, " : ", ~moyenne_region$warm),
+                fillOpacity = 0.8,
+                fillColor = ~pal(moyenne_region$warm),
+                highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
     addLegend(pal = pal, 
-              values = moyenne_region$leaking, 
+              values = moyenne_region$warm, 
               opacity = 1.0)
 #              fillColor = ~pal(1-moyenne_region$warm)) %>% 
 #    addLegend(pal = pal, values = 1-moyenne_region$warm, opacity = 1.0)
