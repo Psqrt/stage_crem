@@ -1,0 +1,40 @@
+code label = valeur
+
+Variables :
+
+########################
+Bouton - CARTE
+########################
+
+choix_nuts
+- NUTS 0
+- NUTS 1
+- NUTS 2
+
+choix_variable_map
+- HH050 -> Warm
+- HS021 -> Arrears
+- HH040 -> Leaking
+
+choix_modalite_map
+- 1 : Never
+- 2 : Once
+- 3 : At least once
+
+switch_periode
+
+choix_annee
+2004:2013
+
+choix_periode
+'2004-2005'
+...
+
+colorblind_safe
+TRUE
+FALSE
+
+na_proportion
+TRUE
+FALSE
+
