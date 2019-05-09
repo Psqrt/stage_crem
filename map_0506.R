@@ -10,7 +10,7 @@ library(tidyverse)
 # Importations
 ###################################################################################################
 
-nuts = 2
+nuts = 0
 annee_enquete = 2013
 if (annee_enquete < 2006){
     annee_carte = 2003
@@ -83,6 +83,7 @@ for (fichier in liste_nom_fichier){
         }
     }
 }
+
 
 # DONNEES - DICTIONNAIRE
 

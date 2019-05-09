@@ -1,0 +1,53 @@
+fichiers_source = list.files("./tab")
+fichiers_source = paste("./tab/", fichiers_source, sep = '')
+sapply(fichiers_source, source)
+
+
+
+
+contenu_UI <- shinyUI(
+    dashboardPage(
+        dashboardHeader(),
+        dashboardSidebar(
+            sidebarMenu(
+                menuItem("CARTO", 
+                         tabName = "tab_carto", 
+                         icon = icon("dashboard")
+                ),
+                menuItem("STATS", 
+                         tabName = "tab_stats", 
+                         icon = icon("dashboard")
+                )
+            )
+        ),
+        dashboardBody(
+            includeCSS("./extra/styles.css", encoding = "UTF-8"),
+            tabItems(
+                tabItem(
+                    tabName = "tab_carto",
+                    tab_carto),
+                tabItem(
+                    tabName = "tab_stats",
+                    "tab_carto")
+            )
+        )
+    )
+    # dashboardPage(
+    #     # Modifications de style css
+    #     #includeCSS("./extra/styles.css", encoding = "UTF-8"),
+    # 
+    #     # Choix du theme de l'application
+    #     # theme = shinytheme("sandstone"),
+    # 
+    #     # Listing des onglets
+    #     tags$div(class = "grandtitre",
+    #              titlePanel(
+    #                  title = "NOM APPLICATION"
+    #              )
+    #     ),
+    #     dashboardSidebar(title = "",
+    #                      tab_carto,
+    #                      collapsable = TRUE
+    #     )
+    # )
+)

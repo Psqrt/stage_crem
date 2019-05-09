@@ -26,3 +26,6 @@
 
 ## Coloration
 * Choix des palettes : http://colorbrewer2.org/
+
+## Shiny
+* Gallerie widgets : http://shinyapps.dreamrs.fr/shinyWidgets/

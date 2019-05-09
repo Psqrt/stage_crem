@@ -1,0 +1,45 @@
+/* Carte */
+#map {
+	position: relative;
+	top: -15px;
+	left: -15px;
+	bottom: -15px;
+	right: 0px;
+  width: 100%;
+	overflow: hidden;
+}
+
+.content {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-right: -15px;
+}
+
+/* Barre horizontale */
+
+.skin-blue .main-header .navbar{
+  background-color: #15354a;
+}
+
+.main-header .logo {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.main-header:hover .logo:hover {
+  background-color: #15354a;
+}
+
+.skin-blue .main-header .logo {
+  background-color: #15354a;
+}
+
+.skin-blue .left-side, .skin-blue .main-sidebar, .skin-blue .wrapper{
+  background-color: #022833;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #000000;
+}
