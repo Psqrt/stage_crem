@@ -17,6 +17,10 @@
   margin-right: -15px;
 }
 
+#abspanel_map_left {
+  margin-left: 10px;
+}
+
 /* Barre horizontale */
 
 .skin-blue .main-header .navbar{

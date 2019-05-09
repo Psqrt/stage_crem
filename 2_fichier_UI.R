@@ -12,11 +12,11 @@ contenu_UI <- shinyUI(
             sidebarMenu(
                 menuItem("CARTO", 
                          tabName = "tab_carto", 
-                         icon = icon("dashboard")
+                         icon = icon("globe-americas")
                 ),
                 menuItem("STATS", 
                          tabName = "tab_stats", 
-                         icon = icon("dashboard")
+                         icon = icon("chart-bar")
                 )
             )
         ),
@@ -28,7 +28,7 @@ contenu_UI <- shinyUI(
                     tab_carto),
                 tabItem(
                     tabName = "tab_stats",
-                    "tab_carto")
+                    textOutput("texte2"))
             )
         )
     )

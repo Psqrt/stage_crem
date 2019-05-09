@@ -1,6 +1,6 @@
 tab_carto <- tabPanel("NOM ONGLET",
                       
-                      
+                      textOutput("texte"),
                       
                       leafletOutput("map",
                                     height = "1000px"),
@@ -8,12 +8,11 @@ tab_carto <- tabPanel("NOM ONGLET",
                       
                       absolutePanel(
                           id = "abspanel_map_left",
-                          fixed = TRUE,
+                          fixed = FALSE,
                           class = "panel panel-default",
                           width = "auto",
                           height = "auto",
                           top = "60px",
-                          left = "240px",
                           draggable = TRUE,
                           
                           
@@ -25,8 +24,8 @@ tab_carto <- tabPanel("NOM ONGLET",
                               
                               
                               radioGroupButtons(
-                                  inputId = "Id073",
-                                  label = "Label",
+                                  inputId = "choix_nuts",
+                                  label = "LEVEL:",
                                   choices = c("NUTS 0",
                                               "NUTS 1",
                                               "NUTS 2"),
@@ -38,57 +37,58 @@ tab_carto <- tabPanel("NOM ONGLET",
                               ),
                               
                               
-                              
                               selectInput(
-                                  inputId = "Id081",
-                                  label = "VARIABLE A CHOISIR", 
-                                  choices = c("leaking", "arrears", "warm")
+                                  inputId = "choix_variable_map",
+                                  label = "INDICATOR", 
+                                  choices = c(c("Warm" = "HH050", 
+                                                "Arrears" = "HS021",
+                                                "Leaking" = "HH040"))
                               ),
                               
                               selectInput(
-                                  inputId = "Id081conditionel",
-                                  label = "MODALITES VAR QUALI", 
+                                  inputId = "choix_modalite_map",
+                                  label = "MODALITE (PLUS TARD)", 
                                   choices = c("Never", "Once", "At least once")
                               ),
                               
                               
                               
                               materialSwitch(
-                                  inputId = "Id076",
-                                  label = "PERIODE", 
+                                  inputId = "switch_periode",
+                                  label = "PERIOD", 
                                   right = TRUE
                               ),
                               
                               
                               
                               sliderTextInput(
-                                  inputId = "Id095",
-                                  label = "Choose a letter:", 
+                                  inputId = "choix_annee",
+                                  label = "YEAR:", 
                                   choices = c(2004:2013)
                               ),
                               
                               selectInput(
-                                  inputId = "Id081conditionel2",
-                                  label = "MODALITES PERIODES", 
-                                  choices = c("2004-2009", "2010-2012")
+                                  inputId = "choix_periode",
+                                  label = "PERIOD", 
+                                  choices = c("2004-2005", "2010-2012")
                               ),
                               
                               
                               
                               
                               
-                              prettyCheckbox(
-                                  inputId = "Id023",
-                                  label = "Colorbind safe", 
-                                  value = FALSE,
-                                  status = "primary",
-                                  icon = icon("check"),
-                                  fill = TRUE
-                              ),
+                              # prettyCheckbox(
+                              #     inputId = "colorblind_safe",
+                              #     label = "COLORBLIND SAFE", 
+                              #     value = FALSE,
+                              #     status = "primary",
+                              #     icon = icon("check"),
+                              #     fill = TRUE
+                              # ),
                               
                               prettyCheckbox(
-                                  inputId = "Id023a",
-                                  label = "NA proportion", 
+                                  inputId = "na_proportion",
+                                  label = "NA PROPORTION", 
                                   value = FALSE,
                                   status = "primary",
                                   icon = icon("check"),

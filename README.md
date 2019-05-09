@@ -29,3 +29,4 @@
 
 ## Shiny
 * Gallerie widgets : http://shinyapps.dreamrs.fr/shinyWidgets/
+* Fonds de carte : https://leaflet-extras.github.io/leaflet-providers/preview/
