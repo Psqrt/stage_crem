@@ -74,7 +74,7 @@ library(tidyverse)
 #                         header = T,
 #                         stringsAsFactors = F)
 # 
-# dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte, 
+# dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte,
 #                                    dico_enquete_avant_2010$code_enquete)
 # 
 # 
@@ -83,7 +83,7 @@ library(tidyverse)
 #                         header = T,
 #                         stringsAsFactors = F)
 # 
-# dico_enquete_apres_2010 = setNames(dico_enquete_apres_2010$code_carte, 
+# dico_enquete_apres_2010 = setNames(dico_enquete_apres_2010$code_carte,
 #                                    dico_enquete_apres_2010$code_enquete)
 # 
 # 
@@ -92,7 +92,7 @@ library(tidyverse)
 #                         header = T,
 #                         stringsAsFactors = F)
 # 
-# dico_enquete_croatie_apres_2010 = setNames(dico_enquete_croatie_apres_2010$code_carte, 
+# dico_enquete_croatie_apres_2010 = setNames(dico_enquete_croatie_apres_2010$code_carte,
 #                                            dico_enquete_croatie_apres_2010$code_enquete)
 # 
 # 
@@ -101,6 +101,6 @@ library(tidyverse)
 #                                       header = T,
 #                                       stringsAsFactors = F)
 # 
-# dico_enquete_uk_apres_2013 = setNames(dico_enquete_uk_apres_2013$code_carte, 
+# dico_enquete_uk_apres_2013 = setNames(dico_enquete_uk_apres_2013$code_carte,
 #                                       dico_enquete_uk_apres_2013$code_enquete)
 

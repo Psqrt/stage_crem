@@ -50,7 +50,7 @@ dico_enquete_uk_apres_2013 = setNames(dico_enquete_uk_apres_2013$code_carte,
 df_final = data.frame()
 
 for (nuts in c(0:2)){
-    for (annee_enquete in c(2004:2013)){
+    for (annee_enquete in c(2004:2013)){ #c(2004:2013)
         # nuts = 0
         # annee_enquete = 2013
         if (annee_enquete < 2006){
@@ -151,7 +151,7 @@ for (nuts in c(0:2)){
         
         ### Recodage des regions pour etre conforme a la norme en vigueur #################################
         if (nuts == 2){
-            if (annee_carte >= 2010) 
+            if (annee_carte >= 2010)
                 print("XX1")
             df_t$DB040 = recode(df_t$DB040, !!!dico_enquete_croatie_apres_2010)
             if (annee_carte >= 2013)
@@ -231,23 +231,25 @@ for (nuts in c(0:2)){
         # Calcul des moyennes par region
         if (nuts == 2){
             print("XX3")
-            moy_region = data2 %>% 
+            moy_region = data2 %>% # moy_region
                 group_by(region) %>% 
                 summarise_all(mean, na.rm = T) %>% 
                 # mutate(region = as.character(region)) %>% 
                 filter(region != "")
         } else if (nuts <= 1){
             if (annee_carte < 2010){
+                # x = moy_region
                 print("XX4")
-                moy_region = data2 %>% 
+                data3 = data2 %>% #moy_region
                     mutate(region = recode(region, !!!dico_enquete_avant_2010))
+                # y = moy_region
             } else if (annee_carte >= 2010 & annee_carte < 2013){
                 print("XX5")
-                moy_region = data2 %>% 
+                data3 = data2 %>% #moy_region
                     mutate(region = recode(region, !!!dico_enquete_apres_2010))
             }
             print("XXXXXXXXXXXXXXXXXXXXXXX")
-            moy_region = data2 %>% 
+            moy_region = data3 %>% 
                 mutate(region = substr(region, 1, nuts + 2)) %>%
                 group_by(region) %>% 
                 summarise_all(mean, na.rm = T) %>% 
@@ -309,15 +311,26 @@ for (nuts in c(0:2)){
                 rownames_to_column() %>% 
                 filter(substr(region, 1, 3) == "UKI")
             
+            print("C1")
+            
             nb_region_londres = liste_ids_londres %>% nrow
             
+            print("C1")
+            
+            print(data2 %>% head)
             moyenne_londres = data2 %>%
                 group_by(region) %>%
                 summarise_all(mean, na.rm = T) %>%
-                filter(region == "UKIX") %>% 
-                slice(rep(1, each = nb_region_londres)) %>% 
-                mutate(region = liste_ids_londres$region) %>% 
-                left_join(liste_ids_londres, by = c("region"))
+                filter(region == "UKIX")
+            
+            if (nrow(moyenne_londres) != 0){ 
+                moyenne_londres = moyenne_londres %>% 
+                    slice(rep(1, each = nb_region_londres)) %>%
+                    mutate(region = liste_ids_londres$region) %>% 
+                    left_join(liste_ids_londres, by = c("region"))
+            }
+            
+            print("C1")
             
             moyenne_region = moyenne_region %>%
                 rownames_to_column() %>%
@@ -328,13 +341,19 @@ for (nuts in c(0:2)){
                 select(-rowname)
         }
         
+            print("C1")
+            
         moyenne_region = moyenne_region %>% 
             mutate(NUTS = paste0("NUTS ", nuts),
                    ANNEE = annee_enquete,
                    PAYS = substr(region, 1, 2))
         
+            print("C1")
+            
         df_final = df_final %>% 
             rbind(moyenne_region)
+        
+            print("C1")
     }
 }
         
@@ -363,25 +382,25 @@ write.csv(df_final2, file = "./data/finaux/donnees.csv",
         # Cartographie
         ###################################################################################################
         # 
-        # # Choix de la palette
+        # Choix de la palette
         # pal <- colorNumeric("YlOrRd", NULL, na.color = "#F0F0F0", alpha = T)
         # # base-light-nolabels
         # # Carte leaflet
-        # leaflet(get(choix_carte)) %>% 
-        #     addTiles(urlTemplate = "//{s}.api.cartocdn.com/base-light-nolabels/{z}/{x}/{y}.png") %>% 
+        # leaflet(data_map2003_nuts1) %>% #get(choix_carte)
+        #     addTiles(urlTemplate = "//{s}.api.cartocdn.com/base-light-nolabels/{z}/{x}/{y}.png") %>%
         #     addPolygons(color = "black",
         #                 weight = 1,
         #                 smoothFactor = 0,
-        #                 label = ~paste0(moyenne_region$region, " : ", round(moyenne_region$warm, 2)),
+        #                 label = ~paste0(moyenne_region$REGION, " : ", round(moyenne_region$warm, 2)),
         #                 fillOpacity = 0.8,
         #                 fillColor = ~pal(moyenne_region$warm),
-        #                 highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
-        #     addLegend(pal = pal, 
-        #               values = moyenne_region$warm, 
+        #                 highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>%
+        #     addLegend(pal = pal,
+        #               values = moyenne_region$warm,
         #               opacity = 1.0)
-        # #              fillColor = ~pal(1-moyenne_region$warm)) %>% 
-        # #    addLegend(pal = pal, values = 1-moyenne_region$warm, opacity = 1.0)
-        # #                fillColor = ~pal(1-moyenne_region$arrears)) %>% 
-        # #    addLegend(pal = pal, values = 1-moyenne_region$arrears, opacity = 1.0)
-        # 
+        #              fillColor = ~pal(1-moyenne_region$warm)) %>%
+        #    addLegend(pal = pal, values = 1-moyenne_region$warm, opacity = 1.0)
+        #                fillColor = ~pal(1-moyenne_region$arrears)) %>%
+        #    addLegend(pal = pal, values = 1-moyenne_region$arrears, opacity = 1.0)
+
         
