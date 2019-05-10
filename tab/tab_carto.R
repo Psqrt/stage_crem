@@ -29,6 +29,7 @@ tab_carto <- tabPanel("NOM ONGLET",
                                   choices = c("NUTS 0",
                                               "NUTS 1",
                                               "NUTS 2"),
+                                  selected = "NUTS 0",
                                   checkIcon = list(
                                       yes = tags$i(class = "fa fa-circle", 
                                                    style = "color: steelblue"),

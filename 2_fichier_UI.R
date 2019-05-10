@@ -28,7 +28,10 @@ contenu_UI <- shinyUI(
                     tab_carto),
                 tabItem(
                     tabName = "tab_stats",
-                    textOutput("texte2"))
+                    textOutput("texte2"),
+                      
+                    DT::dataTableOutput("df_a_afficher")
+                    )
             )
         )
     )
