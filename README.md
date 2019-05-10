@@ -4,8 +4,9 @@
 
 * Dropbox : https://www.dropbox.com/home/Stage%20M1%20-%20Pr%C3%A9carit%C3%A9%20%C3%A9nerg%C3%A9tique
 * Github : https://github.com/Psqrt/stage_crem
-* Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit#
 * Maquette : https://balsamiq.cloud/sgf7255/pky7rtu/r3D7B
+* Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit
+* Rapport 2 : https://docs.google.com/document/d/1VrJxGSwtAESfuOQFKSoIyODAAj68VapsTirIRVFsrYU/edit
 
 ## Données
 * Données de l'enquête : https://ec.europa.eu/eurostat/fr/web/microdata/statistics-on-income-and-living-conditions
