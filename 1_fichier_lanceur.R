@@ -1,4 +1,4 @@
-options(encoding = "UTF8")
+options(encoding = "UTF-8")
 
 library(shiny)
 library(shinydashboard)
