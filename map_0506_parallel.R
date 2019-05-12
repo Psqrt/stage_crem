@@ -6,8 +6,8 @@
 # library(geojsonio)
 library(tidyverse)
 library(crayon)
-# library(doMC)
-# registerDoMC(3)
+library(doMC)
+registerDoMC(12)
 
 ###################################################################################################
 # Setup global
@@ -16,6 +16,7 @@ importer_carte = 0 # choix : 0 ou 1
 precision = 60 # choix : 1 ou 60
 date_premiere_enquete = 2004
 date_derniere_enquete = 2013
+nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1
 date_debut = Sys.time()
 cat(green("######################################################################################
 Paramètres d'importation :
@@ -122,7 +123,10 @@ if (importer_carte == 1){
 
 df_final = data.frame()
 
-for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
+zozo = foreach (annee_enquete = c(date_premiere_enquete:date_derniere_enquete)) %dopar% {
+    
+    df_annee = data.frame()
+    
     # Liste des fichiers de données (les fichiers zip)
     liste_nom_fichier = list.files("./data/enquete/")
     liste_nom_fichier = liste_nom_fichier[grep(annee_enquete, liste_nom_fichier)]
@@ -139,10 +143,10 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     
     # Logique d'importation : importer les 4 fichiers csv de chaque fichier zip.
     for (fichier in liste_nom_fichier) {
-        cat(blue("Importation de :", fichier, "\n"))
+        # cat(blue("Importation de :", fichier, "\n"))
         dir_zip = paste0("./data/enquete/", fichier, ".zip", sep = "")
         for (type in type_fichier) {
-            cat(blue("    * Importation du fichier du type :", type, "\n"))
+            # cat(blue("    * Importation du fichier du type :", type, "\n"))
             dir_csv = paste0(substr(fichier, 1, 7), type, substr(fichier, 8, nchar(fichier)), ".csv", sep = "")
             provisoire = read.csv(con <- unz(dir_zip, dir_csv),
                                   header = T,
@@ -171,7 +175,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         inner_join(df_d, by = c("HB030" = "DB030", "HB020" = "DB020", "HB010" = "DB010"))
     
     for (nuts in c(0:2)) {
-        cat(green("Traitement pour l'année", annee_enquete, "pour le NUTS", nuts, "\n"))
+        # cat(green("Traitement pour l'année", annee_enquete, "pour le NUTS", nuts, "\n"))
         if (annee_enquete < 2006){
             annee_carte = 2003
         } else if (annee_enquete >= 2006 & annee_enquete < 2010){
@@ -191,27 +195,27 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         ###################################################################################################
         
         if (nuts == 0){
-            cat(blue("Traitement des régions sans nom pour le cas de NUTS0 [...]\n"))
+            # cat(blue("Traitement des régions sans nom pour le cas de NUTS0 [...]\n"))
             moy_sans_region = df_t_copie %>%
                 filter(DB040 == "") %>% 
                 mutate(DB040 = HB020)
             
             df_t_copie = df_t_copie %>% 
                 bind_rows(moy_sans_region)
-            cat(green("[...] Terminé !\n"))
+            # cat(green("[...] Terminé !\n"))
         }
         
         ### Recodage des regions pour etre conforme a la norme en vigueur #################################
         if (nuts == 2){
             if (annee_carte >= 2010){
-                cat(blue("Recodage des régions pour le cas des NUTS2 après 2010 de la Croatie [...]\n"))
+                # cat(blue("Recodage des régions pour le cas des NUTS2 après 2010 de la Croatie [...]\n"))
                 df_t_copie$DB040 = recode(df_t_copie$DB040, !!!dico_enquete_croatie_apres_2010)
-                cat(green("[...] Terminé !\n"))
+                # cat(green("[...] Terminé !\n"))
             }
             if (annee_carte >= 2013){
-                cat(blue("Recodage des régions pour le cas NUTS2 après 2013 du Royaume-Uni [...]\n"))
+                # cat(blue("Recodage des régions pour le cas NUTS2 après 2013 du Royaume-Uni [...]\n"))
                 df_t_copie$DB040 = recode(df_t_copie$DB040, !!!dico_enquete_uk_apres_2013)
-                cat(green("[...] Terminé !\n"))
+                # cat(green("[...] Terminé !\n"))
             }
         }    
         
@@ -232,7 +236,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         
         # Calcul des moyennes par region
         if (nuts == 2){
-            cat(blue("Calcul des moyennes par région [...]\n"))
+            # cat(blue("Calcul des moyennes par région [...]\n"))
             moy_region = data2 %>% # moy_region
                 group_by(region) %>%
                 summarise_all(mean, na.rm = T) %>%
@@ -241,26 +245,26 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         } else if (nuts <= 1){
             if (annee_carte < 2010){
                 # x = moy_region
-                cat(blue("Recodage des régions pour le cas NUTS0 et NUTS1 avant 2010 [...]\n"))
+                # cat(blue("Recodage des régions pour le cas NUTS0 et NUTS1 avant 2010 [...]\n"))
                 data3 = data2 %>% #moy_region
                     mutate(region = recode(region, !!!dico_enquete_avant_2010))
-                cat(green("[...] Terminé !\n"))
+                # cat(green("[...] Terminé !\n"))
                 # y = moy_region
             } else if (annee_carte >= 2010 & annee_carte < 2013){
-                cat(blue("Recodage des régions pour le cas NUTS0 et NUTS1 entre 2010 et 2013 [...]\n"))
+                # cat(blue("Recodage des régions pour le cas NUTS0 et NUTS1 entre 2010 et 2013 [...]\n"))
                 data3 = data2 %>% #moy_region
                     mutate(region = recode(region, !!!dico_enquete_apres_2010))
-                cat(green("[...] Terminé !\n"))
+                # cat(green("[...] Terminé !\n"))
             } else {
                 data3 = data2
             }
-            cat(blue("Calcul des moyennes par région [...]\n"))
+            # cat(blue("Calcul des moyennes par région [...]\n"))
             moy_region = data3 %>% 
                 mutate(region = substr(region, 1, nuts + 2)) %>%
                 group_by(region) %>% 
                 summarise_all(mean, na.rm = T) %>% 
                 filter(region != "")
-            cat(green("[...] Terminé !\n"))
+            # cat(green("[...] Terminé !\n"))
         }
         
         ###################################################################################################
@@ -285,7 +289,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         ###################################################################################################
         
         # liste des identifiants nuts2 de la carte
-        cat(blue("Jointure entre la liste des régions de la carte et notre liste de valeurs [...]\n"))
+        # cat(blue("Jointure entre la liste des régions de la carte et notre liste de valeurs [...]\n"))
         choix_carte = paste0("data_map", annee_carte, "_nuts", nuts, sep = "")
         liste_ids = data.frame("region" = get(choix_carte)$NUTS_ID)
         
@@ -295,7 +299,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         # jointure : l'idee est d'associer une valeur existante pour chaque region, sinon un NA
         moyenne_region = liste_ids %>%
             left_join(moy_region, by = "region")
-        cat(green("[...] Terminé !\n"))
+        # cat(green("[...] Terminé !\n"))
         
         ###################################################################################################
         # Gestion du cas de Londres en 2013 (2 valeurs pour 5 régions)
@@ -335,13 +339,22 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
                    ANNEE = annee_enquete,
                    PAYS = substr(region, 1, 2))
         
-        # Mise à jour de la table finale
-        cat(blue("Mise à jour de la table finale [...]\n"))
-        df_final = df_final %>% 
-            rbind(moyenne_region)
-        # cat(green("[...] Terminé !\n"))
+        df_annee = df_annee %>% 
+            bind_rows(moyenne_region)
     }
+    return(df_annee)
 }
+
+for (i in c(1:nombre_enquete)){
+    df_final = df_final %>% 
+        bind_rows(zozo[[i]])
+}
+
+        # Mise à jour de la table finale
+        # cat(blue("Mise à jour de la table finale [...]\n"))
+        # df_final = df_final %>% 
+        #     rbind(moyenne_region)
+        # cat(green("[...] Terminé !\n"))
 
 
 

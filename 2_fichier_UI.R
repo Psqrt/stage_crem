@@ -29,28 +29,10 @@ contenu_UI <- shinyUI(
                 tabItem(
                     tabName = "tab_stats",
                     textOutput("texte2"),
-                      
+                    
                     DT::dataTableOutput("df_a_afficher")
-                    )
+                )
             )
         )
     )
-    # dashboardPage(
-    #     # Modifications de style css
-    #     #includeCSS("./extra/styles.css", encoding = "UTF-8"),
-    # 
-    #     # Choix du theme de l'application
-    #     # theme = shinytheme("sandstone"),
-    # 
-    #     # Listing des onglets
-    #     tags$div(class = "grandtitre",
-    #              titlePanel(
-    #                  title = "NOM APPLICATION"
-    #              )
-    #     ),
-    #     dashboardSidebar(title = "",
-    #                      tab_carto,
-    #                      collapsable = TRUE
-    #     )
-    # )
 )

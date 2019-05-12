@@ -8,23 +8,45 @@ library(tidyverse)
 
 
 # # DONNEES - CARTE NUTS2
-# data_map2003_nuts2 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
-# data_map2006_nuts2 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2006_4326_LEVL_2.geojson", what = "sp")
-# data_map2010_nuts2 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2010_4326_LEVL_2.geojson", what = "sp")
-# data_map2013_nuts2 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2013_4326_LEVL_2.geojson", what = "sp")
-# data_map2016_nuts2 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2016_4326_LEVL_2.geojson", what = "sp")
+# data_map2003_nuts2 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_20M_2003_4326_LEVL_2.geojson", what = "sp")
+# data_map2006_nuts2 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2006_4326_LEVL_2.geojson", what = "sp")
+# data_map2010_nuts2 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_2.geojson", what = "sp")
+# data_map2013_nuts2 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_2.geojson", what = "sp")
+# data_map2016_nuts2 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_2.geojson", what = "sp")
 # # DONNEES - CARTE NUTS1
-# data_map2003_nuts1 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2003_4326_LEVL_1.geojson", what = "sp")
-# data_map2006_nuts1 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2006_4326_LEVL_1.geojson", what = "sp")
-# data_map2010_nuts1 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2010_4326_LEVL_1.geojson", what = "sp")
-# data_map2013_nuts1 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2013_4326_LEVL_1.geojson", what = "sp")
-# data_map2016_nuts1 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2016_4326_LEVL_1.geojson", what = "sp")
+# data_map2003_nuts1 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_20M_2003_4326_LEVL_1.geojson", what = "sp")
+# data_map2006_nuts1 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2006_4326_LEVL_1.geojson", what = "sp")
+# data_map2010_nuts1 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_1.geojson", what = "sp")
+# data_map2013_nuts1 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_1.geojson", what = "sp")
+# data_map2016_nuts1 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_1.geojson", what = "sp")
 # # DONNEES - CARTE NUTS0
-# data_map2003_nuts0 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2003_4326_LEVL_0.geojson", what = "sp")
-# data_map2006_nuts0 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2006_4326_LEVL_0.geojson", what = "sp")
-# data_map2010_nuts0 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2010_4326_LEVL_0.geojson", what = "sp")
-# data_map2013_nuts0 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2013_4326_LEVL_0.geojson", what = "sp")
-# data_map2016_nuts0 = geojsonio::geojson_read("./data/map/NUTS_RG_01M_2016_4326_LEVL_0.geojson", what = "sp")
+# data_map2003_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_20M_2003_4326_LEVL_0.geojson", what = "sp")
+# data_map2006_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2006_4326_LEVL_0.geojson", what = "sp")
+# data_map2010_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
+# data_map2013_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
+# data_map2016_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
+
+###### DONNEES #################################################################
+
+
+# # DONNEES - CARTE NUTS2
+# data_map2003_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
+# data_map2006_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2006_4326_LEVL_2.geojson", what = "sp")
+# data_map2010_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2010_4326_LEVL_2.geojson", what = "sp")
+# data_map2013_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2013_4326_LEVL_2.geojson", what = "sp")
+# data_map2016_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2016_4326_LEVL_2.geojson", what = "sp")
+# # DONNEES - CARTE NUTS1
+# data_map2003_nuts1 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_1.geojson", what = "sp")
+# data_map2006_nuts1 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2006_4326_LEVL_1.geojson", what = "sp")
+# data_map2010_nuts1 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2010_4326_LEVL_1.geojson", what = "sp")
+# data_map2013_nuts1 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2013_4326_LEVL_1.geojson", what = "sp")
+# data_map2016_nuts1 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2016_4326_LEVL_1.geojson", what = "sp")
+# # DONNEES - CARTE NUTS0
+# data_map2003_nuts0 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_0.geojson", what = "sp")
+# data_map2006_nuts0 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2006_4326_LEVL_0.geojson", what = "sp")
+# data_map2010_nuts0 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2010_4326_LEVL_0.geojson", what = "sp")
+# data_map2013_nuts0 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2013_4326_LEVL_0.geojson", what = "sp")
+# data_map2016_nuts0 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2016_4326_LEVL_0.geojson", what = "sp")
 
 # 
 # # DONNEES - ENQUETE
