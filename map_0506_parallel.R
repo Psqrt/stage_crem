@@ -378,8 +378,68 @@ df_final2 = df_final %>%
     mutate_at(vars(contains("_na")), funs(round(./NB_OBS, 4)))
 cat(green("[...] Terminé !\n"))
 
+
+# bac à sable
+
+liste_periode = list(c(2004:2005),
+                     c(2006:2009),
+                     c(2010:2012),
+                     c(2013:2015))
+
+df_periode = data.frame()
+
+for (i in c(1:length(liste_periode))){
+    df_identifiant = df_final2 %>%
+        rownames_to_column() %>% 
+        mutate_at(vars(contains("_moy")), funs(. * NB_OBS)) %>% 
+        filter(ANNEE %in% liste_periode[[i]]) %>% 
+        filter(!is.na(NB_OBS)) %>%
+        group_by(REGION) %>% 
+        # mutate(ANNEE = as.factor(ANNEE)) %>% 
+        mutate(ANNEES_PRESENTES = paste(unlist(unique(ANNEE)), collapse = ", ")) %>% 
+        select(-contains("_moy")) #, -ANNEE
+    
+    df_valeurs = df_final2 %>%
+        group_by(REGION) %>% 
+        summarise_at(vars(contains("_moy")), funs(sum(.)/sum(NB_OBS))) %>%
+        mutate(PERIODE = paste(liste_periode[[i]][1], "-", liste_periode[[i]][length(liste_periode[[i]])], sep = ""))
+    
+    df_tot = df_valeurs %>%
+        merge(df_identifiant, by = c("REGION"), sort = FALSE) %>%
+        arrange(rowname)
+    
+    # df_tot = df_final2 %>% 
+    #     filter(ANNEE %in% c(2004, 2006, 2010, 2013)) %>% 
+    #     select(REGION, ANNEE) %>% 
+    #     merge(df_tot, by = c("REGION", "ANNEE"), sort = F, all.x = T) %>% 
+    #     select(-ANNEE)
+    
+    df1 = df_final2 %>% 
+        filter(ANNEE %in% c(2004, 2006, 2010, 2013)) %>% 
+        select(REGION, ANNEE) %>% 
+        left_join(df_tot, by = c("REGION", "ANNEE"))
+    
+    
+        
+    df_periode = df_periode %>% 
+        bind_rows(df1)
+}
+
+
+
+
+
+
+
+
+
+
+df_final3 = df_final2 %>% 
+    bind_rows(df_periode)
+
+
 cat(blue("Exportation de la table finale [...]\n"))
-write.csv(df_final2, file = "./data/finaux/donnees.csv",
+write.csv(df_final3, file = "./data/finaux/donnees.csv",
           row.names = F)
 cat(green("[...] Terminé !\n"))
 

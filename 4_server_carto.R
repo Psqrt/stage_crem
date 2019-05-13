@@ -22,9 +22,15 @@ liste_annee = reactive({
 })
 
 moyenne_region_filtre = reactive({
-    moyenne_region %>%
-        filter(NUTS == input$choix_nuts &
-                   ANNEE %in% liste_annee())
+    if (input$switch_periode){
+        moyenne_region %>% 
+            filter(NUTS == input$choix_nuts &
+                       PERIODE == input$choix_periode)
+    } else {
+        moyenne_region %>%
+            filter(NUTS == input$choix_nuts &
+                       ANNEE == input$choix_annee) #liste_annee()
+    }
 })
 
 observe({
@@ -104,7 +110,7 @@ observe({
                     fillColor = ~pal(moyenne_region_filtre()$warm_moy),
                     highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
         clearControls() %>% 
-        addLegend(pal = pal, values = 1-moyenne_region_filtre()$warm_moy, opacity = 1.0)
+        addLegend(pal = pal, values = moyenne_region_filtre()$warm_moy, opacity = 1.0)
 })
 
 
