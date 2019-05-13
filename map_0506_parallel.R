@@ -239,7 +239,9 @@ zozo = foreach (annee_enquete = c(date_premiere_enquete:date_derniere_enquete)) 
             # cat(blue("Calcul des moyennes par région [...]\n"))
             moy_region = data2 %>% # moy_region
                 group_by(region) %>%
-                summarise_all(mean, na.rm = T) %>%
+                group_by(NB_OBS = n(), add = T) %>% 
+                summarise_all(list(moy = ~mean(., na.rm = T), na = ~sum(is.na(.)))) %>%
+                ungroup() %>% 
                 filter(region != "")
             cat(green("[...] Terminé !\n"))
         } else if (nuts <= 1){
@@ -262,7 +264,9 @@ zozo = foreach (annee_enquete = c(date_premiere_enquete:date_derniere_enquete)) 
             moy_region = data3 %>% 
                 mutate(region = substr(region, 1, nuts + 2)) %>%
                 group_by(region) %>% 
-                summarise_all(mean, na.rm = T) %>% 
+                group_by(NB_OBS = n(), add = T) %>% 
+                summarise_all(list(moy = ~mean(., na.rm = T), na = ~sum(is.na(.)))) %>%
+                ungroup() %>% 
                 filter(region != "")
             # cat(green("[...] Terminé !\n"))
         }
@@ -315,7 +319,9 @@ zozo = foreach (annee_enquete = c(date_premiere_enquete:date_derniere_enquete)) 
             
             moyenne_londres = data2 %>%
                 group_by(region) %>%
-                summarise_all(mean, na.rm = T) %>%
+                group_by(NB_OBS = n(), add = T) %>% 
+                summarise_all(list(moy = ~mean(., na.rm = T), na = ~sum(is.na(.)))) %>%
+                ungroup() %>% 
                 filter(region == "UKIX")
             
             if (nrow(moyenne_londres) != 0){ 
@@ -368,7 +374,8 @@ df_final2 = df_final %>%
     round(4) %>% 
     cbind(df_final %>% 
               select(NUTS, ANNEE, PAYS, region)) %>% 
-    select(PAYS, REGION = region, NUTS, ANNEE, everything())
+    select(PAYS, REGION = region, NUTS, ANNEE, everything()) %>% 
+    mutate_at(vars(contains("_na")), funs(round(./NB_OBS, 4)))
 cat(green("[...] Terminé !\n"))
 
 cat(blue("Exportation de la table finale [...]\n"))

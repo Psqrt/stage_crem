@@ -57,22 +57,30 @@ tab_carto <- tabPanel("NOM ONGLET",
                               materialSwitch(
                                   inputId = "switch_periode",
                                   label = "PERIOD", 
+                                  value = FALSE,
                                   right = TRUE
                               ),
                               
                               
                               
-                              sliderTextInput(
-                                  inputId = "choix_annee",
-                                  label = "YEAR:", 
-                                  choices = c(2004:2013)
+                              conditionalPanel("input.switch_periode == 0",
+                                               sliderTextInput(
+                                                   inputId = "choix_annee",
+                                                   label = "YEAR:", 
+                                                   choices = c(2004:2013)
+                                               )
                               ),
                               
-                              selectInput(
-                                  inputId = "choix_periode",
-                                  label = "PERIOD", 
-                                  choices = c("2004-2005", "2010-2012")
-                              ),
+                              conditionalPanel("input.switch_periode == 1",
+                                               selectInput(
+                                                   inputId = "choix_periode",
+                                                   label = "PERIOD",
+                                                   choices = c("2004-2005",
+                                                               "2006-2009",
+                                                               "2010-2012",
+                                                               "2013-2015")
+                                               )
+                              )
                               
                               
                               
@@ -87,14 +95,14 @@ tab_carto <- tabPanel("NOM ONGLET",
                               #     fill = TRUE
                               # ),
                               
-                              prettyCheckbox(
-                                  inputId = "na_proportion",
-                                  label = "NA PROPORTION", 
-                                  value = FALSE,
-                                  status = "primary",
-                                  icon = icon("check"),
-                                  fill = TRUE
-                              )
+                              # prettyCheckbox(
+                              #     inputId = "na_proportion",
+                              #     label = "NA PROPORTION", 
+                              #     value = FALSE,
+                              #     status = "primary",
+                              #     icon = icon("check"),
+                              #     fill = TRUE
+                              # )
                               
                               
                               

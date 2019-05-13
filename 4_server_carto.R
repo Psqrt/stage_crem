@@ -8,8 +8,15 @@ moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
 ### REACTIVE LISTE ANNEE ##############################################################################
 liste_annee = reactive({
     if (input$switch_periode == TRUE){
-        c(as.numeric(substr(input$choix_periode, 1, 4)):as.numeric(substr(input$choix_periode, 6: 9)))
+        if (is.null(input$choix_periode)){
+            c(0)
+        } else {
+            print(input$choix_periode)
+            c(as.numeric(substr(input$choix_periode, 1, 4)):as.numeric(substr(input$choix_periode, 6, 9)))
+            # c(as.numeric(input$choix_annee))
+        }
     } else {
+        print(input$choix_periode)
         c(as.numeric(input$choix_annee))
     }
 })
@@ -28,6 +35,28 @@ observe({
         # print(moyenne_region_filtre)
     })
 })
+
+# observeEvent(input$switch_periode, {
+#     if (input$switch_periode == TRUE){
+#         print("QQQQQQQQQQQQQQQQQQQQQQQQ")
+#         insertUI(
+#             selector = "#switch_periode",
+#             where = "beforeBegin",
+#             # immediate = T,
+#             ui =  selectInput(
+#                 inputId = "choix_periode",
+#                 label = "PERIOD",
+#                 selected = "2006-2009",
+#                 choices = c("2004-2005",
+#                             "2006-2009",
+#                             "2010-2012",
+#                             "2013-2015")
+#             )
+#         )
+#     } else {
+#         removeUI(selector = "switch_periode")
+#     }
+# })
 
 ###################################################################################################
 # Cartographie
@@ -70,12 +99,12 @@ observe({
                     color = "black",
                     weight = 1,
                     smoothFactor = 0,
-                    # label = ~paste0(moyenne_region_filtre$REGION, " : ", round(moyenne_region_filtre$warm, 2)),
-                    fillOpacity = 0.8,
-                    fillColor = ~pal(moyenne_region_filtre()$warm),
+                    label = ~paste0(moyenne_region_filtre()$REGION, " : ", round(moyenne_region_filtre()$warm_moy, 2)),
+                    fillOpacity = 0.5,
+                    fillColor = ~pal(moyenne_region_filtre()$warm_moy),
                     highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
         clearControls() %>% 
-        addLegend(pal = pal, values = 1-moyenne_region_filtre()$warm, opacity = 1.0)
+        addLegend(pal = pal, values = 1-moyenne_region_filtre()$warm_moy, opacity = 1.0)
 })
 
 
