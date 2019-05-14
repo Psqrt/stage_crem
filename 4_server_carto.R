@@ -86,6 +86,23 @@ choix_carte = reactive({
     paste0("data_map", annee_carte, "_nuts", nuts, sep = "")
 })
 
+choix_carte_front = reactive({
+    paste("LISTE ANNEE DANS CHOIX CARTE : ", liste_annee()[1])
+    annee_enquete = liste_annee()[1]
+    if (annee_enquete < 2006){
+        annee_carte = 2003
+    } else if (annee_enquete >= 2006 & annee_enquete < 2010){
+        annee_carte = 2006
+    } else if (annee_enquete >= 2010 & annee_enquete < 2013){
+        annee_carte = 2010
+    } else if (annee_enquete >= 2013 & annee_enquete < 2016){
+        annee_carte = 2013
+    } else {
+        annee_carte = 2016
+    }
+    paste0("data_map", annee_carte, "_nuts0_front", sep = "")
+})
+
 # Choix de la palette
 pal <- colorNumeric("YlOrRd", NULL, na.color = "#F0F0F0", alpha = T)
 # base-light-nolabels
@@ -94,7 +111,9 @@ pal <- colorNumeric("YlOrRd", NULL, na.color = "#F0F0F0", alpha = T)
 
 output$map <- renderLeaflet({
             leaflet(options = leafletOptions(zoomControl = FALSE)) %>% 
-                addTiles(urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png") %>%
+                # addTiles(urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png") %>%
+                addTiles(urlTemplate = "//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png") %>%
+                # addTiles(urlTemplate = "//server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}") %>%
                 setView(lng = 9.9921, lat = 48.3453, zoom = 5)
 })
 
@@ -103,12 +122,16 @@ observe({
         clearShapes() %>% 
         addPolygons(data = get(choix_carte()),
                     color = "black",
-                    weight = 1,
+                    weight = 0.3,
                     smoothFactor = 0,
                     label = ~paste0(moyenne_region_filtre()$REGION, " : ", round(moyenne_region_filtre()$warm_moy, 2)),
-                    fillOpacity = 0.5,
+                    fillOpacity = 0.6,
                     fillColor = ~pal(moyenne_region_filtre()$warm_moy),
                     highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
+        addPolylines(data = get(choix_carte_front()),
+                 weight = 2,
+                 color = "black",
+                 opacity = 0.8) %>% 
         clearControls() %>% 
         addLegend(pal = pal, values = moyenne_region_filtre()$warm_moy, opacity = 1.0)
 })

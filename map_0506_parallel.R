@@ -93,6 +93,12 @@ if (importer_carte == 1){
         data_map2010_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        # FRONTIERES
+        data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
+        data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
+        data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
+        data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
+        data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
     } else if (precision == 1){
         # DONNEES - CARTE NUTS2
         data_map2003_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
@@ -133,8 +139,8 @@ zozo = foreach (annee_enquete = c(date_premiere_enquete:date_derniere_enquete)) 
     liste_nom_fichier = substr(liste_nom_fichier, 1, nchar(liste_nom_fichier)-4)
     
     
-    # type_fichier = c("h", "d", "p", "r")
-    type_fichier = c("h", "d")
+    type_fichier = c("h", "d", "p", "r")
+    # type_fichier = c("h", "d")
     
     df_h = data.frame()
     df_d = data.frame()
@@ -388,50 +394,36 @@ liste_periode = list(c(2004:2005),
 
 df_periode = data.frame()
 
+
 for (i in c(1:length(liste_periode))){
-    df_identifiant = df_final2 %>%
-        rownames_to_column() %>% 
+    df_moy_periode = df_final2 %>%
         mutate_at(vars(contains("_moy")), funs(. * NB_OBS)) %>% 
+        filter(ANNEE %in% liste_periode[[i]]) %>% 
+        group_by(REGION) %>% 
+        summarise_at(vars(contains("_moy")), funs(sum(.)/sum(NB_OBS))) %>%
+        mutate(PERIODE = paste(liste_periode[[i]][1], "-", liste_periode[[i]][length(liste_periode[[i]])], sep = "")) %>% 
+        select(REGION, PERIODE, contains("_moy"))
+    
+    df_presente_periode = df_final2 %>% 
         filter(ANNEE %in% liste_periode[[i]]) %>% 
         filter(!is.na(NB_OBS)) %>%
         group_by(REGION) %>% 
-        # mutate(ANNEE = as.factor(ANNEE)) %>% 
         mutate(ANNEES_PRESENTES = paste(unlist(unique(ANNEE)), collapse = ", ")) %>% 
-        select(-contains("_moy")) #, -ANNEE
+        select(PAYS, REGION, NUTS, ANNEES_PRESENTES) %>% 
+        distinct() %>% 
+        select(REGION, ANNEES_PRESENTES)
     
-    df_valeurs = df_final2 %>%
-        group_by(REGION) %>% 
-        summarise_at(vars(contains("_moy")), funs(sum(.)/sum(NB_OBS))) %>%
-        mutate(PERIODE = paste(liste_periode[[i]][1], "-", liste_periode[[i]][length(liste_periode[[i]])], sep = ""))
+    df_ordre_periode = df_final2 %>% 
+        filter(ANNEE == liste_periode[[i]][1]) %>% 
+        select(PAYS, REGION, NUTS, NB_OBS, contains("_na"))
     
-    df_tot = df_valeurs %>%
-        merge(df_identifiant, by = c("REGION"), sort = FALSE) %>%
-        arrange(rowname)
+    df_tot = df_ordre_periode %>% 
+        left_join(df_moy_periode, by = c("REGION")) %>% 
+        left_join(df_presente_periode, by = c("REGION"))
     
-    # df_tot = df_final2 %>% 
-    #     filter(ANNEE %in% c(2004, 2006, 2010, 2013)) %>% 
-    #     select(REGION, ANNEE) %>% 
-    #     merge(df_tot, by = c("REGION", "ANNEE"), sort = F, all.x = T) %>% 
-    #     select(-ANNEE)
-    
-    df1 = df_final2 %>% 
-        filter(ANNEE %in% c(2004, 2006, 2010, 2013)) %>% 
-        select(REGION, ANNEE) %>% 
-        left_join(df_tot, by = c("REGION", "ANNEE"))
-    
-    
-        
     df_periode = df_periode %>% 
-        bind_rows(df1)
+        bind_rows(df_tot)
 }
-
-
-
-
-
-
-
-
 
 
 df_final3 = df_final2 %>% 
