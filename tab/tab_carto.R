@@ -13,7 +13,7 @@ tab_carto <- tabPanel("NOM ONGLET",
                           width = "auto",
                           height = "auto",
                           top = "60px",
-                          draggable = TRUE,
+                          draggable = FALSE,
                           
                           
                           dropdownButton(
@@ -41,11 +41,23 @@ tab_carto <- tabPanel("NOM ONGLET",
                               selectInput(
                                   inputId = "choix_variable_map",
                                   label = "INDICATOR", 
-                                  choices = c(c("Warm" = "HH050", 
-                                                "Arrears" = "HS021",
-                                                "Leaking" = "HH040"))
+                                  choices = toto,#c(liste_variable_label),
+                                  selected = "HH050_moy"
                               ),
                               
+                              
+                              selectInput(
+                                  inputId = "choix_variable_map2",
+                                  label = "INDICATOR", 
+                                  choices = list(`var_quali` = c("mod21", "mod22"), 
+                                                   `var_quali2` = c("mod1", "mod2")),
+                                  selected = "HH050_moy"
+                              ),
+                              selectInput("state", "Choose a state:",
+                                          list(`East Coast` = c("NY", "NJ", "CT"),
+                                               `West Coast` = c("WA", "OR", "CA"),
+                                               `Midwest` = "MN")
+                              ),
                               selectInput(
                                   inputId = "choix_modalite_map",
                                   label = "MODALITE (PLUS TARD)", 

@@ -1,0 +1,40 @@
+code,label
+HH050,Ability to keep adequately warm
+HH040,"Leaking roof, dam walls/floors/foundation or rot in window rames or floor"
+HS021,Arrears on utility bills
+DB100,Degree of urbanisation
+RB200,Residential status
+HH010,Dwelling type
+HH021,Tenure status
+HH030,Number of rooms available to the household
+HH060,Current rent related to occupied dwelling
+HH061,Subjective rent
+HH070,Total housing cost
+HH081,Bath or shower in dwelling
+HS160,"Problems with the dwelling : too dark, not enough light"
+HS180,"Pollution, grime or other environment problems"
+HS190,"Crime, violence or vandalism in the area"
+RB031,Year of immigration
+PB140,Year of birth
+PB150,Sex
+PB190,Marital status
+PB220A,Citizenship 1
+PB220B,Citizenship 2
+PE010,Current education activity
+PE020,ISCED level currently attended
+PE040,Highest ISCED level attained
+HC010T4,Food at home
+RB170,Main activity status during the incoming reference period
+RB210,Basic activity status
+PL015,Wheter person has ever worked
+PL031,Self-defined current economic status
+PL051,Occupation (ISCO-08 (COM))
+PL060,Number of hours usually worked per week in main job
+PL100,"Total number of hours usually worked in second, third, … jobs"
+PL140,Type of contract
+PL160,Change of job since last year
+PL200,Number of years spent in paid work
+HY010,Total household gross income
+HY020,Total disposable household income
+PC040T4,Personal Regular savings (in a typical month)
+HC050T4,Household Regular savings (in a typical month)

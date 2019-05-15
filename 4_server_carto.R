@@ -3,7 +3,27 @@ moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
                           header = T,
                           stringsAsFactors = F)
 
+dico_variable_import = read.csv(file = "./data/liste_variable.csv",
+                                sep = ",",
+                                header = T,
+                                stringsAsFactors = F)
 
+dico_variable_import$code_moy = paste(dico_variable_import$code, "_moy", sep = "")
+
+dico_variable_moy = setNames(dico_variable_import$code_moy,
+                             dico_variable_import$label)
+
+df_variable_moy = data.frame(var = intersect(colnames(moyenne_region), dico_variable_moy),
+                  stringsAsFactors = F)
+
+df_variable_moy = df_variable_moy %>% 
+    inner_join(dico_variable_import,
+               by = c("var" = "code_moy"))
+
+liste_variable_label = setNames(df_variable_moy$var,
+                                df_variable_moy$label)
+
+dico_variable_import[!(dico_variable_import$code %in% df_variable_moy$code),]
 
 ### REACTIVE LISTE ANNEE ##############################################################################
 liste_annee = reactive({
@@ -118,22 +138,24 @@ output$map <- renderLeaflet({
 })
 
 observe({
+    variable_choisie = input$choix_variable_map
+    print(variable_choisie)
     leafletProxy('map') %>% 
         clearShapes() %>% 
         addPolygons(data = get(choix_carte()),
                     color = "black",
                     weight = 0.3,
                     smoothFactor = 0,
-                    label = ~paste0(moyenne_region_filtre()$REGION, " : ", round(moyenne_region_filtre()$warm_moy, 2)),
+                    label = ~paste0(moyenne_region_filtre()$REGION, " : ", round(moyenne_region_filtre()[, variable_choisie], 2)),
                     fillOpacity = 0.6,
-                    fillColor = ~pal(moyenne_region_filtre()$warm_moy),
+                    fillColor = ~pal(moyenne_region_filtre()[, variable_choisie]),
                     highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 
         addPolylines(data = get(choix_carte_front()),
                  weight = 2,
                  color = "black",
                  opacity = 0.8) %>% 
         clearControls() %>% 
-        addLegend(pal = pal, values = moyenne_region_filtre()$warm_moy, opacity = 1.0)
+        addLegend(pal = pal, values = moyenne_region_filtre()[, variable_choisie], opacity = 1.0)
 })
 
 
