@@ -7,6 +7,8 @@
 * Maquette : https://balsamiq.cloud/sgf7255/pky7rtu/r3D7B
 * Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit
 * Rapport 2 : https://docs.google.com/document/d/1VrJxGSwtAESfuOQFKSoIyODAAj68VapsTirIRVFsrYU/edit
+* Transformations NUTS : https://docs.google.com/document/d/1IRVb8912ijZBV2mBxJdbu_GYBd4NTY5QlBu008ZSkXw/edit
+* Détails des variables retenues : https://docs.google.com/document/d/1qfzHbjN1enVYsdSeOloMRwxj7nW6uSb4Yq8c_FLZCR0/edit
 
 ## Données
 * Données de l'enquête : https://ec.europa.eu/eurostat/fr/web/microdata/statistics-on-income-and-living-conditions

@@ -49,8 +49,10 @@ tab_carto <- tabPanel("NOM ONGLET",
                               selectInput(
                                   inputId = "choix_variable_map2",
                                   label = "INDICATOR", 
-                                  choices = list(`var_quali` = c("mod21", "mod22"), 
-                                                   `var_quali2` = c("mod1", "mod2")),
+                                  choices = list(`variable 1` = c(`modalité 1` = "zozo",
+                                                                  `modalité 2` = "zaza"),
+                                                 `variable 2` = c(`modalité 1` = "zuzu",
+                                                                  `modalité 2` = "zpzp")),
                                   selected = "HH050_moy"
                               ),
                               selectInput("state", "Choose a state:",
