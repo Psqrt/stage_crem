@@ -1,30 +1,3 @@
-moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
-                          sep = ",",
-                          header = T,
-                          stringsAsFactors = F)
-
-dico_variable_import = read.csv(file = "./data/liste_variable.csv",
-                                sep = ",",
-                                header = T,
-                                stringsAsFactors = F)
-
-dico_variable_import$code_moy = paste(dico_variable_import$code, "_moy", sep = "")
-
-dico_variable_moy = setNames(dico_variable_import$code_moy,
-                             dico_variable_import$label)
-
-df_variable_moy = data.frame(var = intersect(colnames(moyenne_region), dico_variable_moy),
-                  stringsAsFactors = F)
-
-df_variable_moy = df_variable_moy %>% 
-    inner_join(dico_variable_import,
-               by = c("var" = "code_moy"))
-
-liste_variable_label = setNames(df_variable_moy$var,
-                                df_variable_moy$label)
-
-dico_variable_import[!(dico_variable_import$code %in% df_variable_moy$code),]
-
 ### REACTIVE LISTE ANNEE ##############################################################################
 liste_annee = reactive({
     if (input$switch_periode == TRUE){
@@ -33,7 +6,6 @@ liste_annee = reactive({
         } else {
             print(input$choix_periode)
             c(as.numeric(substr(input$choix_periode, 1, 4)):as.numeric(substr(input$choix_periode, 6, 9)))
-            # c(as.numeric(input$choix_annee))
         }
     } else {
         print(input$choix_periode)
@@ -49,40 +21,15 @@ moyenne_region_filtre = reactive({
     } else {
         moyenne_region %>%
             filter(NUTS == input$choix_nuts &
-                       ANNEE == input$choix_annee) #liste_annee()
+                       ANNEE == input$choix_annee)
     }
 })
 
 observe({
     output$df_a_afficher = DT::renderDataTable({
-        # invalidateLater(2000)
         moyenne_region_filtre()
-
-        # print(moyenne_region_filtre)
     })
 })
-
-# observeEvent(input$switch_periode, {
-#     if (input$switch_periode == TRUE){
-#         print("QQQQQQQQQQQQQQQQQQQQQQQQ")
-#         insertUI(
-#             selector = "#switch_periode",
-#             where = "beforeBegin",
-#             # immediate = T,
-#             ui =  selectInput(
-#                 inputId = "choix_periode",
-#                 label = "PERIOD",
-#                 selected = "2006-2009",
-#                 choices = c("2004-2005",
-#                             "2006-2009",
-#                             "2010-2012",
-#                             "2013-2015")
-#             )
-#         )
-#     } else {
-#         removeUI(selector = "switch_periode")
-#     }
-# })
 
 ###################################################################################################
 # Cartographie
@@ -125,16 +72,15 @@ choix_carte_front = reactive({
 
 # Choix de la palette
 pal <- colorNumeric("YlOrRd", NULL, na.color = "#F0F0F0", alpha = T)
-# base-light-nolabels
+
+
 # Carte leaflet
-
-
 output$map <- renderLeaflet({
             leaflet(options = leafletOptions(zoomControl = FALSE)) %>% 
                 # addTiles(urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png") %>%
                 addTiles(urlTemplate = "//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png") %>%
                 # addTiles(urlTemplate = "//server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}") %>%
-                setView(lng = 9.9921, lat = 48.3453, zoom = 5)
+                setView(lng = 6.1231853, lat = 49.6014421, zoom = 5)
 })
 
 observe({
@@ -155,7 +101,11 @@ observe({
                  color = "black",
                  opacity = 0.8) %>% 
         clearControls() %>% 
-        addLegend(pal = pal, values = moyenne_region_filtre()[, variable_choisie], opacity = 1.0)
+        addLegend(pal = pal, 
+                  values = moyenne_region_filtre()[, variable_choisie], 
+                  title = "LEGEND",
+                  opacity = 2.0,
+                  na.label = "NA")
 })
 
 

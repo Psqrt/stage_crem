@@ -10,11 +10,11 @@ contenu_UI <- shinyUI(
         dashboardHeader(),
         dashboardSidebar(
             sidebarMenu(
-                menuItem("CARTO", 
+                menuItem("MAP", 
                          tabName = "tab_carto", 
                          icon = icon("globe-americas")
                 ),
-                menuItem("STATS", 
+                menuItem("STATISTICS", 
                          tabName = "tab_stats", 
                          icon = icon("chart-bar")
                 )

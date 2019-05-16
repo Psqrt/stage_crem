@@ -1,12 +1,21 @@
 /* Carte */
 #map {
-	position: relative;
-	top: -20px;
-	left: -15px;
+	position: fixed;
+	top: 50px;
+	left: 0px;
 	bottom: -15px;
 	right: 0px;
   width: 100%;
 	overflow: hidden;
+}
+
+.leaflet-top .leaflet-right {
+  padding-top: 6px;
+}
+
+/* menus déroulants */
+#div_choix_variable_map .selectize-dropdown-content {
+  min-height: 450px;
 }
 
 .content {
@@ -19,6 +28,25 @@
 
 #abspanel_map_left {
   margin-left: 10px;
+  padding: 15px;
+}
+
+.irs-bar {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+}
+.irs-bar-edge {
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+#legend_fluidrow > .row {
+  width: 430px;
+}
+
+#legend_switch {
+  padding-top: 37px;
 }
 
 /* Barre horizontale */
