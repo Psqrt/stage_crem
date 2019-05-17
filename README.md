@@ -24,7 +24,7 @@
 * Documentation NUTS2013 : https://ec.europa.eu/eurostat/documents/3859598/6948381/KS-GQ-14-006-EN-N.pdf/b9ba3339-b121-4775-9991-d88e807628e3
 
 ## Géographie
-* norme IBAN/ISO2 : https://www.iban.com/country-codes
+* Norme IBAN/ISO2 : https://www.iban.com/country-codes
 * Carte Europe avec ISO2 : https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/media/File:Europe_ISO_3166-1.svg
 * Liste pays de l'UE : https://fr.wikipedia.org/wiki/%C3%89tats_membres_de_l%27Union_europ%C3%A9enne
 
@@ -34,3 +34,5 @@
 ## Shiny
 * Gallerie widgets : http://shinyapps.dreamrs.fr/shinyWidgets/
 * Fonds de carte : https://leaflet-extras.github.io/leaflet-providers/preview/
+* Fonction HTML : https://shiny.rstudio.com/articles/tag-glossary.html 
+* Icones : https://fontawesome.com/icons/plus-circle?style=solid
