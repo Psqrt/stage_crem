@@ -31,6 +31,17 @@ observe({
     })
 })
 
+
+############################    
+# pdf   
+############################
+
+output$pdfviewer <- renderText({
+    page = recode(substr(input$choix_variable_map, 1, 5), !!!dico_liste_variable_page)
+    return(paste('<iframe style="height:500px; width:793px;" src="./pdf/', page, '.pdf', '"></iframe>', sep = ""))
+  })
+
+
 ###################################################################################################
 # Cartographie
 ###################################################################################################
@@ -80,7 +91,7 @@ output$map <- renderLeaflet({
                 # addTiles(urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png") %>%
                 addTiles(urlTemplate = "//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png") %>%
                 # addTiles(urlTemplate = "//server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}") %>%
-                setView(lng = 6.1231853, lat = 49.6014421, zoom = 5)
+                setView(lng = 7.2231853, lat = 49.6014421, zoom = 5)
 })
 
 observe({
@@ -92,7 +103,9 @@ observe({
                     color = "black",
                     weight = 0.3,
                     smoothFactor = 0,
-                    label = ~paste0(moyenne_region_filtre()$REGION, " : ", round(moyenne_region_filtre()[, variable_choisie], 2)),
+                    popup = ~sprintf("<b> %s : </b> %s", moyenne_region_filtre()$NOM_REGION, round(moyenne_region_filtre()[, variable_choisie], 2)),
+                    # label = ~paste0(strong(moyenne_region_filtre()$NOM_REGION), " : ", round(moyenne_region_filtre()[, variable_choisie], 2)),
+                    # label = lapply(xx, FUN = HTML),
                     fillOpacity = 0.6,
                     fillColor = ~pal(moyenne_region_filtre()[, variable_choisie]),
                     highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = T)) %>% 

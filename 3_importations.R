@@ -33,4 +33,12 @@ liste_variable_label = setNames(df_variable_moy$var,
 
 dico_variable_import[!(dico_variable_import$code %in% df_variable_moy$code),]
 
+dico_liste_variable_page_import = read.csv(file = "./data/liste_variable_page.csv",
+                                           sep = ",",
+                                           header = T,
+                                           stringsAsFactors = F)
+
+dico_liste_variable_page = setNames(dico_liste_variable_page_import$page,
+                                    dico_liste_variable_page_import$code)
+
 source("./liste_deroulante_map.R")$values

@@ -75,3 +75,18 @@
 .skin-blue .main-header .navbar .sidebar-toggle:hover {
   background-color: #000000;
 }
+
+#abspanel_map_bot {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#abspanel_map_right {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/*.dropdown-shinyWidgets {
+  border: 0px !important;
+  background-color: transparent !important;
+}*/

@@ -409,10 +409,12 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         # liste des identifiants nuts2 de la carte
         cat(blue("Jointure entre la liste des régions de la carte et notre liste de valeurs [...]\n"))
         choix_carte = paste0("data_map", annee_carte, "_nuts", nuts, sep = "")
-        liste_ids = data.frame("REGION" = get(choix_carte)$NUTS_ID)
+        liste_ids = data.frame("REGION" = get(choix_carte)$NUTS_ID,
+                               "NOM_REGION" = get(choix_carte)$NUTS_NAME)
         
         # conversion en char pour merger
         liste_ids[, "REGION"] = as.character(liste_ids[, "REGION"])
+        liste_ids[, "NOM_REGION"] = as.character(liste_ids[, "NOM_REGION"])
         
         # jointure : l'idee est d'associer une valeur existante pour chaque region, sinon un NA
         moyenne_region_menage = liste_ids %>%
@@ -488,18 +490,18 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
 # réordonner les colonnes pour avoir les variables d'identification au début et calcul des pourcentages de NA
 cat(blue("Préparation de la table finale avant exportation [...]\n"))
 df_final2_menage = df_annee_menage %>% 
-    select(-NUTS, -ANNEE, -PAYS, -REGION) %>% 
+    select(-NUTS, -ANNEE, -PAYS, -REGION, -NOM_REGION) %>% 
     round(4) %>% 
     cbind(df_annee_menage %>% 
-              select(NUTS, ANNEE, PAYS, REGION)) %>% 
-    select(PAYS, REGION, NUTS, ANNEE, everything()) %>% 
+              select(NUTS, ANNEE, PAYS, REGION, NOM_REGION)) %>% 
+    select(PAYS, REGION, NOM_REGION, NUTS, ANNEE, everything()) %>% 
     mutate_at(vars(contains("_na")), funs(round(./NB_OBS, 4)))
 df_final2_personne = df_annee_personne %>% 
-    select(-NUTS, -ANNEE, -PAYS, -REGION) %>% 
+    select(-NUTS, -ANNEE, -PAYS, -REGION, -NOM_REGION) %>% 
     round(4) %>% 
     cbind(df_annee_personne %>% 
-              select(NUTS, ANNEE, PAYS, REGION)) %>% 
-    select(PAYS, REGION, NUTS, ANNEE, everything()) %>% 
+              select(NUTS, ANNEE, PAYS, REGION, NOM_REGION)) %>% 
+    select(PAYS, REGION, NOM_REGION, NUTS, ANNEE, everything()) %>% 
     mutate_at(vars(contains("_na")), funs(round(./NB_OBS, 4)))
 cat(green("[...] Terminé !\n"))
 
@@ -535,7 +537,7 @@ for (i in c(1:length(liste_periode))){
     
     df_ordre_periode_menage = df_final2_menage %>% 
         filter(ANNEE == liste_periode[[i]][1]) %>% 
-        select(PAYS, REGION, NUTS, NB_OBS, contains("_na"))
+        select(PAYS, REGION, NOM_REGION, NUTS, NB_OBS, contains("_na"))
     
     df_tot_menage = df_ordre_periode_menage %>% 
         left_join(df_moy_periode_menage, by = c("REGION")) %>% 
@@ -567,7 +569,7 @@ for (i in c(1:length(liste_periode))){
     
     df_ordre_periode_personne = df_final2_personne %>% 
         filter(ANNEE == liste_periode[[i]][1]) %>% 
-        select(PAYS, REGION, NUTS, NB_OBS, contains("_na"))
+        select(PAYS, REGION, NOM_REGION, NUTS, NB_OBS, contains("_na"))
     
     df_tot_personne = df_ordre_periode_personne %>% 
         left_join(df_moy_periode_personne, by = c("REGION")) %>% 
@@ -589,10 +591,10 @@ df_final3_tot = df_final3_menage %>%
     rownames_to_column() %>% 
     inner_join(df_final3_personne %>% 
                    rownames_to_column() %>% 
-                   select(-PAYS, -REGION, -ANNEE, -NUTS, -PERIODE, -ANNEES_PRESENTES) %>% 
+                   select(-PAYS, -REGION, -NOM_REGION, -ANNEE, -NUTS, -PERIODE, -ANNEES_PRESENTES) %>% 
                    rename(NB_PERSONNE = NB_OBS), by = c("rowname")) %>% 
     select(-rowname) %>% 
-    select(PAYS, REGION, NUTS, ANNEE, PERIODE, ANNEES_PRESENTES, NB_MENAGE = NB_OBS, NB_PERSONNE, everything())
+    select(PAYS, REGION, NOM_REGION, NUTS, ANNEE, PERIODE, ANNEES_PRESENTES, NB_MENAGE = NB_OBS, NB_PERSONNE, everything())
 
 
 # Exportation de la table finale qui servira de base de départ sur shiny

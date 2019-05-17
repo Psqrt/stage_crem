@@ -44,7 +44,7 @@ tab_carto <- tabPanel("Map",
                                        )
                                    )
                           ),
-                                   
+                          
                           tags$div(id = "div_choix_variable_map",
                                    class = "div_cvm",
                                    selectInput(
@@ -80,6 +80,58 @@ tab_carto <- tabPanel("Map",
                                                            "2010-2012",
                                                            "2013-2015")
                                            )
+                          )
+                      ),
+                      
+                      
+                      absolutePanel(
+                          id = "abspanel_map_bot",
+                          fixed = FALSE,
+                          class = "panel panel-default",
+                          width = "auto",
+                          height = "auto",
+                          bottom = "0px",
+                          left = "245px",
+                          draggable = FALSE,
+                          
+                          dropdownButton(
+                              htmlOutput('pdfviewer'),
+                              circle = TRUE,
+                              status = 'danger',
+                              label = "G1",
+                              size = "sm",
+                              icon = icon("file-pdf"),
+                              width = "795px",
+                              margin = "0px",
+                              up = T
+                          )
+                      ),
+                      
+                      
+                      absolutePanel(
+                          id = "abspanel_map_right",
+                          fixed = FALSE,
+                          class = "panel panel-default",
+                          width = "auto",
+                          height = "auto",
+                          bottom = "0px",
+                          right = "30px",
+                          draggable = FALSE,
+                          
+                          dropdownButton(
+                              tags$h2("TITRE1"),
+                              tags$hr(),
+                              tags$h2("TITRE2"),
+                              
+                              
+                              circle = TRUE,
+                              status = 'primary',
+                              label = "G1",
+                              size = "sm",
+                              icon = icon("plus-circle"),
+                              width = "100px",
+                              up = T,
+                              right = T
                           )
                       )
 )
