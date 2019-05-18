@@ -91,14 +91,14 @@ tab_carto <- tabPanel("Map",
                           width = "auto",
                           height = "auto",
                           bottom = "0px",
-                          left = "245px",
+                          # left = "245px",
                           draggable = FALSE,
                           
                           dropdownButton(
                               htmlOutput('pdfviewer'),
                               circle = TRUE,
                               status = 'danger',
-                              label = "G1",
+                              label = "Documentation",
                               size = "sm",
                               icon = icon("file-pdf"),
                               width = "795px",
@@ -109,29 +109,48 @@ tab_carto <- tabPanel("Map",
                       
                       
                       absolutePanel(
-                          id = "abspanel_map_right",
+                          id = "abspanel_map_right_button",
                           fixed = FALSE,
                           class = "panel panel-default",
                           width = "auto",
                           height = "auto",
                           bottom = "0px",
-                          right = "30px",
+                          right = "15px",
                           draggable = FALSE,
                           
-                          dropdownButton(
-                              tags$h2("TITRE1"),
-                              tags$hr(),
-                              tags$h2("TITRE2"),
-                              
-                              
-                              circle = TRUE,
-                              status = 'primary',
-                              label = "G1",
-                              size = "sm",
+                          
+                          
+                          
+                          actionBttn(
+                              inputId = "infoplus",
+                              label = "Information", 
+                              style = "material-circle",
+                              color = "primary",
                               icon = icon("plus-circle"),
-                              width = "100px",
-                              up = T,
-                              right = T
+                              size = "sm",
+                              block = T
                           )
+                      ),
+                      
+                      
+                      
+                      conditionalPanel("(input.infoplus % 2) == 1",
+                                       absolutePanel(
+                                           id = "abspanel_map_right",
+                                           fixed = FALSE,
+                                           class = "panel panel-default",
+                                           width = "300px",
+                                           height = "auto",
+                                           bottom = "40px",
+                                           right = "15px",
+                                           draggable = FALSE,
+                                           
+                                           
+                                           htmlOutput("sortie_click_titre1"),
+                                           htmlOutput("sortie_click_texte1"),
+                                           tags$hr(),
+                                           htmlOutput("sortie_click_titre2"),
+                                           htmlOutput("sortie_click_texte2")
+                                       )
                       )
 )

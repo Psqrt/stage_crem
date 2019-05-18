@@ -1,13 +1,13 @@
 options(encoding = "UTF-8")
 
 
-# library(shiny)
-# library(shinydashboard)
-# library(rjson)
-# library(leaflet)
-# library(shinyWidgets)
-# # library(geojsonio)
-# library(tidyverse)
+library(shiny)
+library(shinydashboard)
+library(rjson)
+library(leaflet)
+library(shinyWidgets)
+# library(geojsonio)
+library(tidyverse)
 
 source('3_importations.R')
 source('2_fichier_UI.R', local = TRUE)

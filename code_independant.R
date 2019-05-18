@@ -117,12 +117,18 @@ if (importer_carte == 1){
         data_map2010_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
-        # FRONTIERES
-        data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
-        data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
-        data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
-        data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
-        data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        # # FRONTIERES
+        # data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
+        # data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
+        # data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
+        # data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
+        # data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        # # NOMS PAYS
+        # data_map2003_nuts0_noms = geojsonio::geojson_read("./data/map1:60/NUTS_LB_2003_4326_LEVL_0.geojson", what = "sp")
+        # data_map2006_nuts0_noms = geojsonio::geojson_read("./data/map1:60/NUTS_LB_2006_4326_LEVL_0.geojson", what = "sp")
+        # data_map2010_nuts0_noms = geojsonio::geojson_read("./data/map1:60/NUTS_LB_2010_4326_LEVL_0.geojson", what = "sp")
+        # data_map2013_nuts0_noms = geojsonio::geojson_read("./data/map1:60/NUTS_LB_2013_4326_LEVL_0.geojson", what = "sp")
+        # data_map2016_nuts0_noms = geojsonio::geojson_read("./data/map1:60/NUTS_LB_2016_4326_LEVL_0.geojson", what = "sp")
     } else if (precision == 1){
         # DONNEES - CARTE NUTS2
         data_map2003_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")

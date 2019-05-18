@@ -7,6 +7,7 @@
 * Maquette : https://balsamiq.cloud/sgf7255/pky7rtu/r3D7B
 * Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit
 * Rapport 2 : https://docs.google.com/document/d/1VrJxGSwtAESfuOQFKSoIyODAAj68VapsTirIRVFsrYU/edit  
+* Rapport 3 : https://docs.google.com/document/d/16wZxiQ52D4dDHrUmpOiZVj5TBNeec611DEXRmDoFvbk/edit
 * Transformations NUTS : https://docs.google.com/document/d/1IRVb8912ijZBV2mBxJdbu_GYBd4NTY5QlBu008ZSkXw/edit
 * Détails des variables retenues : https://docs.google.com/document/d/1qfzHbjN1enVYsdSeOloMRwxj7nW6uSb4Yq8c_FLZCR0/edit
 * Documentation Programme Indépendant : https://docs.google.com/document/d/1Zie090c7jKBRM7OdSxhfMM6s7Pyy1T5helV3eWCTnnY/edit#heading=h.2ldbl6ws0ers
