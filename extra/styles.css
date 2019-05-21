@@ -104,8 +104,22 @@
   line-height: 1.1;
 }
 
+.fa.fa-file-pdf {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+#abspanel_map_bot_inside {
+  position: relative;
+}
 /*.dropdown-shinyWidgets {
   border: 0px !important;
   background-color: transparent !important;
 }*/
 
+
+#abspanel_ts_left {
+  margin-top: 5px;
+  padding-top: 15px;
+  padding-left: 15px;
+}

@@ -145,36 +145,39 @@ observe({
 
 ### PANEL INFO DE DROITE ##############################################################################
 observeEvent(input$map_shape_click, {
+  print(input$map_shape_click)
   click <<- input$map_shape_click
   
-  ligne_click = moyenne_region_filtre() %>% 
-    filter(REGION == click$id)
-  
-  if (input$choix_nuts == "NUTS 2"){
-    texte1 = paste("Une région NUTS 2 a été selectionnée : donner infos sur cette région NUTS2 : ", ligne_click$HH050_moy)
-    texte2 = paste("Une région NUTS 2 a été selectionnée : donner infos sur la région NUTS1 : ", ligne_click$HH040_moy)
-    titre2 = tags$h4(substr(ligne_click$REGION, 1, 3))
-  } else if (input$choix_nuts == "NUTS 1"){
-    texte1 = paste("Une région NUTS 1 a été selectionnée : donner infos sur cette région NUTS1 : ", ligne_click$HH050_moy)
-    texte2 = paste("Une région NUTS 1 a été selectionnée : donner infos sur le pays NUTS0 : ", ligne_click$HH040_moy)
-    titre2 = tags$h4(substr(ligne_click$REGION, 1, 2))
-  } else if (input$choix_nuts == "NUTS 0"){
-    texte1 = paste("Une région NUTS 0 a été selectionnée : donner infos sur cette région NUTS0 : ", ligne_click$HH050_moy)
-    texte2 = paste("Une région NUTS 0 a été selectionnée : donner infos sur l'Europe : ", ligne_click$HH040_moy)
-    titre2 = tags$h4("Europe")
+  if (!is.null(click$id)){
+    ligne_click = moyenne_region_filtre() %>% 
+      filter(REGION == click$id)
+    
+    if (input$choix_nuts == "NUTS 2"){
+      texte1 = paste("Une région NUTS 2 a été selectionnée : donner infos sur cette région NUTS2 : ", ligne_click$HH050_moy)
+      texte2 = paste("Une région NUTS 2 a été selectionnée : donner infos sur la région NUTS1 : ", ligne_click$HH040_moy)
+      titre2 = tags$h4(substr(ligne_click$REGION, 1, 3))
+    } else if (input$choix_nuts == "NUTS 1"){
+      texte1 = paste("Une région NUTS 1 a été selectionnée : donner infos sur cette région NUTS1 : ", ligne_click$HH050_moy)
+      texte2 = paste("Une région NUTS 1 a été selectionnée : donner infos sur le pays NUTS0 : ", ligne_click$HH040_moy)
+      titre2 = tags$h4(substr(ligne_click$REGION, 1, 2))
+    } else if (input$choix_nuts == "NUTS 0"){
+      texte1 = paste("Une région NUTS 0 a été selectionnée : donner infos sur cette région NUTS0 : ", ligne_click$HH050_moy)
+      texte2 = paste("Une région NUTS 0 a été selectionnée : donner infos sur l'Europe : ", ligne_click$HH040_moy)
+      titre2 = tags$h4("Europe")
+    }
+    output$sortie_click_titre1 = renderUI({
+      tags$h4(ligne_click$NOM_REGION)
+    })
+    output$sortie_click_texte1 = renderUI({
+      texte1
+    })
+    output$sortie_click_titre2 = renderUI({
+      titre2
+    })
+    output$sortie_click_texte2 = renderUI({
+      texte2
+    })
   }
-  output$sortie_click_titre1 = renderUI({
-    tags$h4(ligne_click$NOM_REGION)
-  })
-  output$sortie_click_texte1 = renderUI({
-    texte1
-  })
-  output$sortie_click_titre2 = renderUI({
-    titre2
-  })
-  output$sortie_click_texte2 = renderUI({
-    texte2
-  })
 })
 
 

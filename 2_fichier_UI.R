@@ -6,8 +6,8 @@ sapply(fichiers_source, source)
 
 
 contenu_UI <- shinyUI(
-    dashboardPage(
-        dashboardHeader(),
+    dashboardPagePlus(
+        dashboardHeaderPlus(),
         dashboardSidebar(
             sidebarMenu(
                 menuItem("MAP", 
@@ -15,22 +15,28 @@ contenu_UI <- shinyUI(
                          icon = icon("globe-americas")
                 ),
                 menuItem("STATISTICS", 
-                         tabName = "tab_stats", 
-                         icon = icon("chart-bar")
+                         tabName = "tab_stats",
+                         icon = icon("chart-bar"),
+                         menuSubItem("Time series",
+                             tabName = "subtab_timeseries",
+                             
+                         )
                 )
             )
         ),
         dashboardBody(
+            useShinyjs(),
             includeCSS("./extra/styles.css", encoding = "UTF-8"),
             tabItems(
                 tabItem(
                     tabName = "tab_carto",
                     tab_carto),
                 tabItem(
-                    tabName = "tab_stats",
-                    textOutput("texte2"),
+                    tabName = "subtab_timeseries",
+                    # textOutput("texte2"),
+                    subtab_timeseries
                     
-                    DT::dataTableOutput("df_a_afficher")
+                    # DT::dataTableOutput("df_a_afficher")
                 )
             )
         )

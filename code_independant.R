@@ -619,6 +619,84 @@ write.csv(liste_variable_moy_final,
           file = "./data/finaux/liste_variable_moy_final.csv",
           row.names = F)
 
+
+
+# toto = df_final3_tot %>% 
+#     select(REGION, NOM_REGION, ANNEE) %>% 
+#     filter(!is.na(ANNEE)) %>% 
+#     mutate(REGION = recode(REGION, !!!dico_enquete_avant_2010),
+#            REGION = recode(REGION, !!!dico_enquete_apres_2010))
+
+
+
+
+# df_final3_tot = moyenne_region
+
+# bac à sable
+
+mise_a_jour_stats = read.csv(file = "./data/mise_a_jour_stats.csv",
+                             header = T,
+                             sep = ",",
+                             stringsAsFactors = F)
+
+mise_a_jour_stats = setNames(mise_a_jour_stats$nouveau,
+                             mise_a_jour_stats$ancien)
+
+
+
+df_final3_tot_stat = df_final3_tot %>% 
+    filter(!is.na(ANNEE)) %>% 
+    mutate(REGION = recode(REGION, !!!mise_a_jour_stats))
+
+write.csv(df_final3_tot_stat,
+          file = "./data/finaux/donnees_stats.csv",
+          row.names = F)
+
+
+liste_nuts0_stat = df_final3_tot_stat %>% 
+    filter(NUTS == "NUTS 0") %>% 
+    select(REGION, NOM_REGION) %>%
+    group_by(REGION) %>% 
+    summarise(NOM_REGION = first(NOM_REGION)) %>% 
+    mutate(NOM_REGION = paste("[", substr(REGION, 1, 2), "] ", NOM_REGION, sep = "")) %>% 
+    arrange(NOM_REGION)
+
+liste_nuts1_stat = df_final3_tot_stat %>% 
+    filter(NUTS == "NUTS 1") %>% 
+    group_by(REGION) %>% 
+    summarise(NOM_REGION = first(NOM_REGION)) %>% 
+    mutate(NOM_REGION = paste("[", substr(REGION, 1, 2), "] ", NOM_REGION, sep = "")) %>% 
+    arrange(NOM_REGION)
+
+liste_nuts2_stat = df_final3_tot_stat %>% 
+    filter(NUTS == "NUTS 2") %>% 
+    group_by(REGION) %>% 
+    summarise(NOM_REGION = first(NOM_REGION)) %>% 
+    mutate(NOM_REGION = paste("[", substr(REGION, 1, 2), "] ", NOM_REGION, sep = "")) %>% 
+    arrange(NOM_REGION)
+
+write.csv(liste_nuts0_stat,
+          file = "./data/finaux/liste_nuts0_stat.csv",
+          row.names = F)
+
+write.csv(liste_nuts1_stat,
+          file = "./data/finaux/liste_nuts1_stat.csv",
+          row.names = F)
+
+write.csv(liste_nuts2_stat,
+          file = "./data/finaux/liste_nuts2_stat.csv",
+          row.names = F)
+
+
+
+
+
+
+
+
+
+
+
 date_fin = Sys.time()
 diff = date_fin - date_debut
 print(diff)

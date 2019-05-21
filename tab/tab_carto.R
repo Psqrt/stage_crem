@@ -15,7 +15,7 @@ tab_carto <- tabPanel("Map",
                           
                           tags$div(id = "legend_fluidrow",
                                    fluidRow(
-                                       column(width = 8,
+                                       column(width = 9,
                                               radioGroupButtons(
                                                   inputId = "choix_nuts",
                                                   label = "LEVEL",
@@ -31,7 +31,9 @@ tab_carto <- tabPanel("Map",
                                               )
                                        ),
                                        
-                                       column(width = 4,
+                                       column(width = 1),
+                                       
+                                       column(width = 2,
                                               tags$div(id = "legend_switch",
                                                        materialSwitch(
                                                            inputId = "switch_periode",
@@ -84,6 +86,51 @@ tab_carto <- tabPanel("Map",
                       ),
                       
                       
+                      
+                      ## ICI
+                      
+                      # absolutePanel(
+                      #     id = "abspanel_map_bot",
+                      #     fixed = FALSE,
+                      #     class = "panel panel-default",
+                      #     width = "auto",
+                      #     height = "auto",
+                      #     bottom = "0px",
+                      #     # left = "245px",
+                      #     draggable = FALSE,
+                      #     
+                      #     
+                      #     
+                      #     
+                      #     actionBttn(
+                      #         inputId = "docplus",
+                      #         label = "Documentation", 
+                      #         style = "material-circle",
+                      #         color = "danger",
+                      #         icon = icon("file-pdf"),
+                      #         size = "sm",
+                      #         block = T
+                      #     )
+                      # ),
+                      # 
+                      # 
+                      # 
+                      # conditionalPanel("(input.docplus % 2) == 1",
+                      #                  absolutePanel(
+                      #                      id = "abspanel_map_bot_inside",
+                      #                      fixed = FALSE,
+                      #                      class = "panel panel-default",
+                      #                      width = "795px",
+                      #                      height = "auto",
+                      #                      bottom = "40px",
+                      #                      left = "15px",
+                      #                      draggable = FALSE,
+                      #                      
+                      #                      
+                      #                      htmlOutput('pdfviewer')
+                      #                  )
+                      # ),
+                      
                       absolutePanel(
                           id = "abspanel_map_bot",
                           fixed = FALSE,
@@ -93,7 +140,7 @@ tab_carto <- tabPanel("Map",
                           bottom = "0px",
                           # left = "245px",
                           draggable = FALSE,
-                          
+
                           dropdownButton(
                               htmlOutput('pdfviewer'),
                               circle = TRUE,

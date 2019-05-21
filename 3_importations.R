@@ -7,10 +7,19 @@ library(shiny)
 library(shinydashboard)
 library(shinyWidgets)
 # library(geojsonio)
+library(shinydashboardPlus)
+# library(bs4Dash)
+library(rAmCharts)
+library(shinyjs)
 
 ###### DONNEES #################################################################
 
 moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
+                          sep = ",",
+                          header = T,
+                          stringsAsFactors = F)
+
+moyenne_region_stat = read.csv(file = "./data/finaux/donnees_stats.csv",
                           sep = ",",
                           header = T,
                           stringsAsFactors = F)
@@ -46,6 +55,38 @@ dico_liste_variable_page = setNames(dico_liste_variable_page_import$page,
                                     dico_liste_variable_page_import$code)
 
 source("./liste_deroulante_map.R")$values
+
+### Listes pour stats
+
+liste_nuts0_stat = read.csv("./data/finaux/liste_nuts0_stat.csv",
+                            header = T,
+                            sep = ",",
+                            stringsAsFactors = F)
+
+liste_nuts1_stat = read.csv("./data/finaux/liste_nuts1_stat.csv",
+                            header = T,
+                            sep = ",",
+                            stringsAsFactors = F)
+
+liste_nuts2_stat = read.csv("./data/finaux/liste_nuts2_stat.csv",
+                            header = T,
+                            sep = ",",
+                            stringsAsFactors = F)
+
+liste_nuts0_stat = setNames(liste_nuts0_stat$REGION,
+                            liste_nuts0_stat$NOM_REGION)
+
+liste_nuts1_stat = setNames(liste_nuts1_stat$REGION,
+                            liste_nuts1_stat$NOM_REGION)
+
+liste_nuts2_stat = setNames(liste_nuts2_stat$REGION,
+                            liste_nuts2_stat$NOM_REGION)
+
+
+
+
+
+
 
 
 ### Cartes ###
