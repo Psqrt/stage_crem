@@ -82,7 +82,7 @@ liste_nuts1_stat = setNames(liste_nuts1_stat$REGION,
 liste_nuts2_stat = setNames(liste_nuts2_stat$REGION,
                             liste_nuts2_stat$NOM_REGION)
 
-
+liste_tout_nuts_stat = c(liste_nuts0_stat, liste_nuts1_stat, liste_nuts2_stat)
 
 
 
