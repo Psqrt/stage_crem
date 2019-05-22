@@ -7,7 +7,11 @@ sapply(fichiers_source, source)
 
 contenu_UI <- shinyUI(
     dashboardPagePlus(
-        dashboardHeaderPlus(),
+        dashboardHeaderPlus(
+            title = tagList(
+                span(class = "logo-lg", "Fuel Poverty"),
+                icon("fas fa-home"))
+        ),
         dashboardSidebar(
             sidebarMenu(
                 menuItem("MAP", 
@@ -18,8 +22,8 @@ contenu_UI <- shinyUI(
                          tabName = "tab_stats",
                          icon = icon("chart-bar"),
                          menuSubItem("Time series",
-                             tabName = "subtab_timeseries",
-                             
+                                     tabName = "subtab_timeseries",
+                                     
                          )
                 )
             )
