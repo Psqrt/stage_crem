@@ -646,7 +646,8 @@ mise_a_jour_stats = setNames(mise_a_jour_stats$nouveau,
 
 df_final3_tot_stat = df_final3_tot %>% 
     filter(!is.na(ANNEE)) %>% 
-    mutate(REGION = recode(REGION, !!!mise_a_jour_stats))
+    mutate(REGION = recode(REGION, !!!mise_a_jour_stats),
+           PAYS = substr(REGION, 1, 2))
 
 write.csv(df_final3_tot_stat,
           file = "./data/finaux/donnees_stats.csv",

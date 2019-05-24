@@ -11,6 +11,7 @@ library(shinydashboardPlus)
 # library(bs4Dash)
 library(rAmCharts)
 library(shinyjs)
+library(plotly)
 
 ###### DONNEES #################################################################
 
