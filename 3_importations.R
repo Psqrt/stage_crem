@@ -21,9 +21,9 @@ moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
                           stringsAsFactors = F)
 
 moyenne_region_stat = read.csv(file = "./data/finaux/donnees_stats.csv",
-                          sep = ",",
-                          header = T,
-                          stringsAsFactors = F)
+                               sep = ",",
+                               header = T,
+                               stringsAsFactors = F)
 
 dico_variable_import = read.csv(file = "./data/liste_variable.csv",
                                 sep = ",",
@@ -56,6 +56,12 @@ dico_liste_variable_page = setNames(dico_liste_variable_page_import$page,
                                     dico_liste_variable_page_import$code)
 
 source("./liste_deroulante_map.R")$values
+
+
+# Applatissement de la liste (càd transformer la liste de listes en une liste uniquement (pas de profondeur))
+liste_deroulante_map_applatie = unlist(liste_deroulante_map)
+liste_deroulante_map_applatie = setNames(liste_deroulante_map_applatie,
+                                         gsub(".*\\.\\[", "[", names(liste_deroulante_map_applatie), perl = T))
 
 ### Listes pour stats
 

@@ -1,9 +1,16 @@
-tab_carto <- tabPanel("Map",
+# LEXIQUE :
+#    - INPUT : Élément de l'interface attendant un choix de l'utilisateur
+#      OUTPUT : Élément de l'interface renvoyé par le côté serveur selon les inputs
+#      PANEL : Élément de l'interface accueillant les inputs ou les outputs.
+
+tab_carto <- tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque le curseur est dans le body.
                       
+                      # = OUTPUT : Carte Leaflet =======================================================
                       leafletOutput("map",
                                     height = "100%"),
+                      # ================================================================================
                       
-                      
+                      # = PANEL : Fenêtre contenant les inputs utilisateur =============================
                       absolutePanel(
                           id = "abspanel_map_left",
                           fixed = FALSE,
@@ -16,6 +23,7 @@ tab_carto <- tabPanel("Map",
                           tags$div(id = "legend_fluidrow",
                                    fluidRow(
                                        column(width = 9,
+                                              # = INPUT : Choix du niveau NUTS =========================
                                               radioGroupButtons(
                                                   inputId = "choix_nuts",
                                                   label = "LEVEL",
@@ -31,10 +39,11 @@ tab_carto <- tabPanel("Map",
                                               )
                                        ),
                                        
-                                       column(width = 1),
+                                       column(width = 1), # Pour simuler une marge entre les deux éléments
                                        
                                        column(width = 2,
                                               tags$div(id = "legend_switch",
+                                                       # = INPUT : Choix du mode : ANNEE ou PERIODE ====
                                                        materialSwitch(
                                                            inputId = "switch_periode",
                                                            label = "PERIOD", 
@@ -49,6 +58,7 @@ tab_carto <- tabPanel("Map",
                           
                           tags$div(id = "div_choix_variable_map",
                                    class = "div_cvm",
+                                   # = INPUT : Choix de la variable à représenter ======================
                                    selectInput(
                                        inputId = "choix_variable_map",
                                        label = "VARIABLE", 
@@ -60,19 +70,21 @@ tab_carto <- tabPanel("Map",
                           
                           
                           
-                          conditionalPanel("input.switch_periode == 0",
+                          conditionalPanel("input.switch_periode == 0", # Si le mode ANNEE est actif ===
                                            tags$div(id = "div_choix_annee",
                                                     class = "div_ca",
+                                                    # = INPUT : Choix de l'année à représenter =========
                                                     sliderTextInput(
                                                         inputId = "choix_annee",
                                                         width = "430px",
                                                         label = "YEAR", 
-                                                        choices = c(2004:2013)
+                                                        choices = c(2004:2013) # NOTE : coder ce vecteur plus proprement.
                                                     )
                                            )
                           ),
                           
-                          conditionalPanel("input.switch_periode == 1",
+                          conditionalPanel("input.switch_periode == 1", # Si le mode PERIODE est actif =
+                                           # = INPUT : Choix de la période à représenter ===============
                                            selectInput(
                                                inputId = "choix_periode",
                                                label = "PERIOD",
@@ -84,53 +96,10 @@ tab_carto <- tabPanel("Map",
                                            )
                           )
                       ),
+                      # FIN PANEL : Fenêtre contenant les inputs utilisateur ###########################
                       
                       
-                      
-                      ## ICI
-                      
-                      # absolutePanel(
-                      #     id = "abspanel_map_bot",
-                      #     fixed = FALSE,
-                      #     class = "panel panel-default",
-                      #     width = "auto",
-                      #     height = "auto",
-                      #     bottom = "0px",
-                      #     # left = "245px",
-                      #     draggable = FALSE,
-                      #     
-                      #     
-                      #     
-                      #     
-                      #     actionBttn(
-                      #         inputId = "docplus",
-                      #         label = "Documentation", 
-                      #         style = "material-circle",
-                      #         color = "danger",
-                      #         icon = icon("file-pdf"),
-                      #         size = "sm",
-                      #         block = T
-                      #     )
-                      # ),
-                      # 
-                      # 
-                      # 
-                      # conditionalPanel("(input.docplus % 2) == 1",
-                      #                  absolutePanel(
-                      #                      id = "abspanel_map_bot_inside",
-                      #                      fixed = FALSE,
-                      #                      class = "panel panel-default",
-                      #                      width = "795px",
-                      #                      height = "auto",
-                      #                      bottom = "40px",
-                      #                      left = "15px",
-                      #                      draggable = FALSE,
-                      #                      
-                      #                      
-                      #                      htmlOutput('pdfviewer')
-                      #                  )
-                      # ),
-                      
+                      # PANEL : Fenêtre contenant le bouton PDF (documentation) ########################
                       absolutePanel(
                           id = "abspanel_map_bot",
                           fixed = FALSE,
@@ -138,11 +107,11 @@ tab_carto <- tabPanel("Map",
                           width = "auto",
                           height = "auto",
                           bottom = "0px",
-                          # left = "245px",
                           draggable = FALSE,
-
+                          
+                          # INPUT : Bouton ouvrant ou fermant la documentation PDF de la variable ######
                           dropdownButton(
-                              htmlOutput('pdfviewer'),
+                              htmlOutput('pdf_doc_var1_map'),
                               circle = TRUE,
                               status = 'danger',
                               label = "Documentation",
@@ -154,7 +123,7 @@ tab_carto <- tabPanel("Map",
                           )
                       ),
                       
-                      
+                      # PANEL : Fenêtre contenant le bouton permettant d'accéder aux données supplémentaires
                       absolutePanel(
                           id = "abspanel_map_right_button",
                           fixed = FALSE,
@@ -165,9 +134,7 @@ tab_carto <- tabPanel("Map",
                           right = "15px",
                           draggable = FALSE,
                           
-                          
-                          
-                          
+                          # INPUT : Bouton ouvrant ou fermant la fenêtre contenant les données supplémentaires
                           actionBttn(
                               inputId = "infoplus",
                               label = "Information", 
@@ -180,8 +147,13 @@ tab_carto <- tabPanel("Map",
                       ),
                       
                       
-                      
-                      conditionalPanel("(input.infoplus % 2) == 1",
+                      # Afin de garder la fenêtre ouverte même lorsque l'utilisateur clique ailleurs (persistence),
+                      # la condition pour faire apparaitre ou disparaitre la fenêtre se fera uniquement en fonction
+                      # du nombre de clics sur le bouton (Id = infoplus).
+                      # Le bouton comptabilise le nombre de clics et si celui-ci est pair (modulo 2), la fenetre est fermée,
+                      # sinon, elle est ouverte.
+                      # PANEL : Fenêtre contenant les données supplémentaires ==========================
+                      conditionalPanel("(input.infoplus % 2) == 1", # Le % détermine le reste d'une division en javascript
                                        absolutePanel(
                                            id = "abspanel_map_right",
                                            fixed = FALSE,
@@ -192,12 +164,12 @@ tab_carto <- tabPanel("Map",
                                            right = "15px",
                                            draggable = FALSE,
                                            
-                                           
-                                           htmlOutput("sortie_click_titre1"),
-                                           htmlOutput("sortie_click_texte1"),
+                                           # OUTPUT : Éléments à afficher dans la fenêtre des données supplémentaires.
+                                           htmlOutput("panel_droite_map_titre1"),
+                                           htmlOutput("panel_droite_map_contenu1"),
                                            tags$hr(),
-                                           htmlOutput("sortie_click_titre2"),
-                                           htmlOutput("sortie_click_texte2")
+                                           htmlOutput("panel_droite_map_titre2"),
+                                           htmlOutput("panel_droite_map_contenu2")
                                        )
                       )
 )
