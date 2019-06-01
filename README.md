@@ -5,13 +5,16 @@
 * Dropbox : https://www.dropbox.com/home/Stage%20M1%20-%20Pr%C3%A9carit%C3%A9%20%C3%A9nerg%C3%A9tique
 * Github : https://github.com/Psqrt/stage_crem
 * Maquette : https://balsamiq.cloud/sgf7255/pky7rtu/r3D7B
+* Transformations NUTS : https://docs.google.com/document/d/1IRVb8912ijZBV2mBxJdbu_GYBd4NTY5QlBu008ZSkXw/edit
+* Détails des variables retenues : https://docs.google.com/document/d/1qfzHbjN1enVYsdSeOloMRwxj7nW6uSb4Yq8c_FLZCR0/edit
+* Documentation Programme Indépendant : https://docs.google.com/document/d/1Zie090c7jKBRM7OdSxhfMM6s7Pyy1T5helV3eWCTnnY/edit#heading=h.2ldbl6ws0ers
+
+### Rapports
+
 * Rapport 1 : https://docs.google.com/document/d/1-z5IbRFjhgHSs6zwLoByYDJXsHQUUa0QpQ2p6zoMuzo/edit
 * Rapport 2 : https://docs.google.com/document/d/1VrJxGSwtAESfuOQFKSoIyODAAj68VapsTirIRVFsrYU/edit  
 * Rapport 3 : https://docs.google.com/document/d/16wZxiQ52D4dDHrUmpOiZVj5TBNeec611DEXRmDoFvbk/edit
 * Rapport 4 : https://docs.google.com/document/d/1dxWyNT5gl4dCZRpWX4IFYPVkQxzU8LIjnttgMnfCnWs/edit
-* Transformations NUTS : https://docs.google.com/document/d/1IRVb8912ijZBV2mBxJdbu_GYBd4NTY5QlBu008ZSkXw/edit
-* Détails des variables retenues : https://docs.google.com/document/d/1qfzHbjN1enVYsdSeOloMRwxj7nW6uSb4Yq8c_FLZCR0/edit
-* Documentation Programme Indépendant : https://docs.google.com/document/d/1Zie090c7jKBRM7OdSxhfMM6s7Pyy1T5helV3eWCTnnY/edit#heading=h.2ldbl6ws0ers
 
 ## Données
 * Données de l'enquête : https://ec.europa.eu/eurostat/fr/web/microdata/statistics-on-income-and-living-conditions
@@ -29,6 +32,13 @@
 * Norme IBAN/ISO2 : https://www.iban.com/country-codes
 * Carte Europe avec ISO2 : https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#/media/File:Europe_ISO_3166-1.svg
 * Liste pays de l'UE : https://fr.wikipedia.org/wiki/%C3%89tats_membres_de_l%27Union_europ%C3%A9enne
+
+### Algorithme de recherche du pole d'inaccessibilité
+* Concept : https://en.wikipedia.org/wiki/Pole_of_inaccessibility
+* Source : https://blog.mapbox.com/a-new-algorithm-for-finding-a-visual-center-of-a-polygon-7c77e6492fbc
+* Explications : https://github.com/mapbox/polylabel
+* Implémentation R : https://github.com/jolars/polylabelr
+
 
 ## Coloration
 * Choix des palettes : http://colorbrewer2.org/
