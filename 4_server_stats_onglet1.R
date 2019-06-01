@@ -168,7 +168,7 @@ observe({
   
   
   
-  
+  # GROSSE PARTIE PAS ENCORE COMMENTÉE (cas par cas)
   
   
   df_tableau_central = df_final %>% 
@@ -402,30 +402,6 @@ observeEvent(input$switch_variable_stat, {
   reset("choix_var_ts2")
 })
 
-
-# 
-# observe({
-#   if (input$choix_nuts_ts1 == "NUTS 0"){
-#     code_region = moyenne_region %>% 
-#       filter(nchar(REGION) == 2) %>% 
-#       select(REGION) %>% 
-#       unique()
-#     
-#     association_region = code_region %>% 
-#       left_join(moyenne_region %>% 
-#                   select(REGION, NOM_REGION),
-#                 by = c("REGION")) %>% 
-#       group_by(REGION) %>% 
-#       summarise(NOM_REGION = first(NOM_REGION))
-#     
-#     liste_region1 = setNames(association_region$REGION, 
-#                              association_region$NOM_REGION)
-#   } else if (input$choix_nuts_ts1 == "NUTS 1"){
-#     
-#   } else {
-#     
-#   }
-# })
 
 
 # == PDF 1 =============================================================================================

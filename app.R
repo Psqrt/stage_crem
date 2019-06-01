@@ -1,12 +1,12 @@
 options(encoding = "UTF-8")
 
-
+# Ne pas lancer ce fichier, utiliser le fichier 1_fichier_lanceur.R
+# Celui-ci sert uniquement pour shinyapps.io
 library(shiny)
 library(shinydashboard)
 library(rjson)
 library(leaflet)
 library(shinyWidgets)
-# library(geojsonio)
 library(tidyverse)
 
 source('3_importations.R')

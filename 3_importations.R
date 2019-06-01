@@ -1,14 +1,11 @@
 ###### PACKAGES ################################################################
 library(rjson)
 library(leaflet)
-# library(geojsonio)
 library(tidyverse)
 library(shiny)
 library(shinydashboard)
 library(shinyWidgets)
-# library(geojsonio)
 library(shinydashboardPlus)
-# library(bs4Dash)
 library(rAmCharts)
 library(shinyjs)
 library(plotly)
@@ -29,6 +26,8 @@ dico_variable_import = read.csv(file = "./data/liste_variable.csv",
                                 sep = ",",
                                 header = T,
                                 stringsAsFactors = F)
+
+### Dictionnaires pour alimenter les listes déroulantes UI : labels au lieu des codes abstraits
 
 dico_variable_import$code_moy = paste(dico_variable_import$code, "_moy", sep = "")
 
@@ -63,7 +62,7 @@ liste_deroulante_map_applatie = unlist(liste_deroulante_map)
 liste_deroulante_map_applatie = setNames(liste_deroulante_map_applatie,
                                          gsub(".*\\.\\[", "[", names(liste_deroulante_map_applatie), perl = T))
 
-### Listes pour stats
+### Listes pour stats (alimenter les listes déroulantes UI)
 
 liste_nuts0_stat = read.csv("./data/finaux/liste_nuts0_stat.csv",
                             header = T,
