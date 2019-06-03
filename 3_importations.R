@@ -12,10 +12,15 @@ library(plotly)
 
 ###### DONNEES #################################################################
 
-moyenne_region = read.csv(file = "./data/finaux/donnees.csv",
+moyenne_region = read.csv(file = "./data/finaux/donnees_carte_2.csv",
                           sep = ",",
                           header = T,
                           stringsAsFactors = F)
+
+moyenne_region_eu28 = read.csv(file = "./data/finaux/donnees_carte_eu28.csv",
+                               sep = ",",
+                               header = T,
+                               stringsAsFactors = F)
 
 moyenne_region_stat = read.csv(file = "./data/finaux/donnees_stats.csv",
                                sep = ",",

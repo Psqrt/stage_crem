@@ -54,18 +54,18 @@ dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte,
 # Importation du dictionnaire - codage après 2010
 # permet de corriger (harmoniser) le code des pays suivants sur les cartes de 2010, 2013 :
 # Grêce
-dico_enquete_apres_2010 = read.csv(file = "./data/dictionnaire_codage_apres_2010.csv",
-                                   sep = ",",
-                                   header = T,
-                                   stringsAsFactors = F)
+dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre_2010_2013.csv",
+                                        sep = ",",
+                                        header = T,
+                                        stringsAsFactors = F)
 
 # REMARQUE IMPORTANTE : N'AYANT PAS LES DONNÉES DE 2016 ET PLUS, LE TRAITEMENT DES INCOHÉRENCES DE CODAGE
 # DES REGIONS N'A PAS ÉTÉ FAITE POUR LE MOMENT.
 
 # conversion en vecteur nommé (classe d'objet la plus proche d'un objet dictionnaire en python)
 # les vecteurs nommés sont adaptés pour la fonction recode de dplyr 
-dico_enquete_apres_2010 = setNames(dico_enquete_apres_2010$code_carte, 
-                                   dico_enquete_apres_2010$code_enquete)
+dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte, 
+                                        dico_enquete_entre_2010_2013$code_enquete)
 
 # Importation du dictionnaire - codage Croatie après 2010
 # permet de corriger le cas de la Croatie
@@ -443,9 +443,9 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         } else if (annee_carte >= 2010 & annee_carte < 2013){
             cat(blue("Recodage des régions entre 2010 et 2013 [...]\n"))
             df_menage_t_copie = df_menage_t_copie %>%
-                mutate(REGION = recode(REGION, !!!dico_enquete_apres_2010))
+                mutate(REGION = recode(REGION, !!!dico_enquete_entre_2010_2013))
             df_personne_t_copie = df_personne_t_copie %>%
-                mutate(REGION = recode(REGION, !!!dico_enquete_apres_2010))
+                mutate(REGION = recode(REGION, !!!dico_enquete_entre_2010_2013))
             cat(green("[...] Terminé !\n"))
         } else {
             # peut-être du nouveau pour 2016
