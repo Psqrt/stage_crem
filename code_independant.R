@@ -1,9 +1,9 @@
 ###################################################################################################
 # Packages
 ###################################################################################################
-library(tidyverse)
-library(crayon)
-library(ade4)
+library(tidyverse) # traitements en tout genre
+library(crayon) # print coloré dans la console
+library(ade4) # tableau disjonctif complet
 
 ###################################################################################################
 # Setup global
@@ -143,6 +143,12 @@ if (importer_carte == 1){
         data_map2010_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0 = geojsonio::geojson_read("./data/map1:60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        # FRONTIERES (remarque : les frontières sont inutiles pour ce fichier, mais au moins ça évite d'importer manuellement depuis shiny)
+        data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
+        data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
+        data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
+        data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
+        data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1:60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
     } else if (precision == 1){
         # DONNEES - CARTE NUTS2
         data_map2003_nuts2 = geojsonio::geojson_read("./data/map1:1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")

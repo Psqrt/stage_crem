@@ -1,0 +1,13 @@
+install.packages(c("tidyverse",
+                   "crayon",
+                   "ade4",
+                   "stringr",
+                   "rjson",
+                   "leaflet",
+                   "shiny",
+                   "shinydashboard",
+                   "shinyWidgets",
+                   "shinydashboardPlus",
+                   "rAmCharts",
+                   "shinyjs",
+                   "plotly"))
