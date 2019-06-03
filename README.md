@@ -4,6 +4,7 @@
 
 L'application est divisée en plusieurs modules. On reviendra en détail sur le rôle de chaque fichier, mais pour l'instant, les fichiers qui servent à exécuter l'application sont (à exécuter dans l'ordre) :
 
+
 * (0) Le code ***0_verif_packages.R*** permet d'installer l'ensemble des packages nécessaires au bon déroulement des codes suivants.
 * (1) Le code ***code_independant.R*** pour créer le fichier alimentant l'application shiny (pas tout à fait en fait ...). Le temps d'éxecution de ce code est d'environ 5 minutes pour notre ordinateur portable de travail (ordre d'idée)
     - Si les bases de données sont déjà créées (c'est-à-dire que le répertoire ***./data/finaux*** n'est pas vide), alors il n'est pas nécessaire de lancer ce code.
