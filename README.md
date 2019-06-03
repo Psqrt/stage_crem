@@ -1,5 +1,20 @@
 # stage_crem
 
+## /!\\ Remarques pratiques
+
+L'application est divisée en plusieurs modules. On reviendra en détail sur le rôle de chaque fichier, mais pour l'instant, les fichiers qui servent à exécuter l'application sont (à exécuter dans l'ordre) :
+
+* (1) Le code ***code_independant.R*** pour créer le fichier alimentant l'application shiny (pas tout à fait en fait ...). Le temps d'éxecution de ce code est d'environ 5 minutes pour notre ordinateur portable de travail (ordre d'idée)
+    - Si les bases de données sont déjà créées (c'est-à-dire que le répertoire ***./data/finaux*** n'est pas vide), alors il n'est pas nécessaire de lancer ce code.
+    - Si vous lancez ce code pour la première fois, il est nécessaire d'importer les données spatiales (polygones de carte). Dans le code ***code_independant.R***, il faut mettre 1 à la variable ***importer_carte*** (ligne 11 du code)
+    - Si vous lancez ce code pour la seconde fois, il n'est plus nécessaire d'importer les données spatiales (à condition de les avoir dans la session R active). Il faudra alors remettre la variable ***importer_carte*** à 0.
+* (2) Le code ***donnees_complementaires_carte.R*** pour créer le fichier alimentant le panel de droite de la carte (données socio-démo-économiques sur la région). Le temps d'exécution de ce code est de moins de 30 secondes (le délai vient essentiellement du téléchagement des 9 bases de données directement prises sur le site d'Eurostat)
+    - Le bon déroulement de l'exécution de ce code nécessite l'existence du fichier de données ***./data/finaux/donnees.csv*** (celui créé à partir du code précédent)
+    - Si le répertoire ***./data/finaux*** n'a pas été vidé, alors il n'est pas nécessaire d'exécuter ce code (le fichier créé existe déjà)
+* (3) Le code ***1_fichier_lanceur.R*** permet de démarrer l'application shiny. Le temps de lancement est inférieur à 2 secondes normalement.
+    - Si les deux précédents codes ont été exécutés avant, l'application peut directement être lancée.
+
+
 ## Administration
 
 * Dropbox : https://www.dropbox.com/home/Stage%20M1%20-%20Pr%C3%A9carit%C3%A9%20%C3%A9nerg%C3%A9tique
