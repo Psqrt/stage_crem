@@ -7,7 +7,8 @@ library(dplyr)
 dico_enquete_avant_2010 = read.csv(file = "./data/dictionnaire_codage_avant_2010.csv",
                                    sep = ",",
                                    header = T,
-                                   stringsAsFactors = F)
+                                   stringsAsFactors = F,
+                                   fileEncoding = "UTF-8")
 
 dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte, 
                                    dico_enquete_avant_2010$code_enquete)
@@ -16,7 +17,8 @@ dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte,
 dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre_2010_2013.csv",
                                         sep = ",",
                                         header = T,
-                                        stringsAsFactors = F)
+                                        stringsAsFactors = F,
+                                        fileEncoding = "UTF-8")
 
 dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte, 
                                         dico_enquete_entre_2010_2013$code_enquete)
@@ -24,7 +26,8 @@ dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte,
 donnees_finale = read.csv(file =  "./data/finaux/donnees.csv",
                           sep = ",",
                           header = T,
-                          stringsAsFactors = F)
+                          stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 # =================================================================================================================
 
@@ -112,7 +115,8 @@ creation_colonne = function(lien, parametre_filtrage, variable_nom){
                     sep = "\t",
                     header = T,
                     na.strings = c(":"),
-                    stringsAsFactors = F)
+                    stringsAsFactors = F,
+                    fileEncoding = "UTF-8")
     
     # deconnexion
     close(con)
@@ -229,7 +233,8 @@ df_final2 = donnees_finale %>%
 # exportation (ce fichier alimentera l'application shiny, côté cartographie)
 write.csv(df_final2, 
           file = "./data/finaux/donnees_carte_2.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 
 # récupération des données pour l'europe des 28
@@ -239,4 +244,5 @@ df_europe = df_final_corrige %>%
 # exportation
 write.csv(df_europe, 
           file = "./data/finaux/donnees_carte_eu28.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")

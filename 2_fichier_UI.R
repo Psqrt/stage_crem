@@ -7,7 +7,10 @@ fichiers_source = list.files("./tab")                        # 1. Obtention de l
 fichiers_source = paste("./tab/", fichiers_source, sep = '') # 2. Construction des chemins ...
 sapply(fichiers_source, source)                              # 3. Sourcing de chacun de ces fichiers.
 
-
+#source("./tab/tab_carto.R", encoding = "UTF-8")
+#source("./tab/tab_stats_onglet1.R", encoding = "UTF-8")
+#source("./tab/tab_stats_onglet2.R", encoding = "UTF-8")
+#source("./tab/tab_stats_onglet3.R", encoding = "UTF-8")
 
 
 contenu_UI <- shinyUI(

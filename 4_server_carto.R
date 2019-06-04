@@ -6,11 +6,11 @@ liste_annee = reactive({
     if (is.null(input$choix_periode)){
       c(0)
     } else {
-      print(input$choix_periode)
+      # print(input$choix_periode)
       c(as.numeric(substr(input$choix_periode, 1, 4)):as.numeric(substr(input$choix_periode, 6, 9)))
     }
   } else {
-    print(input$choix_periode)
+    # print(input$choix_periode)
     c(as.numeric(input$choix_annee))
   }
 })
@@ -135,19 +135,6 @@ observeEvent(input$map_shape_click, {
     ligne_click = moyenne_region_filtre() %>% 
       filter(REGION == info_click$id)
     
-    print(ligne_click)
-    
-    # liste_noms = c("POPULATION", # (1)
-    #            "DENSITE", # (2)
-    #            "PIBH", # (3)
-    #            "EDUC_JEUNE", # (4)
-    #            "RISQUE_PAUVR_NB", # (5)
-    #            "RISQUE_PAUVR_TX", # (6)
-    #            "CHOMAGE_TX", # (7)
-    #            "DEGRES_JOUR_COLD", # (8)
-    #            "DEGRES_JOUR_HOT") # (9)
-    
-    
     # 3. Affichage conditionnel en fonction de l'échelle actuelle
     if (input$choix_nuts == "NUTS 2"){
       
@@ -157,27 +144,27 @@ observeEvent(input$map_shape_click, {
       
       # En NUTS 2, donner des informations sur la région choisie et sur la région NUTS 1 qui l'englobe
       texte1 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", ligne_click$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", ligne_click$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", ligne_click$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       texte2 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", ligne_donnees_2$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", ligne_donnees_2$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_donnees_2$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       titre1 = tags$h4(ligne_click$NOM_REGION)
@@ -191,27 +178,27 @@ observeEvent(input$map_shape_click, {
                  REGION == substr(ligne_click$REGION, 1, 2))
       
       texte1 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", ligne_click$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", ligne_click$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", ligne_click$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       texte2 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", ligne_donnees_2$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", ligne_donnees_2$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_donnees_2$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       titre1 = tags$h4(ligne_click$NOM_REGION)
@@ -224,27 +211,27 @@ observeEvent(input$map_shape_click, {
         filter(ANNEE == ligne_click$ANNEE)
       
       texte1 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", ligne_click$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", ligne_click$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", ligne_click$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       texte2 = paste("<table>",
-                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$POPULATION, "habitants</td></tr>",
-                     "<tr><td><strong>Densité</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DENSITE, "habitants/km²</td></tr>",
-                     "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$PIBH, "€/habitant/an</td></tr>",
-                     "<tr><td><strong>Jeunes ayant quitté prématurément l'éducation</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$EDUC_JEUNE, "%</td></tr>",
-                     "<tr><td><strong>Personnes en risque de pauvreté ou d'exclusion sociale</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_NB, "%</td></tr>",
-                     "<tr><td><strong>Taux de risque de pauvreté</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_TX, "%</td></tr>",
-                     "<tr><td><strong>Taux de chômage</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$CHOMAGE_TX, "%</td></tr>",
-                     "<tr><td><strong>Degré-jours de refroidissement</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_COLD, "</td></tr>",
-                     "<tr><td><strong>Degré-jours de chauffage</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_HOT, "</td></tr>",
+                     "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(moyenne_region_eu28_filtre$POPULATION, big.mark = ","), "inhabitants</td></tr>",
+                     "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(moyenne_region_eu28_filtre$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
+                     "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(moyenne_region_eu28_filtre$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
+                     "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$EDUC_JEUNE, "%</td></tr>",
+                     "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_NB, "%</td></tr>",
+                     "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_TX, "%</td></tr>",
+                     "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$CHOMAGE_TX, "%</td></tr>",
+                     "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_COLD, "</td></tr>",
+                     "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_HOT, "</td></tr>",
                      "</table>")
       
       titre1 = tags$h4(ligne_click$NOM_REGION)

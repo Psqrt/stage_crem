@@ -8,7 +8,7 @@ library(ade4) # tableau disjonctif complet
 ###################################################################################################
 # Setup global
 ###################################################################################################
-importer_carte = 0 # choix : 0 ou 1
+importer_carte = 1 # choix : 0 ou 1
 precision = 60 # choix : 1 ou 60
 chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
 date_premiere_enquete = 2004
@@ -44,7 +44,8 @@ cat(blue("Importation des dictionnaires de recodage [...]\n"))
 dico_enquete_avant_2010 = read.csv(file = "./data/dictionnaire_codage_avant_2010.csv",
                                    sep = ",",
                                    header = T,
-                                   stringsAsFactors = F)
+                                   stringsAsFactors = F,
+                                   fileEncoding = "UTF-8")
 
 # conversion en vecteur nommé (classe d'objet la plus proche d'un objet dictionnaire en python)
 # les vecteurs nommés sont adaptés pour la fonction recode de dplyr 
@@ -57,7 +58,8 @@ dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte,
 dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre_2010_2013.csv",
                                         sep = ",",
                                         header = T,
-                                        stringsAsFactors = F)
+                                        stringsAsFactors = F,
+                                        fileEncoding = "UTF-8")
 
 # REMARQUE IMPORTANTE : N'AYANT PAS LES DONNÉES DE 2016 ET PLUS, LE TRAITEMENT DES INCOHÉRENCES DE CODAGE
 # DES REGIONS N'A PAS ÉTÉ FAITE POUR LE MOMENT.
@@ -72,7 +74,8 @@ dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte,
 dico_enquete_croatie_apres_2010 = read.csv(file = "./data/dictionnaire_codage_croatie_apres_2010.csv",
                                            sep = ",",
                                            header = T,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = F,
+                                           fileEncoding = "UTF-8")
 
 # conversion en vecteur nommé (classe d'objet la plus proche d'un objet dictionnaire en python)
 # les vecteurs nommés sont adaptés pour la fonction recode de dplyr 
@@ -85,7 +88,8 @@ dico_enquete_croatie_apres_2010 = setNames(dico_enquete_croatie_apres_2010$code_
 dico_enquete_uk_apres_2013 = read.csv(file = "./data/dictionnaire_codage_uk_apres_2013.csv",
                                       sep = ",",
                                       header = T,
-                                      stringsAsFactors = F)
+                                      stringsAsFactors = F,
+                                      fileEncoding = "UTF-8")
 
 # conversion en vecteur nommé (classe d'objet la plus proche d'un objet dictionnaire en python)
 # les vecteurs nommés sont adaptés pour la fonction recode de dplyr 
@@ -97,7 +101,8 @@ dico_enquete_uk_apres_2013 = setNames(dico_enquete_uk_apres_2013$code_carte,
 dico_variable_import = read.csv(file = "./data/liste_variable.csv",
                                 sep = ",",
                                 header = T,
-                                stringsAsFactors = F)
+                                stringsAsFactors = F,
+                                fileEncoding = "UTF-8")
 
 # conversion en vecteur nommé (classe d'objet la plus proche d'un objet dictionnaire en python)
 dico_variable = setNames(dico_variable_import$code,
@@ -111,18 +116,20 @@ dico_variable_moy = setNames(paste(dico_variable_import$code, "_moy", sep = ""),
 liste_variable_binaire = read.csv(file = "./data/liste_variable_binaire.csv",
                                   sep = ",",
                                   header = T,
-                                  stringsAsFactors = F) %>% unlist(use.names = F)
+                                  stringsAsFactors = F,
+                                  fileEncoding = "UTF-8") %>% unlist(use.names = F)
 
 # liste des variables qualitatives (codes uniquement, servant à lister facilement les variables dans le traitement)
 liste_variable_quali = read.csv(file = "./data/liste_variable_quali.csv",
                                 sep = ",",
                                 header = T,
-                                stringsAsFactors = F) %>% unlist(use.names = F)
+                                stringsAsFactors = F,
+                                fileEncoding = "UTF-8") %>% unlist(use.names = F)
 cat(green("[...] Terminé !\n"))
 
 # DONNEES - CARTES ================================================================================
 
-if (importer_carte == 0){
+if (importer_carte == 1){
     cat(blue("Importation des cartes [...]\n"))
     if (precision == 60){
         # DONNEES - CARTE NUTS2
@@ -143,12 +150,53 @@ if (importer_carte == 0){
         data_map2010_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
-        # FRONTIERES (remarque : les frontières sont inutiles pour ce fichier, mais au moins ça évite d'importer manuellement depuis shiny)
+
+
+
+
+        
+        liste_carte = ls()[grep("data_map", ls())]
+        
+        ma_func = function(carte){
+            if (is.factor(carte@data[["NUTS_NAME"]])) {
+                char <- as.character(carte@data[["NUTS_NAME"]])
+                Encoding(char) <- 'UTF-8'
+                carte@data[["NUTS_NAME"]] <- as.factor(char)
+                return(carte)
+            }
+        }
+
+        
+        
+        data_map2003_nuts0 = ma_func(data_map2003_nuts0)
+        data_map2003_nuts1 = ma_func(data_map2003_nuts1)
+        data_map2003_nuts2 = ma_func(data_map2003_nuts2)
+        
+        data_map2006_nuts0 = ma_func(data_map2006_nuts0)
+        data_map2006_nuts1 = ma_func(data_map2006_nuts1)
+        data_map2006_nuts2 = ma_func(data_map2006_nuts2)
+        
+        data_map2010_nuts0 = ma_func(data_map2010_nuts0)
+        data_map2010_nuts1 = ma_func(data_map2010_nuts1)
+        data_map2010_nuts2 = ma_func(data_map2010_nuts2)
+        
+        data_map2013_nuts0 = ma_func(data_map2013_nuts0)
+        data_map2013_nuts1 = ma_func(data_map2013_nuts1)
+        data_map2013_nuts2 = ma_func(data_map2013_nuts2)
+        
+        data_map2016_nuts0 = ma_func(data_map2016_nuts0)
+        data_map2016_nuts1 = ma_func(data_map2016_nuts1)
+        data_map2016_nuts2 = ma_func(data_map2016_nuts2)
+
+        
+
+        # FRONTIERES (remarque : les frontires sont inutiles pour ce fichier, mais au moins a vite d'importer manuellement depuis shiny)
         data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
         data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
         data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
     } else if (precision == 1){
         # DONNEES - CARTE NUTS2
         data_map2003_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
@@ -225,7 +273,8 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
                                   header = T,
                                   sep = ",",
                                   stringsAsFactors = F,
-                                  colClasses = c("character")) # (2)
+                                  colClasses = c("character"),
+                                  fileEncoding = "UTF-8") # (2)
             # (1) : La fonction unz permet de lire le contenu d'un fichier zip sans dezipper.
             # (2) : Toutes les variables sont importées en type character pour son aspect générique ouvert (on peut toujours ramener quelconque type
             # à un type character mais pas l'inverse). Ceci permet d'éviter des problèmes liés aux données. Par exemple, si à la première
@@ -771,7 +820,8 @@ cat(green("[...] Terminé !\n"))
 cat(blue("Exportation de la table finale [...]\n"))
 write.csv(df_final3_tot, 
           file = "./data/finaux/donnees.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 cat(green("[...] Terminé !\n"))
 
 # Exporations complémentaires (utilitaires) ============================================================
@@ -784,7 +834,8 @@ liste_variable_moy_final = df_final3_tot %>%
     filter(grepl("_moy", var))
 write.csv(liste_variable_moy_final,
           file = "./data/finaux/liste_variable_moy_final.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 # La partie statistiques de l'application nécessite des corrections supplémentaires sur les régions.
 # Jusqu'à présent, on a considéré les régions indépendamment de la dimension temporelle, c'est-à-dire
@@ -798,7 +849,8 @@ write.csv(liste_variable_moy_final,
 mise_a_jour_stats = read.csv(file = "./data/mise_a_jour_stats.csv",
                              header = T,
                              sep = ",",
-                             stringsAsFactors = F)
+                             stringsAsFactors = F,
+                             fileEncoding = "UTF-8")
 
 # mise en forme de "dictionnaire" pour le recodage ensuite.
 mise_a_jour_stats = setNames(mise_a_jour_stats$nouveau,
@@ -814,7 +866,8 @@ df_final3_tot_stat = df_final3_tot %>%
 # les régions sont harmonisées en fonction du temps maintenant, la base est opérationnelle pour shiny.
 write.csv(df_final3_tot_stat,
           file = "./data/finaux/donnees_stats.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 # On récupère la liste des régions afin d'alimenter les listes déroulantes de l'UI de l'application.
 liste_nuts0_stat = df_final3_tot_stat %>% 
@@ -841,15 +894,18 @@ liste_nuts2_stat = df_final3_tot_stat %>%
 
 write.csv(liste_nuts0_stat,
           file = "./data/finaux/liste_nuts0_stat.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 write.csv(liste_nuts1_stat,
           file = "./data/finaux/liste_nuts1_stat.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 write.csv(liste_nuts2_stat,
           file = "./data/finaux/liste_nuts2_stat.csv",
-          row.names = F)
+          row.names = F,
+          fileEncoding = "UTF-8")
 
 
 cat(green("[...] Terminé !\n"))

@@ -15,22 +15,26 @@ library(plotly)
 moyenne_region = read.csv(file = "./data/finaux/donnees_carte_2.csv",
                           sep = ",",
                           header = T,
-                          stringsAsFactors = F)
+                          stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 moyenne_region_eu28 = read.csv(file = "./data/finaux/donnees_carte_eu28.csv",
                                sep = ",",
                                header = T,
-                               stringsAsFactors = F)
+                               stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 moyenne_region_stat = read.csv(file = "./data/finaux/donnees_stats.csv",
                                sep = ",",
                                header = T,
-                               stringsAsFactors = F)
+                               stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 dico_variable_import = read.csv(file = "./data/liste_variable.csv",
                                 sep = ",",
                                 header = T,
-                                stringsAsFactors = F)
+                                stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 ### Dictionnaires pour alimenter les listes déroulantes UI : labels au lieu des codes abstraits
 
@@ -54,7 +58,8 @@ dico_variable_import[!(dico_variable_import$code %in% df_variable_moy$code),]
 dico_liste_variable_page_import = read.csv(file = "./data/liste_variable_page.csv",
                                            sep = ",",
                                            header = T,
-                                           stringsAsFactors = F)
+                                           stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 dico_liste_variable_page = setNames(dico_liste_variable_page_import$page,
                                     dico_liste_variable_page_import$code)
@@ -72,17 +77,20 @@ liste_deroulante_map_applatie = setNames(liste_deroulante_map_applatie,
 liste_nuts0_stat = read.csv("./data/finaux/liste_nuts0_stat.csv",
                             header = T,
                             sep = ",",
-                            stringsAsFactors = F)
+                            stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 liste_nuts1_stat = read.csv("./data/finaux/liste_nuts1_stat.csv",
                             header = T,
                             sep = ",",
-                            stringsAsFactors = F)
+                            stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 liste_nuts2_stat = read.csv("./data/finaux/liste_nuts2_stat.csv",
                             header = T,
                             sep = ",",
-                            stringsAsFactors = F)
+                            stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
 
 liste_nuts0_stat = setNames(liste_nuts0_stat$REGION,
                             liste_nuts0_stat$NOM_REGION)
