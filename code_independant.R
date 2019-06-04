@@ -8,7 +8,7 @@ library(ade4) # tableau disjonctif complet
 ###################################################################################################
 # Setup global
 ###################################################################################################
-importer_carte = 1 # choix : 0 ou 1
+importer_carte = 0 # choix : 0 ou 1
 precision = 60 # choix : 1 ou 60
 chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
 date_premiere_enquete = 2004
