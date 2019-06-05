@@ -11,11 +11,14 @@ L'application est divisée en plusieurs modules. On reviendra en détail sur le 
     - Si les bases de données sont déjà créées (c'est-à-dire que le répertoire ***./data/finaux*** n'est pas vide), alors il n'est pas nécessaire de lancer ce code.
     - Si vous lancez ce code pour la première fois, il est nécessaire d'importer les données spatiales (polygones de carte). Dans le code ***code_independant.R***, il faut mettre 1 à la variable ***importer_carte*** (ligne 11 du code)
     - Si vous lancez ce code pour la seconde fois, il n'est plus nécessaire d'importer les données spatiales (à condition de les avoir dans la session R active). Il faudra alors remettre la variable ***importer_carte*** à 0.
-* (4) Le code ***donnees_complementaires_carte.R*** pour créer le fichier alimentant le panel de droite de la carte (données socio-démo-économiques sur la région). Le temps d'exécution de ce code est de moins de 30 secondes (le délai vient essentiellement du téléchagement des 9 bases de données directement prises sur le site d'Eurostat)
+* (4) Le code ***calcul_centre.R*** est à lancer ensuite, il permet de greffer à la base de données issue de l'étape (3), deux nouvelles colonnes, qui permettent de positionner le "centre" de chaque région. Le temps d'exécution ne dépasse pas 15 secondes.
+* (5) Le code ***donnees_complementaires_carte.R*** pour créer le fichier alimentant le panel de droite de la carte (données socio-démo-économiques sur la région). Le temps d'exécution de ce code est de moins de 30 secondes (le délai vient essentiellement du téléchagement des 9 bases de données directement prises sur le site d'Eurostat)
     - Le bon déroulement de l'exécution de ce code nécessite l'existence du fichier de données ***./data/finaux/donnees.csv*** (celui créé à partir du code précédent)
     - Si le répertoire ***./data/finaux*** n'a pas été vidé, alors il n'est pas nécessaire d'exécuter ce code (le fichier créé existe déjà)
-* (5) Le code ***1_fichier_lanceur.R*** permet de démarrer l'application shiny. Le temps de lancement est inférieur à 2 secondes normalement.
+* (6) Le code ***1_fichier_lanceur.R*** permet de démarrer l'application shiny. Le temps de lancement est inférieur à 2 secondes normalement.
     - Si les deux précédents codes ont été exécutés avant, l'application peut directement être lancée.
+
+Les fichiers se cumulent de plus en plus, rendant de moins en moins facile la construction des données, donc il sera prévu de créer un fichier "central" qui servira de tableau de bord afin d'exécuter ces étapes ci-dessus, avec la possibilité ou non de passer des étapes (si les données ont déjà été créées avant).
 
 
 ## Administration
