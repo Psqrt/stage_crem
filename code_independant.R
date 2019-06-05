@@ -5,10 +5,15 @@ library(tidyverse) # traitements en tout genre
 library(crayon) # print coloré dans la console
 library(ade4) # tableau disjonctif complet
 
+
 ###################################################################################################
 # Setup global
 ###################################################################################################
-importer_carte = 0 # choix : 0 ou 1
+if (Sys.info()[1] == "Windows"){
+    Sys.setlocale("LC_ALL","English")
+}
+
+importer_carte = 1 # choix : 0 ou 1
 precision = 60 # choix : 1 ou 60
 chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
 date_premiere_enquete = 2004
@@ -440,6 +445,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         } else {
             annee_carte = 2016
         }
+        
         
         # copies des bases importées pour être traitées ensuite
         # pourquoi ? pour éviter de réimporter pour chaque nuts

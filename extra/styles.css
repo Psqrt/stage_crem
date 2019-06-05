@@ -9,12 +9,13 @@
 	overflow: hidden;
 }
 
-.leaflet-top .leaflet-right {
+.leaflet-top .leaflet-left {
   padding-top: 6px;
+
 }
 
 /* menus deroulants */
-#div_choix_variable_map .selectize-dropdown-content {
+#div_choix_variable_1_map .selectize-dropdown-content {
   min-height: 450px;
 }
 
@@ -42,12 +43,15 @@
 }
 
 #legend_fluidrow > .row {
-  width: 430px;
+  width: 500px;
 }
 
-#legend_switch {
+/*#legend_switch_var2_map {
   padding-top: 37px;
 }
+#legend_switch_periode_map {
+  padding-top: 37px;
+}*/
 
 /* Barre horizontale */
 
@@ -77,7 +81,7 @@
 }
 
 #abspanel_map_bot {
-  margin-left: 10px;
+  margin-left: 30px;
   padding: 0px;
   background-color: transparent;
   border-color: transparent;

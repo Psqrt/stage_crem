@@ -2,8 +2,10 @@
 output$plotly_scatter <- renderPlotly({
   
   # 1. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
+  print(input$choix_annee_scatterplot)
   filtre_df_scatter = moyenne_region_stat %>% 
-    filter(NUTS == input$choix_nuts_onglet3) %>% 
+    filter(NUTS == input$choix_nuts_onglet3 &
+             ANNEE %in% input$choix_annee_scatterplot) %>%
     mutate(ANNEE = as.factor(ANNEE))
   
   # 2. Ne tracer le graphique que si les deux variables sont choisies
@@ -14,7 +16,7 @@ output$plotly_scatter <- renderPlotly({
       filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_onglet3),
                                     y = ~get(input$choix_var2_onglet3),
                                     color = ~PAYS,
-                                    symbol = ~ANNEE,
+                                    # symbol = ~ANNEE,
                                     mode = "markers",
                                     colors = "Set3",
                                     type = 'scatter',
@@ -24,15 +26,15 @@ output$plotly_scatter <- renderPlotly({
                                                   "Value variable 2: ", get(input$choix_var2_onglet3), 
                                                   sep = ""),
                                     hoverinfo = "text") %>%
-        # Renommage des noms des axes (utilisation du label plutôt que le code)
+        # Renommage des noms des axes (utilisation du label plutot que le code)
         layout(xaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_onglet3])),
                yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_onglet3])))
       
     } else {
       # 2.2. Sinon (mode 3D) ...
-      filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_onglet3),
-                                    y = ~get(input$choix_var2_onglet3),
-                                    z = ~ANNEE,
+      filtre_df_scatter %>% plot_ly(x = ~ANNEE,
+                                    y = ~get(input$choix_var1_onglet3),
+                                    z = ~get(input$choix_var2_onglet3),
                                     color = ~PAYS,
                                     mode = "markers",
                                     colors = "Set3",
@@ -43,10 +45,10 @@ output$plotly_scatter <- renderPlotly({
                                                   "Value variable 2: ", get(input$choix_var2_onglet3), 
                                                   sep = ""),
                                     hoverinfo = "text") %>%
-        # Renommage des noms des axes (utilisation du label plutôt que le code)
-        layout(scene = list(xaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_onglet3])),
-                            yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_onglet3])),
-                            zaxis = list(title = "Year")))
+        # Renommage des noms des axes (utilisation du label plutot que le code)
+        layout(scene = list(yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_onglet3])),
+                            zaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_onglet3])),
+                            xaxis = list(title = "Year")))
     }
   }
 })

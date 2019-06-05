@@ -22,19 +22,19 @@ moyenne_region_eu28 = read.csv(file = "./data/finaux/donnees_carte_eu28.csv",
                                sep = ",",
                                header = T,
                                stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                               fileEncoding = "UTF-8")
 
 moyenne_region_stat = read.csv(file = "./data/finaux/donnees_stats.csv",
                                sep = ",",
                                header = T,
                                stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                               fileEncoding = "UTF-8")
 
 dico_variable_import = read.csv(file = "./data/liste_variable.csv",
                                 sep = ",",
                                 header = T,
                                 stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                                fileEncoding = "UTF-8")
 
 ### Dictionnaires pour alimenter les listes déroulantes UI : labels au lieu des codes abstraits
 
@@ -59,10 +59,19 @@ dico_liste_variable_page_import = read.csv(file = "./data/liste_variable_page.cs
                                            sep = ",",
                                            header = T,
                                            stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                                           fileEncoding = "UTF-8")
 
 dico_liste_variable_page = setNames(dico_liste_variable_page_import$page,
                                     dico_liste_variable_page_import$code)
+
+dico_pays_stats = read.csv(file = "./data/dico_pays_stats.csv",
+                                           sep = ",",
+                                           header = T,
+                                           stringsAsFactors = F,
+                                           fileEncoding = "UTF-8")
+
+liste_dico_pays_stats = setNames(dico_pays_stats$code,
+                                 dico_pays_stats$label)
 
 source("./liste_deroulante_map.R")$values
 
@@ -78,19 +87,19 @@ liste_nuts0_stat = read.csv("./data/finaux/liste_nuts0_stat.csv",
                             header = T,
                             sep = ",",
                             stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                            fileEncoding = "UTF-8")
 
 liste_nuts1_stat = read.csv("./data/finaux/liste_nuts1_stat.csv",
                             header = T,
                             sep = ",",
                             stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                            fileEncoding = "UTF-8")
 
 liste_nuts2_stat = read.csv("./data/finaux/liste_nuts2_stat.csv",
                             header = T,
                             sep = ",",
                             stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                            fileEncoding = "UTF-8")
 
 liste_nuts0_stat = setNames(liste_nuts0_stat$REGION,
                             liste_nuts0_stat$NOM_REGION)

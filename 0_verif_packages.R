@@ -11,4 +11,6 @@ install.packages(c("tidyverse",
                    "shinydashboardPlus",
                    "rAmCharts",
                    "shinyjs",
+                   "DT",
+                   "polylabelr",
                    "plotly"))

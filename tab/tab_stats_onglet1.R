@@ -1,6 +1,6 @@
 # LEXIQUE :
 #    - INPUT : Élément de l'interface attendant un choix de l'utilisateur
-#      OUTPUT : Élément de l'interface renvoyé par le côté serveur selon les inputs
+#      OUTPUT : Élément de l'interface renvoyé par le coté serveur selon les inputs
 #      PANEL : Élément de l'interface accueillant les inputs ou les outputs.
 
 subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque le curseur est dans le body.

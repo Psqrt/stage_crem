@@ -2,6 +2,10 @@
 library(stringr)
 library(dplyr)
 
+if (Sys.info()[1] == "Windows"){
+    Sys.setlocale("LC_ALL","English")
+}
+
 # Importations dictionnaires pour recodage
 
 dico_enquete_avant_2010 = read.csv(file = "./data/dictionnaire_codage_avant_2010.csv",
@@ -24,6 +28,12 @@ dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte,
                                         dico_enquete_entre_2010_2013$code_enquete)
 
 donnees_finale = read.csv(file =  "./data/finaux/donnees.csv",
+                          sep = ",",
+                          header = T,
+                          stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
+
+centre_poly = read.csv(file =  "./data/finaux/centre_poly.csv",
                           sep = ",",
                           header = T,
                           stringsAsFactors = F,
@@ -229,6 +239,13 @@ df_final2 = donnees_finale %>%
               by = c("REGION" = "REGION",
                      "ANNEE" = "ANNEE",
                      "NUTS" = "NUTS"))
+
+df_final2 = df_final2 %>% 
+    left_join(centre_poly,
+              by = c("REGION" = "REGION",
+                     "ANNEE" = "ANNEE",
+                     "NUTS" = "NUTS",
+                     "PERIODE" = "PERIODE"))
 
 # exportation (ce fichier alimentera l'application shiny, côté cartographie)
 write.csv(df_final2, 
