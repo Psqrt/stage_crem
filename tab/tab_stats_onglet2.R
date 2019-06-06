@@ -16,28 +16,36 @@ subtab_onglet2 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                            status = "primary",
                                            
                                            
-                                           fluidRow(
-                                               column(
-                                                   width = 2,
-                                                   
-                                                   
-                                                   conditionalPanel("input.choix_var_onglet2 != 'XXXX'",
-                                                                    
-                                                                    # OUTPUT : Documentation PDF de la variable
-                                                                    dropdownButton(
-                                                                        circle = FALSE,
-                                                                        status = 'danger',
-                                                                        label = "Documentation Variable",
-                                                                        size = "sm",
-                                                                        icon = icon("file-pdf"),
-                                                                        width = "795px",
-                                                                        margin = "0px",
-                                                                        up = F,
-                                                                        
-                                                                        htmlOutput('pdf1_onglet2') # PDF
-                                                                    )
-                                                   )
-                                               )
+                                           conditionalPanel("input.choix_var_onglet2 != 'XXXX'",
+                                                            tags$div(id="data_button_onglet2",
+                                                                     # OUTPUT : Documentation PDF de la variable
+                                                                     dropdownButton(
+                                                                         circle = FALSE,
+                                                                         status = 'danger',
+                                                                         label = "Documentation Variable",
+                                                                         size = "sm",
+                                                                         icon = icon("file-pdf"),
+                                                                         width = "795px",
+                                                                         margin = "0px",
+                                                                         up = F,
+                                                                         
+                                                                         htmlOutput('pdf1_onglet2') # PDF
+                                                                     )
+                                                            ),
+                                                            
+                                                            # OUTPUT : Table des données filtrées
+                                                            dropdownButton(
+                                                                circle = FALSE,
+                                                                status = 'primary',
+                                                                label = "Data",
+                                                                size = "sm",
+                                                                icon = icon("database"),
+                                                                width = "795px",
+                                                                margin = "0px",
+                                                                up = F,
+                                                                
+                                                                dataTableOutput('table_ts') # table data
+                                                            )
                                            ),
                                            
                                            conditionalPanel("input.choix_nuts_onglet2 == 'NUTS 0'",

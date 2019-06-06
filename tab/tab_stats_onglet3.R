@@ -19,17 +19,41 @@ subtab_onglet3 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                tags$div(
                                                    id = "pdf_col1_onglet3",
                                                    
+                                                   
+                                                   tags$div(id="data_button_onglet3",
+                                                            
+                                                            column(
+                                                                width = 2,
+                                                                
+                                                                conditionalPanel("input.choix_var1_onglet3 != 'XXXX'",
+                                                                                 
+                                                                                 # OUTPUT : Documentation PDF de la variable 1
+                                                                                 dropdownButton(
+                                                                                     htmlOutput('pdf1_onglet3'),
+                                                                                     circle = FALSE,
+                                                                                     status = 'danger',
+                                                                                     label = "Documentation Variable 1",
+                                                                                     size = "sm",
+                                                                                     icon = icon("file-pdf"),
+                                                                                     width = "795px",
+                                                                                     margin = "0px",
+                                                                                     up = F
+                                                                                 )
+                                                                )
+                                                            )
+                                                   ),
+                                                   
                                                    column(
                                                        width = 2,
                                                        
-                                                       conditionalPanel("input.choix_var1_onglet3 != 'XXXX'",
+                                                       conditionalPanel("input.choix_var2_onglet3 != 'XXXX'",
                                                                         
-                                                                        # OUTPUT : Documentation PDF de la variable 1
+                                                                        # OUTPUT : Documentation PDF de la variable 2
                                                                         dropdownButton(
-                                                                            htmlOutput('pdf1_onglet3'),
+                                                                            htmlOutput('pdf2_onglet3'),
                                                                             circle = FALSE,
                                                                             status = 'danger',
-                                                                            label = "Documentation Variable 1",
+                                                                            label = "Documentation Variable 2",
                                                                             size = "sm",
                                                                             icon = icon("file-pdf"),
                                                                             width = "795px",
@@ -43,19 +67,20 @@ subtab_onglet3 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                column(
                                                    width = 2,
                                                    
-                                                   conditionalPanel("input.choix_var2_onglet3 != 'XXXX'",
-                                                                    
-                                                                    # OUTPUT : Documentation PDF de la variable 2
+                                                   
+                                                   conditionalPanel("input.choix_var1_onglet3 != 'XXXX' | input.choix_var2_onglet3 != 'XXXX'",
+                                                                    # OUTPUT : Table des données filtrées
                                                                     dropdownButton(
-                                                                        htmlOutput('pdf2_onglet3'),
                                                                         circle = FALSE,
-                                                                        status = 'danger',
-                                                                        label = "Documentation Variable 2",
+                                                                        status = 'primary',
+                                                                        label = "Data",
                                                                         size = "sm",
-                                                                        icon = icon("file-pdf"),
+                                                                        icon = icon("database"),
                                                                         width = "795px",
                                                                         margin = "0px",
-                                                                        up = F
+                                                                        up = F,
+                                                                        
+                                                                        dataTableOutput('table_scatter') # table data
                                                                     )
                                                    )
                                                )

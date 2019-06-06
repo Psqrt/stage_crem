@@ -88,7 +88,7 @@ tab_carto <- tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque l
                                            id = "abspanel_map_right",
                                            fixed = FALSE,
                                            class = "panel panel-default",
-                                           width = "470px",
+                                           width = "490px",
                                            height = "auto",
                                            bottom = "40px",
                                            right = "15px",

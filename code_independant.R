@@ -872,7 +872,12 @@ mise_a_jour_stats = setNames(mise_a_jour_stats$nouveau,
 df_final3_tot_stat = df_final3_tot %>% 
     filter(!is.na(ANNEE)) %>% 
     mutate(REGION = recode(REGION, !!!mise_a_jour_stats),
-           PAYS = substr(REGION, 1, 2))
+           PAYS = substr(REGION, 1, 2)) %>% 
+    left_join(dico_nom_pays, # On rajoute une variable qui donne le nom du pays (au lieu d'un simple code)
+              by = c("PAYS" = "code")) %>% 
+    mutate(label = if_else(PAYS == "GR", "Greece", label)) %>% # cas particulier de la grêce qui peut être EL ou GR
+    rename(NOM_PAYS = label) %>% 
+    select(PAYS, NOM_PAYS, REGION, NOM_REGION, NUTS, ANNEE, PERIODE, ANNEES_PRESENTES, NB_MENAGE, NB_PERSONNE, everything())
 
 # les régions sont harmonisées en fonction du temps maintenant, la base est opérationnelle pour shiny.
 write.csv(df_final3_tot_stat,

@@ -209,7 +209,7 @@ observe({
     mutate(ANNEE = range_date) %>% 
     rename(Year = ANNEE)
   
-  output$df_tableau_central = DT::renderDataTable(
+  output$df_tableau_central = renderDataTable(
     selection = list(mode = 'single'),
     options = list(searching = FALSE,
                    dom = 't'),

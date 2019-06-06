@@ -163,3 +163,18 @@
 #panel_pdf2_onglet1 {
   margin-top: -5px;
 }
+
+.fa.fa-database {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+#data_button_onglet2 {
+  float: left;
+  margin-right: 15px; 
+}
+
+#data_button_onglet3 {
+  float: left;
+  margin-right: -15px;
+}

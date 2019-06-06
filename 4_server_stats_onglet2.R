@@ -17,6 +17,33 @@ observeEvent(input$choix_nuts_onglet2, {
 })
 
 
+
+# == Sortie table pour time series (onglet 2) ==========================================================
+observe({
+  
+  if (input$choix_var_onglet2 != "XXXX"){
+  filtre_df = moyenne_region_stat %>% 
+    filter(NUTS == input$choix_nuts_onglet2 &
+             PAYS %in% input$choix_pays_onglet2) %>% 
+    mutate(ANNEE =as.numeric(ANNEE)) %>%
+    select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var_onglet2) %>% 
+    arrange(ANNEE)
+  } else {
+    filtre_df = data.frame()
+  }
+  
+    output$table_ts = renderDataTable(
+    selection = list(mode = 'single'),
+    options = list(searching = FALSE), filtre_df
+  )
+})
+
+
+
+
+
+
+
 # == TIME SERIES NUTS 0 ================================================================================
 output$plotly_ts_nuts0 <- renderPlotly({
   

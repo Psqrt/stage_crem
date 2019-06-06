@@ -40,6 +40,12 @@ centre_poly = read.csv(file =  "./data/finaux/centre_poly.csv",
                           stringsAsFactors = F,
                           fileEncoding = "UTF-8")
 
+dico_nom_pays = read.csv(file =  "./data/dico_pays_stats.csv",
+                          sep = ",",
+                          header = T,
+                          stringsAsFactors = F,
+                          fileEncoding = "UTF-8")
+
 # =================================================================================================================
 
 # VARIABLES RETENUES DANS LES BASES DE DONNEES EUROSTAT ===========================================================
@@ -246,7 +252,12 @@ df_final2 = df_final2 %>%
               by = c("REGION" = "REGION",
                      "ANNEE" = "ANNEE",
                      "NUTS" = "NUTS",
-                     "PERIODE" = "PERIODE"))
+                     "PERIODE" = "PERIODE")) %>% 
+    left_join(dico_nom_pays, # On rajoute une variable qui donne le nom du pays (au lieu d'un simple code)
+              by = c("PAYS" = "code")) %>% 
+    mutate(label = if_else(PAYS == "GR", "Greece", label)) %>% # cas particulier de la grêce qui peut être EL ou GR
+    rename(NOM_PAYS = label) %>% 
+    select(PAYS, NOM_PAYS, REGION, NOM_REGION, NUTS, ANNEE, PERIODE, ANNEES_PRESENTES, NB_MENAGE, NB_PERSONNE, everything())
 
 # exportation (ce fichier alimentera l'application shiny, côté cartographie)
 write.csv(df_final2, 

@@ -9,6 +9,7 @@ library(shinydashboardPlus)
 library(rAmCharts)
 library(shinyjs)
 library(plotly)
+library(DT)
 
 ###### DONNEES #################################################################
 

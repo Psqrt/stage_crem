@@ -33,6 +33,42 @@ observeEvent(input$choix_nuts_onglet3, {
 
 
 
+# == Sortie table pour scatter plot (onglet 3) ==========================================================
+observe({
+  
+  if (input$choix_var1_onglet3 != "XXXX" | input$choix_var2_onglet3 != "XXXX"){
+    filtre_df_scatter = moyenne_region_stat %>% 
+      filter(NUTS == input$choix_nuts_onglet3 &
+               ANNEE %in% input$choix_annee_scatterplot) %>%
+      mutate(ANNEE = as.factor(ANNEE))
+    
+    if (input$choix_var1_onglet3 != "XXXX"){
+      if (input$choix_var2_onglet3 != "XXXX"){
+        filtre_df_scatter = filtre_df_scatter %>% 
+          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var1_onglet3, input$choix_var2_onglet3)
+      } else {
+        filtre_df_scatter = filtre_df_scatter %>% 
+          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var1_onglet3)
+      }
+    } else {
+      if (input$choix_var2_onglet3 != "XXXX"){
+        filtre_df_scatter = filtre_df_scatter %>% 
+          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var2_onglet3)
+      } else {
+        filtre_df_scatter = data.frame()
+      }
+    }
+  } else {
+    filtre_df_scatter = data.frame()
+  }
+  
+  output$table_scatter = renderDataTable(
+    selection = list(mode = 'single'),
+    options = list(searching = FALSE), filtre_df_scatter
+  )
+})
+
+
 # == SCATTER PLOT ======================================================================================
 output$plotly_scatter <- renderPlotly({
   
