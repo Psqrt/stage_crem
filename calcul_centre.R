@@ -1,19 +1,22 @@
 library(polylabelr)
 library(tidyverse)
 
+# Pour résoudre des problèmes d'encodage ...
 if (Sys.info()[1] == "Windows"){
     Sys.setlocale("LC_ALL","English")
 }
 
-date_premiere_enquete = 2004
-date_derniere_enquete = 2013
-
-
-liste_periode = list(c(2004:2005),
-                     c(2006:2009),
-                     c(2010:2012),
-                     c(2013:2015))
-
+# Si on ne lance pas depuis le fichier pilote, executer ceci (la condition n'est pas tout à fait équivalente...)
+if (!exists("execution_pilote")){
+    date_premiere_enquete = 2004
+    date_derniere_enquete = 2013
+    
+    
+    liste_periode = list(c(2004:2005),
+                         c(2006:2009),
+                         c(2010:2012),
+                         c(2013:2015))
+}
 
 
 

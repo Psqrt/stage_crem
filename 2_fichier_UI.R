@@ -105,7 +105,7 @@ contenu_UI <- shinyUI(
                                                       inputId = "choix_variable_1_map",
                                                       label = "VARIABLE 1 (COLOR)", 
                                                       width = "430px",
-                                                      choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                                       selected = "XXXX"
                                                   )
                                          ),

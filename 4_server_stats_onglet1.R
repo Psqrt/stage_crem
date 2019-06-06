@@ -1,3 +1,37 @@
+# == Update liste déroulante en fonction du NUTS =======================================================
+# Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
+# car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
+# c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
+observeEvent(input$choix_nuts_ts1, {
+  if (input$choix_nuts_ts1 == "NUTS 0"){
+    updateSelectInput(session, "choix_var_ts1", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_var_ts1)
+  } else {
+    updateSelectInput(session, "choix_var_ts1", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_var_ts1 %in% liste_reduite,
+                                         input$choix_var_ts1,
+                                         "XXXX"))
+  }
+})
+
+observeEvent(input$choix_nuts_ts1, {
+  if (input$choix_nuts_ts1 == "NUTS 0"){
+    updateSelectInput(session, "choix_var_ts2", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_var_ts2)
+  } else {
+    updateSelectInput(session, "choix_var_ts2", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_var_ts2 %in% liste_reduite,
+                                         input$choix_var_ts2,
+                                         "XXXX"))
+  }
+})
+
+
+
 observe({
   
   # 1. Trois sources peuvent fournir la région sélectionnée ...
@@ -190,21 +224,38 @@ observe({
   df_init_2lignes = data.frame(Region = c("0", "0"))
   
   output$barplot = renderAmCharts({
-    print("==========================================================")
-    print(input$choix_var_ts1)
-    print(input$choix_var_ts2)
-    print(choix_region_ts1)
-    print(choix_region_ts2)
-    print("==========================================================")
     var1 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_ts1])
     region1 = names(liste_tout_nuts_stat[liste_tout_nuts_stat == choix_region_ts1])
     var2 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_ts2])
     region2 = names(liste_tout_nuts_stat[liste_tout_nuts_stat == choix_region_ts2])
+    
+    
+    
+    # Liste des cas de figures possibles lors de la construction du barplot
+    # |---------------------------------------------------|
+    # |     CAS     | VAR 1 | VAR 2 | REGION 1 | REGION 2 |
+    # |-------------+-------+-------+----------+----------|
+    # | CAS 1 ROSE  | OUI   | NON   | OUI      | NON      |
+    # | CAS 1 VERT  | NON   | OUI   | OUI      | NON      |
+    # | CAS 2 ROSE  | OUI   | NON   | NON      | OUI      |
+    # | CAS 2 VERT  | NON   | OUI   | NON      | OUI      |
+    # | CAS 1 JAUNE | OUI   | OUI   | NON      | OUI      |
+    # | CAS 2 JAUNE | OUI   | OUI   | OUI      | NON      |
+    # | CAS 3 ROSE  | OUI   | NON   | OUI      | OUI      |
+    # | CAS 3 VERT  | NON   | OUI   | OUI      | OUI      |
+    # | CAS 3 JAUNE | OUI   | OUI   | OUI      | OUI      |
+    # | CAS NOIR    | OUI   | NON   | NON      | NON      |
+    # | CAS NOIR    | OUI   | OUI   | NON      | NON      |
+    # | CAS NOIR    | NON   | NON   | OUI      | OUI      |
+    # | CAS NOIR    | NON   | OUI   | NON      | NON      |
+    # |---------------------------------------------------|
+
+    
     if (!is.null(input$df_tableau_central_row_last_clicked)){
       if (input$choix_var_ts1 != "XXXX" & input$choix_var_ts2 == "XXXX"){
         if (choix_region_ts1 != "XXXX" & choix_region_ts2 == "XXXX"){
           
-          print("CAS 1 ROSE")
+          # print("CAS 1 ROSE")
           
           df_barplot = df_init_1ligne %>% 
             mutate(!!var1 := as.numeric(df_tableau_central %>% 
@@ -217,7 +268,7 @@ observe({
                                    data = df_barplot)
         } else if (choix_region_ts1 == "XXXX" & choix_region_ts2 != "XXXX"){
           
-          print("CAS 2 ROSE")
+          # print("CAS 2 ROSE")
           
           df_barplot = df_init_1ligne %>% 
             mutate(!!var1 := as.numeric(df_tableau_central %>% 
@@ -230,7 +281,7 @@ observe({
                                    data = df_barplot)
         } else if (choix_region_ts1 != "XXXX" & choix_region_ts2 != "XXXX"){
           
-          print("CAS 3 ROSE")
+          # print("CAS 3 ROSE")
           
           df_barplot = df_init_2lignes %>% 
             mutate(!!var1 := df_tableau_central %>% 
@@ -243,13 +294,13 @@ observe({
                                    y = c(var1),
                                    data = df_barplot)
         } else {
-          print("CASE 4 ROSE")
+          # print("CAS NOIR")
           
           NULL
         }
       } else if (input$choix_var_ts1 == "XXXX" & input$choix_var_ts2 != "XXXX") {
         if (choix_region_ts1 != "XXXX" & choix_region_ts2 == "XXXX"){
-          print("CAS 1 VERT")
+          # print("CAS 1 VERT")
           
           df_barplot = df_init_1ligne %>% 
             mutate(!!var2 := as.numeric(df_tableau_central %>% 
@@ -264,7 +315,7 @@ observe({
           
           
         } else if (choix_region_ts1 == "XXXX" & choix_region_ts2 != "XXXX") {
-          print("CAS 2 VERT")
+          # print("CAS 2 VERT")
           
           df_barplot = df_init_1ligne %>% 
             mutate(!!var2 := as.numeric(df_tableau_central %>% 
@@ -279,7 +330,7 @@ observe({
           
           
         } else if (choix_region_ts1 != "XXXX" & choix_region_ts2 != "XXXX") {
-          print("CAS 3 VERT")
+          # print("CAS 3 VERT")
           
           df_barplot = df_init_2lignes %>% 
             mutate(!!var2 := df_tableau_central %>% 
@@ -297,7 +348,7 @@ observe({
         }
       } else if (input$choix_var_ts1 != "XXXX" & input$choix_var_ts2 != "XXXX") {
         if (choix_region_ts1 == "XXXX" & choix_region_ts2 != "XXXX"){
-          print("CAS 1 JAUNE")
+          # print("CAS 1 JAUNE")
           
           df_intermediaire <- (df_tableau_central %>% 
                                  filter(Year == 2003 + input$df_tableau_central_row_last_clicked))
@@ -312,7 +363,6 @@ observe({
                      as.numeric,
                    Region = region2
             )
-          print(df_barplot)
           
           barplot_stat = amBarplot(x = "Region",
                                    y = c(var1, var2), 
@@ -322,7 +372,7 @@ observe({
           
           
         } else if (choix_region_ts1 != "XXXX" & choix_region_ts2 == "XXXX"){
-          print("CAS 2 JAUNE")
+          # print("CAS 2 JAUNE")
           
           df_intermediaire <- (df_tableau_central %>% 
                                  filter(Year == 2003 + input$df_tableau_central_row_last_clicked))
@@ -337,7 +387,6 @@ observe({
                      as.numeric,
                    Region = region1
             )
-          print(df_barplot)
           
           barplot_stat = amBarplot(x = "Region",
                                    y = c(var1, var2), 
@@ -345,12 +394,11 @@ observe({
                                    legendPosition = "bottom",
                                    data = df_barplot)
         } else if (choix_region_ts1 != "XXXX" & choix_region_ts2 != "XXXX"){
-          print("CAS 3 JAUNE")
+          # print("CAS 3 JAUNE")
           
           df_intermediaire <- (df_tableau_central %>% 
                                  filter(Year == 2003 + input$df_tableau_central_row_last_clicked))
           
-          print(df_intermediaire)
           df_barplot = df_init_2lignes %>% 
             mutate(!!var1 :=  df_intermediaire %>% 
                      select(2, 4) %>%
@@ -362,7 +410,6 @@ observe({
                      as.numeric,
                    Region = c(region1, region2)
             )
-          print(df_barplot)
           
           barplot_stat = amBarplot(x = "Region",
                                    y = c(var1, var2), 
@@ -375,7 +422,8 @@ observe({
       # amBarplot(x = "REGION", y = c("V1", "V2"), data = qq)
       # barplot_stat
     } else {
-      print("SELECTIONNER UNE LIGNE DU TABLEAU")
+      # CAS NOIR
+      # print("SELECTIONNER UNE LIGNE DU TABLEAU")
       NULL
     }
   })
@@ -383,10 +431,10 @@ observe({
 })
 
 
-# Réactivité lorsque l'utilisateur sélectionne une ligne dans le tableau
-observeEvent(input$df_tableau_central_row_last_clicked, {
-  print(input$df_tableau_central_row_last_clicked)
-})
+# # Réactivité lorsque l'utilisateur sélectionne une ligne dans le tableau
+# observeEvent(input$df_tableau_central_row_last_clicked, {
+#   print(input$df_tableau_central_row_last_clicked)
+# })
 
 # Réactivité lorsque l'utilisateur actionne le switch pour la seconde région
 observeEvent(input$switch_region_stat, {

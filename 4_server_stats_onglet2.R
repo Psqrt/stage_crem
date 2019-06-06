@@ -1,3 +1,22 @@
+# == Update liste déroulante en fonction du NUTS =======================================================
+# Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
+# car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
+# c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
+observeEvent(input$choix_nuts_onglet2, {
+  if (input$choix_nuts_onglet2 == "NUTS 0"){
+    updateSelectInput(session, "choix_var_onglet2", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_var_onglet2)
+  } else {
+    updateSelectInput(session, "choix_var_onglet2", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_var_onglet2 %in% liste_reduite,
+                                         input$choix_var_onglet2,
+                                         "XXXX"))
+  }
+})
+
+
 # == TIME SERIES NUTS 0 ================================================================================
 output$plotly_ts_nuts0 <- renderPlotly({
   

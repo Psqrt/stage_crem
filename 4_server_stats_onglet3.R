@@ -1,8 +1,42 @@
+# == Update liste déroulante en fonction du NUTS =======================================================
+# Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
+# car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
+# c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
+observeEvent(input$choix_nuts_onglet3, {
+  if (input$choix_nuts_onglet3 == "NUTS 0"){
+    updateSelectInput(session, "choix_var1_onglet3", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_var1_onglet3)
+  } else {
+    updateSelectInput(session, "choix_var1_onglet3", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_var1_onglet3 %in% liste_reduite,
+                                         input$choix_var1_onglet3,
+                                         "XXXX"))
+  }
+})
+
+observeEvent(input$choix_nuts_onglet3, {
+  if (input$choix_nuts_onglet3 == "NUTS 0"){
+    updateSelectInput(session, "choix_var2_onglet3", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_var2_onglet3)
+  } else {
+    updateSelectInput(session, "choix_var2_onglet3", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_var2_onglet3 %in% liste_reduite,
+                                         input$choix_var2_onglet3,
+                                         "XXXX"))
+  }
+})
+
+
+
+
 # == SCATTER PLOT ======================================================================================
 output$plotly_scatter <- renderPlotly({
   
   # 1. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
-  print(input$choix_annee_scatterplot)
   filtre_df_scatter = moyenne_region_stat %>% 
     filter(NUTS == input$choix_nuts_onglet3 &
              ANNEE %in% input$choix_annee_scatterplot) %>%

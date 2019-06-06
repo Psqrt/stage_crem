@@ -15,6 +15,50 @@ liste_annee = reactive({
   }
 })
 
+
+# == Update switch / var2 ==============================================================================
+# ... réinitalisation de la variable 2 en "XXXX" lorsqu'on désactive la variable 2 (switch)
+
+observeEvent(input$switch_var2_map, {updateSelectInput(session, "choix_variable_2_map", selected = "XXXX")})
+
+
+# == Update liste déroulante en fonction du NUTS =======================================================
+# Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
+# car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
+# c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
+observeEvent(input$choix_nuts, {
+  if (input$choix_nuts == "NUTS 0"){
+    updateSelectInput(session, "choix_variable_1_map", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_variable_1_map)
+  } else {
+    updateSelectInput(session, "choix_variable_1_map", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_variable_1_map %in% liste_reduite,
+                                         input$choix_variable_1_map,
+                                         "XXXX"))
+  }
+})
+
+
+
+# == Update liste déroulante en fonction du NUTS =======================================================
+# Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
+# car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
+# c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
+observeEvent(input$choix_nuts, {
+  if (input$choix_nuts == "NUTS 0"){
+    updateSelectInput(session, "choix_variable_2_map", 
+                      choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                      selected = input$choix_variable_2_map)
+  } else {
+    updateSelectInput(session, "choix_variable_2_map", 
+                      choices = c("Select a variable" = "XXXX", liste_reduite),
+                      selected = if_else(input$choix_variable_2_map %in% liste_reduite,
+                                         input$choix_variable_2_map,
+                                         "XXXX"))
+  }
+})
 # == Filtrage de la base ===============================================================================
 # ... selon les inputs de l'utilisateur (niveau nuts, et année/période)
 moyenne_region_filtre = reactive({
@@ -159,11 +203,12 @@ observe({
   }
   
   if (input$choix_variable_2_map != "XXXX"){
-    calcul_radius = (20*(moyenne_region_filtre()[, variable_2_choisie]/max(moyenne_region_filtre()[, variable_2_choisie], na.rm = T))**4)/(0.5*(as.integer(substr(input$choix_nuts, 6, 6)) + 1))
+    calcul_radius = (2*(1 + (moyenne_region_filtre()[, variable_2_choisie]/max(moyenne_region_filtre()[, variable_2_choisie], na.rm = T)))**4)/(0.5*(as.integer(substr(input$choix_nuts, 6, 6)) + 1))
     leafletProxy('map') %>% 
       addCircleMarkers(data = moyenne_region_filtre(), # 2nde variable croisée
                        lng = ~LNG_CENTRE,
                        lat = ~LAT_CENTRE,
+                       layerId = ~REGION,
                        stroke = T,
                        weight = 1.5,
                        color = "black",
@@ -179,147 +224,56 @@ observe({
 # == Panel informations de droite ======================================================================
 
 observeEvent(input$choix_variable_1_map, {
-  texte1 = "Choose a variable ..."
-  texte2 = "... then choose a region."
-  titre1 = ""
-  titre2 = ""
-  
-  observeEvent(input$map_shape_click, {
-    
-    # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
-    info_click <- input$map_shape_click
-    
-    if (!is.null(info_click$id)){
-      # 2. Filtrage de la base pour récupérer l'ensemble des données pour cette région à l'année T ou période P
-      ligne_click = moyenne_region_filtre() %>% 
-        filter(REGION == info_click$id)
-      
-      # 3. Affichage conditionnel en fonction de l'échelle actuelle
-      if (input$choix_nuts == "NUTS 2"){
-        
-        ligne_donnees_2 = moyenne_region %>% 
-          filter(ANNEE == ligne_click$ANNEE & 
-                   REGION == substr(ligne_click$REGION, 1, 3))
-        
-        # En NUTS 2, donner des informations sur la région choisie et sur la région NUTS 1 qui l'englobe
-        texte1 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        texte2 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_donnees_2$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>PIB par habitant</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        titre1 = tags$h4(ligne_click$NOM_REGION)
-        titre2 = tags$h4(ligne_donnees_2$NOM_REGION)
-      } else if (input$choix_nuts == "NUTS 1"){
-        # En NUTS 1, donner des informations sur la région choisie et sur le pays qui l'englobe
-        
-        
-        ligne_donnees_2 = moyenne_region %>% 
-          filter(ANNEE == ligne_click$ANNEE & 
-                   REGION == substr(ligne_click$REGION, 1, 2))
-        
-        texte1 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        texte2 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_donnees_2$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_donnees_2$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_donnees_2$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_donnees_2$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_donnees_2$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        titre1 = tags$h4(ligne_click$NOM_REGION)
-        titre2 = tags$h4(ligne_donnees_2$NOM_REGION)
-        
-      } else if (input$choix_nuts == "NUTS 0"){
-        # En NUTS 0, donner des informations sur le pays choisi et sur l'Europe
-        
-        moyenne_region_eu28_filtre = moyenne_region_eu28 %>% 
-          filter(ANNEE == ligne_click$ANNEE)
-        
-        texte1 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(ligne_click$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(ligne_click$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(ligne_click$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", ligne_click$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", ligne_click$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", ligne_click$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", ligne_click$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        texte2 = paste("<table>",
-                       "<tr><td><strong>Population</strong></td><td style = 'text-align: right'>", format(moyenne_region_eu28_filtre$POPULATION, big.mark = ","), "inhabitants</td></tr>",
-                       "<tr><td><strong>Density</strong></td><td style = 'text-align: right'>", format(round(moyenne_region_eu28_filtre$DENSITE), big.mark = ","), "inhabitants/km²</td></tr>",
-                       "<tr><td><strong>GDP per capita</strong></td><td style = 'text-align: right'>", format(moyenne_region_eu28_filtre$PIBH, big.mark = ","), "€/inhabitant/year</td></tr>",
-                       "<tr><td><strong>Young people who permaturely left education</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$EDUC_JEUNE, "%</td></tr>",
-                       "<tr><td><strong>People at risk of poverty or social exclusion</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_NB, "%</td></tr>",
-                       "<tr><td><strong>Risk of poverty rate</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$RISQUE_PAUVR_TX, "%</td></tr>",
-                       "<tr><td><strong>Unemployment rate</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$CHOMAGE_TX, "%</td></tr>",
-                       "<tr><td><strong>Cooling degree days</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_COLD, "</td></tr>",
-                       "<tr><td><strong>Heating degree days</strong></td><td style = 'text-align: right'>", moyenne_region_eu28_filtre$DEGRES_JOUR_HOT, "</td></tr>",
-                       "</table>")
-        
-        titre1 = tags$h4(ligne_click$NOM_REGION)
-        titre2 = tags$h4("Europe")
-        
-        
-        if (input$choix_variable_1_map == "XXXX"){
-          texte1 = "Choose a variable ..."
-          texte2 = "... then choose a region."
-          titre1 = ""
-          titre2 = ""
-        }
-        
-        
-      }
-      
-    }
-    # 4. Les sorties ... cas sélection région
+  if (input$choix_variable_1_map == "XXXX" & input$choix_variable_2_map == "XXXX"){
+    texte1 = "Choose a variable ..."
+    texte2 = "... then choose a region."
+    titre1 = ""
+    titre2 = ""
+    # 4. Les sorties ... cas initialisation et sélection de variable
     output$panel_droite_map_titre1 = renderUI({titre1})
     output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
     output$panel_droite_map_titre2 = renderUI({titre2})
     output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
-  })
+  }
+})
+
+observeEvent(input$choix_variable_2_map, {
+  if (input$choix_variable_1_map == "XXXX" & input$choix_variable_2_map == "XXXX"){
+    texte1 = "Choose a variable ..."
+    texte2 = "... then choose a region."
+    titre1 = ""
+    titre2 = ""
+    # 4. Les sorties ... cas initialisation et sélection de variable
+    output$panel_droite_map_titre1 = renderUI({titre1})
+    output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
+    output$panel_droite_map_titre2 = renderUI({titre2})
+    output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
+  }
+})
+
+observeEvent(input$map_marker_click, {
+  # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
+  info_click <- input$map_marker_click
+  source("fonctions.R", local = T, encoding = "UTF-8")
   
-  
-  # 4. Les sorties ... cas initialisation et sélection de variable
+  # 4. Les sorties ... cas sélection région
   output$panel_droite_map_titre1 = renderUI({titre1})
   output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
   output$panel_droite_map_titre2 = renderUI({titre2})
   output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
   
+  
+})
+
+observeEvent(input$map_shape_click, {
+  # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
+  info_click <- input$map_shape_click
+  
+  source("fonctions.R", local = T, encoding = "UTF-8")
+  
+  # 4. Les sorties ... cas sélection région
+  output$panel_droite_map_titre1 = renderUI({titre1})
+  output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
+  output$panel_droite_map_titre2 = renderUI({titre2})
+  output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
 })

@@ -9,24 +9,29 @@ library(ade4) # tableau disjonctif complet
 ###################################################################################################
 # Setup global
 ###################################################################################################
+
+# Pour résoudre des problèmes d'encodage ...
 if (Sys.info()[1] == "Windows"){
     Sys.setlocale("LC_ALL","English")
 }
 
-importer_carte = 1 # choix : 0 ou 1
-precision = 60 # choix : 1 ou 60
-chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
-date_premiere_enquete = 2004
-date_derniere_enquete = 2013
-nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1
+# Si on ne lance pas depuis le fichier pilote, executer ceci (la condition n'est pas tout à fait équivalente...)
+if (!exists("execution_pilote")){
+    importer_carte = 1 # choix : 0 ou 1
+    precision = 60 # choix : 1 ou 60
+    chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
+    date_premiere_enquete = 2004
+    date_derniere_enquete = 2013
+    nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1
+    
+    # une période ne doit pas chevaucher une modification de la norme NUTS
+    liste_periode = list(c(2004:2005),
+                         c(2006:2009),
+                         c(2010:2012),
+                         c(2013:2015))
+}
 
-# une période ne doit pas chevaucher une modification de la norme NUTS
-liste_periode = list(c(2004:2005),
-                     c(2006:2009),
-                     c(2010:2012),
-                     c(2013:2015))
-
-date_debut = Sys.time()
+date_debut_code_indep = Sys.time()
 cat(green("######################################################################################
 Paramètres d'importation :
     * Importer les fichiers geojson des cartes : ", as.logical(importer_carte), "
@@ -931,6 +936,6 @@ rm(df_personne_t,
 cat(green("Fin du programme !\n"))
 
 # fin du programme
-date_fin = Sys.time()
-diff = date_fin - date_debut
+date_fin_code_indep = Sys.time()
+diff = date_fin_code_indep - date_debut_code_indep
 print(diff)

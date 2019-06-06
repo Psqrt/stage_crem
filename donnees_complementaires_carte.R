@@ -2,6 +2,7 @@
 library(stringr)
 library(dplyr)
 
+# Pour résoudre des problèmes d'encodage ...
 if (Sys.info()[1] == "Windows"){
     Sys.setlocale("LC_ALL","English")
 }
