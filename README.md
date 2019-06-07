@@ -23,6 +23,7 @@ L'application est divisée en plusieurs modules. On reviendra en détail sur le 
 * Rapport 2 : https://docs.google.com/document/d/1VrJxGSwtAESfuOQFKSoIyODAAj68VapsTirIRVFsrYU/edit  
 * Rapport 3 : https://docs.google.com/document/d/16wZxiQ52D4dDHrUmpOiZVj5TBNeec611DEXRmDoFvbk/edit
 * Rapport 4 : https://docs.google.com/document/d/1dxWyNT5gl4dCZRpWX4IFYPVkQxzU8LIjnttgMnfCnWs/edit
+* Rapport 5 : https://docs.google.com/document/d/1VrHjM3K9pf1hE7g88SUupmvgmrfw6Ay00iInvI_YRC4/edit
 
 ## Données
 * Données de l'enquête : https://ec.europa.eu/eurostat/fr/web/microdata/statistics-on-income-and-living-conditions
@@ -48,11 +49,18 @@ L'application est divisée en plusieurs modules. On reviendra en détail sur le 
 * Implémentation R : https://github.com/jolars/polylabelr
 
 
-## Coloration
-* Choix des palettes : http://colorbrewer2.org/
+
 
 ## Shiny
 * Gallerie widgets : http://shinyapps.dreamrs.fr/shinyWidgets/
 * Fonds de carte : https://leaflet-extras.github.io/leaflet-providers/preview/
 * Fonction HTML : https://shiny.rstudio.com/articles/tag-glossary.html 
 * Icones : https://fontawesome.com/icons/plus-circle?style=solid
+
+### Coloration
+* Choix des palettes : http://colorbrewer2.org/
+
+### Inspiration data viz
+
+* https://www.citeco.fr/rubriques/statistiques-et-%C3%A9conomie
+* https://www.gapminder.org/tools/
