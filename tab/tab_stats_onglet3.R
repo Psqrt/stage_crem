@@ -5,7 +5,7 @@
 
 subtab_onglet3 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque le curseur est dans le body.
                           fluidPage(
-                              tags$div(id="box_ggplot_scatter",
+                              tags$div(id="box_plotly_scatter",
                                        
                                        # PANEL : Fenêtre acceuillant le graphique scatter plot =========
                                        box(

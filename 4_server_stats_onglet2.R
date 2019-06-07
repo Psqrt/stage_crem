@@ -14,25 +14,89 @@ observeEvent(input$choix_nuts_onglet2, {
                                          input$choix_var_onglet2,
                                          "XXXX"))
   }
+  
+  # update de la liste des régions après modification sélection nuts
+  
+  dico_region_update_onglet2 = moyenne_region_stat %>% 
+    filter(PAYS == input$choix_pays_onglet2_nuts_1_2,
+           NUTS == input$choix_nuts_onglet2) %>% 
+    select(REGION, NOM_REGION) %>%
+    distinct(REGION, .keep_all = T)
+  
+  liste_region_update_onglet2 = setNames(dico_region_update_onglet2[, "REGION"],
+                                         dico_region_update_onglet2[, "NOM_REGION"])
+  
+  
+  if (input$choix_pays_onglet2_nuts_1_2 != "XXXX"){
+    updatePickerInput(session, "choix_region_onglet2", 
+                      choices = liste_region_update_onglet2,
+                      selected = liste_region_update_onglet2)
+  }
+})
+
+
+
+
+
+# == Update liste déroulante des régions en fonction du pays sélectionné ===============================
+observeEvent(input$choix_pays_onglet2_nuts_1_2, {
+  
+  dico_region_update_onglet2 = moyenne_region_stat %>% 
+    filter(PAYS == input$choix_pays_onglet2_nuts_1_2,
+           NUTS == input$choix_nuts_onglet2) %>% 
+    select(REGION, NOM_REGION) %>%
+    distinct(REGION, .keep_all = T) # supprression des doublons de noms de regions (1)
+  # (1) La clé est le code REGION parce c'est l'identifiant commun entre deux région "Bourgogne" et "BOURGOGNE"
+  
+  liste_region_update_onglet2 = setNames(dico_region_update_onglet2[, "REGION"],
+                                         dico_region_update_onglet2[, "NOM_REGION"])
+  
+  
+  if (input$choix_pays_onglet2_nuts_1_2 != "XXXX"){
+    updatePickerInput(session, "choix_region_onglet2", 
+                      choices = liste_region_update_onglet2,
+                      selected = liste_region_update_onglet2)
+  }
+  
 })
 
 
 
 # == Sortie table pour time series (onglet 2) ==========================================================
 observe({
+  label_var1_onglet2 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_onglet2])
   
-  if (input$choix_var_onglet2 != "XXXX"){
-  filtre_df = moyenne_region_stat %>% 
-    filter(NUTS == input$choix_nuts_onglet2 &
-             PAYS %in% input$choix_pays_onglet2) %>% 
-    mutate(ANNEE =as.numeric(ANNEE)) %>%
-    select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var_onglet2) %>% 
-    arrange(ANNEE)
+  if (input$choix_nuts_onglet2 != "NUTS 0"){
+    if (input$choix_var_onglet2 != "XXXX"){
+      filtre_df = moyenne_region_stat %>% 
+        filter(NUTS == input$choix_nuts_onglet2 &
+                 PAYS == input$choix_pays_onglet2_nuts_1_2) %>% 
+        mutate(ANNEE =as.numeric(ANNEE)) %>%
+        select(Country = NOM_PAYS, 
+               Region = NOM_REGION, 
+               Year = ANNEE, 
+               !!label_var1_onglet2 := input$choix_var_onglet2) %>% 
+        arrange(Year)
+    } else {
+      filtre_df = data.frame()
+    }
   } else {
-    filtre_df = data.frame()
+    if (input$choix_var_onglet2 != "XXXX"){
+      filtre_df = moyenne_region_stat %>% 
+        filter(NUTS == input$choix_nuts_onglet2 &
+                 PAYS %in% input$choix_pays_onglet2_nuts_0) %>% 
+        mutate(ANNEE = as.numeric(ANNEE)) %>%
+        select(Country = NOM_PAYS, 
+               Region = NOM_REGION, 
+               Year = ANNEE, 
+               !!label_var1_onglet2 := input$choix_var_onglet2) %>% 
+        arrange(Year)
+    } else {
+      filtre_df = data.frame()
+    }
   }
   
-    output$table_ts = renderDataTable(
+  output$table_ts = renderDataTable(
     selection = list(mode = 'single'),
     options = list(searching = FALSE), filtre_df
   )
@@ -48,16 +112,16 @@ observe({
 output$plotly_ts_nuts0 <- renderPlotly({
   
   # 1. Filtrage de la base à représenter (inputs considérés : aucun, en supposant qu'on est en NUTS 0)
-  filtre_df = moyenne_region_stat %>% 
+  filtre_df_plotly = moyenne_region_stat %>% 
     filter(NUTS == 'NUTS 0' &
-             PAYS %in% input$choix_pays_onglet2) %>% 
-    mutate(ANNEE =as.numeric(ANNEE)) %>% 
+             PAYS %in% input$choix_pays_onglet2_nuts_0) %>% 
+    mutate(ANNEE = as.numeric(ANNEE)) %>% 
     arrange(ANNEE)
   
   # 2. Si la variable est choisie ...
   if(input$choix_var_onglet2 != 'XXXX'){
     
-    filtre_df %>% plot_ly(x = ~ANNEE,
+    filtre_df_plotly %>% plot_ly(x = ~ANNEE,
                           y = ~get(input$choix_var_onglet2),
                           type = 'scatter',
                           mode = 'lines',
@@ -77,65 +141,22 @@ output$plotly_ts_nuts0 <- renderPlotly({
 output$plotly_ts_nuts12 <- renderPlotly({
   
   # 1. Filtrage de la base à représenter (inputs considérés : choix du NUTS)
-  filtre_df = moyenne_region_stat %>% 
-    filter(NUTS == input$choix_nuts_onglet2 & PAYS %in% input$choix_pays_onglet2) %>% 
-    mutate(ANNEE =as.numeric(ANNEE)) %>% 
+  filtre_df_plotly = moyenne_region_stat %>% 
+    filter(NUTS == input$choix_nuts_onglet2 & 
+             PAYS == input$choix_pays_onglet2_nuts_1_2 &
+             REGION %in% input$choix_region_onglet2) %>% 
+    mutate(ANNEE = as.numeric(ANNEE)) %>% 
     arrange(ANNEE)
   
   # 2. Si la variable est choisie ...
   if(input$choix_var_onglet2 != 'XXXX'){
     
-    # liste_pays_2 = input$choix_pays_onglet2
-    # for (i in c(1:length(liste_pays_2))){
-    #   filtre_2 = filtre_df %>% 
-    #     filter(PAYS == liste_pays_2[i])
-    #   
-    #   # print(filtre_2)
-    #   
-    #   if (i == 1){
-    #     print("coucou")
-    #     stockage_plotly = filtre_2 %>% 
-    #       plot_ly(x = ~ANNEE,
-    #               y = ~get(input$choix_var_onglet2),
-    #               type = 'scatter',
-    #               mode = 'lines',
-    #               color = ~REGION,
-    #               colors = c("red"),
-    #               # Constitution du pop-up (hover)
-    #               text = ~paste("[", REGION, "] ", NOM_REGION, "\n", "Value : ", get(input$choix_var_onglet2), sep = ""),
-    #               hoverinfo = "text") %>% 
-    #       # Renommage des noms des axes (label de la variable plutot que le code)
-    #       layout(xaxis = list(title = "Year"),
-    #              yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_onglet2])))
-    #   } else {
-    #     print("deuxieme")
-    #     filtre_2 = filtre_df %>% 
-    #       filter(PAYS == liste_pays_2[i])
-    #     
-    #     stockage_plotly = stockage_plotly %>% 
-    #       add_lines(x = ~ANNEE,
-    #                 y = ~get(input$choix_var_onglet2),
-    #                 data = filtre_2,
-    #                 color = ~PAYS,
-    #                 colors = c("blue")
-    #       )
-    #     
-    #   }
-    # }
-    # if(exists("stockage_plotly")){
-    #   stockage_plotly
-    # }
     
-    
-    
-    
-    filtre_df %>% plot_ly(x = ~ANNEE,
+    filtre_df_plotly %>% plot_ly(x = ~ANNEE,
                           y = ~get(input$choix_var_onglet2),
                           type = 'scatter',
                           mode = 'lines',
                           color = ~REGION,
-                          colors = c("#000000", "#000000"),
-                          linetype = ~PAYS,
                           # Constitution du pop-up (hover)
                           text = ~paste("[", REGION, "] ", NOM_REGION, "\n", "Value : ", get(input$choix_var_onglet2), sep = ""),
                           hoverinfo = "text") %>%

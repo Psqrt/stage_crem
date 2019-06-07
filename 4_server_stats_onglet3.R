@@ -35,6 +35,9 @@ observeEvent(input$choix_nuts_onglet3, {
 
 # == Sortie table pour scatter plot (onglet 3) ==========================================================
 observe({
+  label_var1_onglet3 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_onglet3])
+  label_var2_onglet3 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_onglet3])
+
   
   if (input$choix_var1_onglet3 != "XXXX" | input$choix_var2_onglet3 != "XXXX"){
     filtre_df_scatter = moyenne_region_stat %>% 
@@ -45,15 +48,25 @@ observe({
     if (input$choix_var1_onglet3 != "XXXX"){
       if (input$choix_var2_onglet3 != "XXXX"){
         filtre_df_scatter = filtre_df_scatter %>% 
-          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var1_onglet3, input$choix_var2_onglet3)
+          select(Country = NOM_PAYS, 
+                 Region = NOM_REGION, 
+                 Year = ANNEE, 
+                 !!label_var1_onglet3 := input$choix_var1_onglet3, 
+                 !!label_var2_onglet3 := input$choix_var2_onglet3)
       } else {
         filtre_df_scatter = filtre_df_scatter %>% 
-          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var1_onglet3)
+          select(Country = NOM_PAYS, 
+                 Region = NOM_REGION, 
+                 Year = ANNEE, 
+                 !!label_var1_onglet3 := input$choix_var1_onglet3)
       }
     } else {
       if (input$choix_var2_onglet3 != "XXXX"){
         filtre_df_scatter = filtre_df_scatter %>% 
-          select(NOM_PAYS, NOM_REGION, ANNEE, input$choix_var2_onglet3)
+          select(Country = NOM_PAYS, 
+                 Region = NOM_REGION, 
+                 Year = ANNEE, 
+                 !!label_var2_onglet3 := input$choix_var2_onglet3)
       } else {
         filtre_df_scatter = data.frame()
       }

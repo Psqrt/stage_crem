@@ -110,7 +110,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                         selectInput(
                                                             inputId = "choix_var_ts1",
                                                             label = "VARIABLE 1",
-                                                            choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                                            choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                                             selected = "XXXX",
                                                             width = "635px"
                                                         ),
@@ -121,7 +121,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                          selectInput(
                                                                              inputId = "choix_var_ts2",
                                                                              label = "VARIABLE 2",
-                                                                             choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                                                             choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                                                              selected = "XXXX",
                                                                              width = "635px"
                                                                          )
@@ -161,7 +161,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                              selectInput(
                                                                                                  inputId = "choix_region_ts1a",
                                                                                                  label = "REGION 1",
-                                                                                                 choices = c("Choose a country" = "XXXX", liste_nuts0_stat),
+                                                                                                 choices = c("Select a country" = "XXXX", liste_nuts0_stat),
                                                                                                  width = "410px"
                                                                                              )
                                                                             ),
@@ -171,7 +171,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                              selectInput(
                                                                                                  inputId = "choix_region_ts1b",
                                                                                                  label = "REGION 1",
-                                                                                                 choices = c("Choose a region" = "XXXX", liste_nuts1_stat),
+                                                                                                 choices = c("Select a region" = "XXXX", liste_nuts1_stat),
                                                                                                  width = "410px"
                                                                                              )
                                                                             ),
@@ -181,7 +181,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                              selectInput(
                                                                                                  inputId = "choix_region_ts1c",
                                                                                                  label = "REGION 1",
-                                                                                                 choices = c("Choose a region" = "XXXX", liste_nuts2_stat),
+                                                                                                 choices = c("Select a region" = "XXXX", liste_nuts2_stat),
                                                                                                  width = "410px"
                                                                                              )
                                                                             )
@@ -219,7 +219,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                                               selectInput(
                                                                                                                   inputId = "choix_region_ts2a",
                                                                                                                   label = "REGION 2",
-                                                                                                                  choices = c("Choose a country" = "XXXX", liste_nuts0_stat),
+                                                                                                                  choices = c("Select a country" = "XXXX", liste_nuts0_stat),
                                                                                                                   width = "410px"
                                                                                                               )
                                                                                              ),
@@ -229,7 +229,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                                               selectInput(
                                                                                                                   inputId = "choix_region_ts2b",
                                                                                                                   label = "REGION 2",
-                                                                                                                  choices = c("Choose a region" = "XXXX", liste_nuts1_stat),
+                                                                                                                  choices = c("Select a region" = "XXXX", liste_nuts1_stat),
                                                                                                                   width = "410px"
                                                                                                               )
                                                                                              ),
@@ -239,7 +239,7 @@ subtab_onglet1 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsq
                                                                                                               selectInput(
                                                                                                                   inputId = "choix_region_ts2c",
                                                                                                                   label = "REGION 2",
-                                                                                                                  choices = c("Choose a region" = "XXXX", liste_nuts2_stat),
+                                                                                                                  choices = c("Select a region" = "XXXX", liste_nuts2_stat),
                                                                                                                   width = "410px"
                                                                                                               )
                                                                                              )

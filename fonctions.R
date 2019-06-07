@@ -111,8 +111,8 @@ if (!is.null(info_click$id)){
         
         
         if (input$choix_variable_1_map == "XXXX" & input$choix_variable_2_map == "XXXX"){
-            texte1 = "Choose a variable ..."
-            texte2 = "... then choose a region."
+            texte1 = "Select a variable ..."
+            texte2 = "... then select a region."
             titre1 = ""
             titre2 = ""
         }

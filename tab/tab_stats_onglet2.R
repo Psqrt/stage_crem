@@ -5,7 +5,7 @@
 
 subtab_onglet2 = tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque le curseur est dans le body.
                           fluidPage(
-                              tags$div(id="box_ggplot_ts",
+                              tags$div(id="box_plotly_ts",
                                        
                                        # PANEL : Fenêtre accueillant le graphique time series ==========
                                        box(

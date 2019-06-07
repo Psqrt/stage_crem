@@ -3,14 +3,21 @@
 # Chaque onglet a son fichier R dédié, il s'agira alors de sourcer l'ensemble ===
 # des fichiers qui se trouvent dans le répertoire ./tab/ ========================
 # ===============================================================================
+# fonction qui sert à source avec l'encoding UTF-8
+source_utf8 = function(fichier){
+    source(fichier, encoding = "UTF-8")
+}
+
 fichiers_source = list.files("./tab")                        # 1. Obtention de la liste des fichiers ...
 fichiers_source = paste("./tab/", fichiers_source, sep = '') # 2. Construction des chemins ...
-# sapply(fichiers_source, source)                              # 3. Sourcing de chacun de ces fichiers.
+sapply(fichiers_source, source_utf8)                         # 3. Sourcing de chacun de ces fichiers.
 
-source("./tab/tab_carto.R", encoding = "UTF-8")
-source("./tab/tab_stats_onglet1.R", encoding = "UTF-8")
-source("./tab/tab_stats_onglet2.R", encoding = "UTF-8")
-source("./tab/tab_stats_onglet3.R", encoding = "UTF-8")
+
+# source("./tab/tab_homepage.R", encoding = "UTF-8")
+# source("./tab/tab_carto.R", encoding = "UTF-8")
+# source("./tab/tab_stats_onglet1.R", encoding = "UTF-8")
+# source("./tab/tab_stats_onglet2.R", encoding = "UTF-8")
+# source("./tab/tab_stats_onglet3.R", encoding = "UTF-8")
 
 
 contenu_UI <- shinyUI(
@@ -28,6 +35,10 @@ contenu_UI <- shinyUI(
         # ==============================================================================
         dashboardSidebar(
             sidebarMenu(id = "sidebar",
+                        menuItem("HOMEPAGE",
+                                 tabName = "tab_homepage",
+                                 icon = icon("home")
+                        ),
                         menuItem("MAP", 
                                  tabName = "tab_carto", 
                                  icon = icon("globe-americas")
@@ -119,7 +130,7 @@ contenu_UI <- shinyUI(
                                                                        inputId = "choix_variable_2_map",
                                                                        label = "VARIABLE 2 (CIRCLE)", 
                                                                        width = "430px",
-                                                                       choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                                                       choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                                                        selected = "XXXX"
                                                                    )
                                                           )
@@ -188,31 +199,48 @@ contenu_UI <- shinyUI(
                                                              style = "color: steelblue"))
                                          ),
                                          
-                                         # conditionalPanel("input.choix_nuts_onglet2 == 'NUTS 1' | input.choix_nuts_onglet2 == 'NUTS 2'",
-                                         #                  selectInput(
-                                         #                      inputId = "choix_pays_onglet2",
-                                         #                      label = "COUNTRY",
-                                         #                      choices = c("Choose a country" = "XXXX", liste_nuts0_stat),
-                                         #                      width = "410px"
-                                         #                  )
-                                         # ),
-                                         
                                          selectInput(
                                              inputId = "choix_var_onglet2",
                                              label = "VARIABLE",
-                                             choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                             choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                              width = "410px"
                                          ),
                                          
                                          
-                                         pickerInput(
-                                             inputId = "choix_pays_onglet2",
-                                             label = "COUNTRIES",
-                                             choices = liste_dico_pays_stats,
-                                             selected = NA,
-                                             multiple = TRUE,
-                                             options = list(
-                                                 'actions-box' = TRUE)
+                                         conditionalPanel("input.choix_nuts_onglet2 == 'NUTS 0'",
+                                                          pickerInput(
+                                                              inputId = "choix_pays_onglet2_nuts_0",
+                                                              label = "COUNTRIES",
+                                                              choices = liste_dico_pays_stats,
+                                                              selected = NA,
+                                                              multiple = TRUE,
+                                                              options = list(
+                                                                  'actions-box' = TRUE)
+                                                          )
+                                         ),
+                                         
+                                         conditionalPanel("input.choix_nuts_onglet2 != 'NUTS 0'",
+                                                          
+                                                          selectInput(
+                                                              inputId = "choix_pays_onglet2_nuts_1_2",
+                                                              label = "COUNTRY",
+                                                              choices = c("Select a country" = "XXXX", liste_dico_pays_stats),
+                                                              selected = "XXXX",
+                                                              width = "410px"
+                                                              
+                                                          ),
+                                                          
+                                                          conditionalPanel("input.choix_pays_onglet2_nuts_1_2 != 'XXXX'",
+                                                                           pickerInput(
+                                                                               inputId = "choix_region_onglet2",
+                                                                               label = "REGIONS",
+                                                                               choices = c(""),
+                                                                               selected = NA,
+                                                                               multiple = TRUE,
+                                                                               options = list(
+                                                                                   'actions-box' = TRUE)
+                                                                           )
+                                                          )
                                          )
                         ),
                         
@@ -240,14 +268,14 @@ contenu_UI <- shinyUI(
                                          selectInput(
                                              inputId = "choix_var1_onglet3",
                                              label = "VARIABLE 1",
-                                             choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                             choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                              selected = "XXXX",
                                              width = "410px"),
                                          
                                          selectInput(
                                              inputId = "choix_var2_onglet3",
                                              label = "VARIABLE 2",
-                                             choices = c("Choose a variable" = "XXXX", liste_deroulante_map),
+                                             choices = c("Select a variable" = "XXXX", liste_deroulante_map),
                                              selected = "XXXX",
                                              width = "410px"),
                                          
@@ -281,6 +309,9 @@ contenu_UI <- shinyUI(
             useShinyjs(), # Extensions pour shiny
             includeCSS("./extra/styles.css", encoding = "UTF-8"), # Feuille CSS
             tabItems(
+                tabItem(
+                    tabName = "tab_homepage",
+                    tab_homepage), # ./tab/tab_homepage.R
                 tabItem(
                     tabName = "tab_carto",
                     tab_carto), # ./tab/tab_carto.R

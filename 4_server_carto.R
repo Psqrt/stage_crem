@@ -150,16 +150,33 @@ output$map <- renderLeaflet({
 observe({
   variable_1_choisie = input$choix_variable_1_map    
   variable_2_choisie = input$choix_variable_2_map
+  variable_1_choisie_na = str_replace(variable_1_choisie, "_moy", "_na")
+  variable_2_choisie_na = str_replace(variable_2_choisie, "_moy", "_na")
+  
   if (input$choix_variable_1_map != "XXXX"){
     if (input$choix_variable_2_map == "XXXX"){ # CAS VAR 1 OK VAR 2 PAS OK
-      contenu_popup = sprintf("<center><b> %s </b></center><br> <b> Variable 1 : </b> %s", 
-                              moyenne_region_filtre()$NOM_REGION, 
-                              round(moyenne_region_filtre()[, variable_1_choisie], 2))
-    } else {
-      contenu_popup = sprintf("<center><b> %s </b></center><br> <b> Variable 1 : </b> %s <br>  <b> Variable 2 : </b> %s ", 
-                              moyenne_region_filtre()$NOM_REGION, 
+      contenu_popup = sprintf("<center><b> %s </b></center><br>
+                              <b>Surveyed Households :</b> %s<br>
+                              <b>Surveyed People :</b> %s<br>
+                              <b>Variable 1 : </b> %s (%1.2f%% NA)",
+                              moyenne_region_filtre()$NOM_REGION,
+                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
                               round(moyenne_region_filtre()[, variable_1_choisie], 2),
-                              round(moyenne_region_filtre()[, variable_2_choisie], 2))
+                              moyenne_region_filtre()[, variable_1_choisie_na])
+    } else {
+      contenu_popup = sprintf("<center><b> %s </b></center><br>
+                              <b>Surveyed Households :</b> %s<br>
+                              <b>Surveyed People :</b> %s<br>
+                              <b>Variable 1 : </b> %s (%1.2f%% NA)<br>
+                              <b>Variable 2 : </b> %s (%1.2f%% NA)", 
+                              moyenne_region_filtre()$NOM_REGION,
+                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
+                              round(moyenne_region_filtre()[, variable_1_choisie], 2),
+                              moyenne_region_filtre()[, variable_1_choisie_na],
+                              round(moyenne_region_filtre()[, variable_2_choisie], 2),
+                              moyenne_region_filtre()[, variable_2_choisie_na])
     }
     
     leafletProxy('map') %>% 
@@ -190,9 +207,15 @@ observe({
                 na.label = "NA")
   } else {
     if (input$choix_variable_2_map != "XXXX"){
-      contenu_popup = sprintf("<center><b> %s </b></center><br><b> Variable 2 : </b> %s ", 
+      contenu_popup = sprintf("<center><b> %s </b></center><br>
+                              <b>Surveyed Households :</b> %s<br>
+                              <b>Surveyed People :</b> %s<br>
+                              <b>Variable 2 : </b> %s (%1.2f%% NA)",
                               moyenne_region_filtre()$NOM_REGION,
-                              round(moyenne_region_filtre()[, variable_2_choisie], 2))
+                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
+                              round(moyenne_region_filtre()[, variable_2_choisie], 2),
+                              moyenne_region_filtre()[, variable_2_choisie_na])
     } else {
       contenu_popup = ""
     }
@@ -225,8 +248,8 @@ observe({
 
 observeEvent(input$choix_variable_1_map, {
   if (input$choix_variable_1_map == "XXXX" & input$choix_variable_2_map == "XXXX"){
-    texte1 = "Choose a variable ..."
-    texte2 = "... then choose a region."
+    texte1 = "Select a variable ..."
+    texte2 = "... then select a region."
     titre1 = ""
     titre2 = ""
     # 4. Les sorties ... cas initialisation et sélection de variable
@@ -239,8 +262,8 @@ observeEvent(input$choix_variable_1_map, {
 
 observeEvent(input$choix_variable_2_map, {
   if (input$choix_variable_1_map == "XXXX" & input$choix_variable_2_map == "XXXX"){
-    texte1 = "Choose a variable ..."
-    texte2 = "... then choose a region."
+    texte1 = "Select a variable ..."
+    texte2 = "... then select a region."
     titre1 = ""
     titre2 = ""
     # 4. Les sorties ... cas initialisation et sélection de variable

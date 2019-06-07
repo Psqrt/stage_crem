@@ -142,12 +142,12 @@
   padding-left : 5px;
 }
 
-#box_ggplot_ts {
+#box_plotly_ts {
   margin-top : 15px;
   margin-left :-15px;
 }
 
-#box_ggplot_scatter {
+#box_plotly_scatter {
   margin-top : 15px;
   margin-left :-15px;
 }
@@ -177,4 +177,8 @@
 #data_button_onglet3 {
   float: left;
   margin-right: -15px;
+}
+
+.inner.open {
+  max-height: 300px !important;
 }
