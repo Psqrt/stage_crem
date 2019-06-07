@@ -15,7 +15,7 @@ sapply(fichiers_source, source_utf8)                         # 3. Sourcing de ch
 
 # source("./tab/tab_homepage.R", encoding = "UTF-8")
 # source("./tab/tab_carto.R", encoding = "UTF-8")
-# source("./tab/tab_stats_onglet1.R", encoding = "UTF-8")
+# source("./tab/tab_stats_onglet1.R", encoding = "UTF-8")   
 # source("./tab/tab_stats_onglet2.R", encoding = "UTF-8")
 # source("./tab/tab_stats_onglet3.R", encoding = "UTF-8")
 
@@ -35,7 +35,7 @@ contenu_UI <- shinyUI(
         # ==============================================================================
         dashboardSidebar(
             sidebarMenu(id = "sidebar",
-                        menuItem("HOMEPAGE",
+                        menuItem("HOME PAGE",
                                  tabName = "tab_homepage",
                                  icon = icon("home")
                         ),

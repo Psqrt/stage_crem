@@ -101,6 +101,7 @@ output$plotly_scatter <- renderPlotly({
                                     color = ~PAYS,
                                     # symbol = ~ANNEE,
                                     mode = "markers",
+                                    # frame = ~ANNEE,
                                     colors = "Set3",
                                     type = 'scatter',
                                     # Constitution du pop-up (hover)
@@ -119,6 +120,7 @@ output$plotly_scatter <- renderPlotly({
                                     y = ~get(input$choix_var1_onglet3),
                                     z = ~get(input$choix_var2_onglet3),
                                     color = ~PAYS,
+                                    # frame = ~ANNEE,
                                     mode = "markers",
                                     colors = "Set3",
                                     size = 1,
