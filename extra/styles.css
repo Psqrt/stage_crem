@@ -152,15 +152,15 @@
   margin-left :-15px;
 }
 
-#pdf_col1_onglet3 {
+#pdf_col1_stats_scatter_plot {
   width: 1210px;
 }
 
-#panel_pdf1_onglet1 {
+#panel_pdf1_stats_comparison {
   margin-top: -5px;
 }
 
-#panel_pdf2_onglet1 {
+#panel_pdf2_stats_comparison {
   margin-top: -5px;
 }
 
@@ -169,12 +169,12 @@
   margin-bottom: 6px;
 }
 
-#data_button_onglet2 {
+#data_button_stats_time_series {
   float: left;
   margin-right: 15px; 
 }
 
-#data_button_onglet3 {
+#data_button_stats_scatter_plot {
   float: left;
   margin-right: -15px;
 }
