@@ -75,7 +75,7 @@ contenu_UI <- shinyUI(
                                          # = INPUT : Choix du niveau NUTS =========================
                                          radioGroupButtons(
                                              inputId = "choix_nuts",
-                                             label = "LEVEL",
+                                             label = "NUTS LEVEL",
                                              choices = c("0" = "NUTS 0",
                                                          "1" = "NUTS 1",
                                                          "2" = "NUTS 2"),

@@ -277,7 +277,7 @@ observeEvent(input$choix_variable_2_map, {
 observeEvent(input$map_marker_click, {
   # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
   info_click <- input$map_marker_click
-  source("fonctions.R", local = T, encoding = "UTF-8")
+  source("contenu_panel_map.R", local = T, encoding = "UTF-8")
   
   # 4. Les sorties ... cas sélection région
   output$panel_droite_map_titre1 = renderUI({titre1})
@@ -293,7 +293,7 @@ observeEvent(input$map_shape_click, {
   # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
   info_click <- input$map_shape_click
   
-  source("fonctions.R", local = T, encoding = "UTF-8")
+  source("contenu_panel_map.R", local = T, encoding = "UTF-8")
   
   if(exists("titre1")){
     # 4. Les sorties ... cas sélection région
