@@ -32,7 +32,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                             column(width = 3,
                                                                    # INPUT : Représenter ou non une 2nde variable
                                                                    materialSwitch(
-                                                                       inputId = "switch_variable_stat",
+                                                                       inputId = "switch_variable_stats_comparison",
                                                                        label = "Variable 2", 
                                                                        value = FALSE,
                                                                        right = TRUE,
@@ -43,7 +43,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                                    
                                                                    # INPUT : Représenter ou non une 2nde région
                                                                    materialSwitch(
-                                                                       inputId = "switch_region_stat",
+                                                                       inputId = "switch_region_stats_comparison",
                                                                        label = "Region 2", 
                                                                        value = FALSE,
                                                                        right = TRUE,
@@ -84,7 +84,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                                        id = "panel_pdf2_stats_comparison",
                                                                        
                                                                        # PANEL : Afficher la documentation VAR2 si VAR2 choisie
-                                                                       conditionalPanel("input.choix_var_ts2 != 'XXXX' & input.switch_variable_stat == 1",
+                                                                       conditionalPanel("input.choix_var_ts2 != 'XXXX' & input.switch_variable_stats_comparison == 1",
                                                                                         
                                                                                         # OUTPUT : Documentation PDF variable 2
                                                                                         dropdownButton(
@@ -115,7 +115,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                             width = "635px"
                                                         ),
                                                         
-                                                        conditionalPanel("input.switch_variable_stat == 1",
+                                                        conditionalPanel("input.switch_variable_stats_comparison == 1",
                                                                          
                                                                          # INPUT : Choix de la variable 2
                                                                          selectInput(
@@ -192,7 +192,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                                  
                                                                  
                                                                  
-                                                                 conditionalPanel("input.switch_region_stat == 1",
+                                                                 conditionalPanel("input.switch_region_stats_comparison == 1",
                                                                                   fluidRow(
                                                                                       column(width = 4,
                                                                                              
@@ -262,7 +262,7 @@ subtab_stats_comparison = tabPanel("", # Chaine vide pour éviter un pop-up inut
                                                status = "primary",
                                                
                                                # OUTPUT : Graphique bar plot ===========================
-                                               amChartsOutput(outputId = "barplot",
+                                               amChartsOutput(outputId = "amchart_barplot",
                                                               width = "100%")
                                            ),
                                            

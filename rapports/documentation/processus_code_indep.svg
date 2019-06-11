@@ -1,0 +1,5434 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="1406.9442"
+   viewBox="0 0 2855.96 1406.9442"
+   width="2855.96"
+   version="1.1"
+   id="svg1903"
+   sodipodi:docname="processus_code_indep.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata1907">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     id="namedview1905"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.32482759"
+     inkscape:cx="1149.7631"
+     inkscape:cy="504.6454"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1812" />
+  <style
+     type="text/css"
+     id="style2"><![CDATA[
+.st2 {fill:#000000;font-family:Calibri;font-size:10pt;font-style:italic}
+.st1 {fill:#000000;font-family:Calibri;font-size:10pt}
+.st3 {fill:#000000;font-family:Calibri;font-size:18pt}
+]]></style>
+  <defs
+     id="defs268">
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg1"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#bee6fb"
+         offset="0"
+         id="stop4" />
+      <stop
+         stop-color="#bee6fb"
+         offset="0.6"
+         id="stop6" />
+      <stop
+         stop-color="#cdebfc"
+         offset="0.6"
+         id="stop8" />
+      <stop
+         stop-color="#cdebfc"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
+    <linearGradient
+       x2="154"
+       gradientUnits="userSpaceOnUse"
+       y2="110"
+       id="lg2"
+       x1="-1"
+       y1="2">
+      <stop
+         stop-color="#dadada"
+         offset="0"
+         id="stop13" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="0.82"
+         id="stop15" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.86"
+         id="stop17" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.86"
+         id="stop19" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.9"
+         id="stop21" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.9"
+         id="stop23" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="1"
+         id="stop25" />
+    </linearGradient>
+    <linearGradient
+       x2="154"
+       gradientUnits="userSpaceOnUse"
+       y2="110"
+       id="lg3"
+       x1="-1"
+       y1="2">
+      <stop
+         stop-color="#fff6bc"
+         offset="0"
+         id="stop28" />
+      <stop
+         stop-color="#fff6bc"
+         offset="0.6"
+         id="stop30" />
+      <stop
+         stop-color="#fff8cb"
+         offset="0.6"
+         id="stop32" />
+      <stop
+         stop-color="#fff8cb"
+         offset="1"
+         id="stop34" />
+    </linearGradient>
+    <linearGradient
+       x2="154"
+       gradientUnits="userSpaceOnUse"
+       y2="110"
+       id="lg4"
+       x1="-1"
+       y1="2">
+      <stop
+         stop-color="#c1e0cc"
+         offset="0"
+         id="stop37" />
+      <stop
+         stop-color="#c1e0cc"
+         offset="0.6"
+         id="stop39" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="0.6"
+         id="stop41" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="1"
+         id="stop43" />
+    </linearGradient>
+    <linearGradient
+       x2="156"
+       gradientUnits="userSpaceOnUse"
+       y2="117"
+       id="lg5"
+       x1="-4"
+       y1="5">
+      <stop
+         stop-color="#e5e2ea"
+         offset="0"
+         id="stop46" />
+      <stop
+         stop-color="#d1cbda"
+         offset="0.82"
+         id="stop48" />
+      <stop
+         stop-color="#c6bed2"
+         offset="0.86"
+         id="stop50" />
+      <stop
+         stop-color="#aea1c0"
+         offset="0.86"
+         id="stop52" />
+      <stop
+         stop-color="#aea1c0"
+         offset="0.9"
+         id="stop54" />
+      <stop
+         stop-color="#c6bed2"
+         offset="0.9"
+         id="stop56" />
+      <stop
+         stop-color="#d1cbda"
+         offset="1"
+         id="stop58" />
+    </linearGradient>
+    <linearGradient
+       x2="156"
+       gradientUnits="userSpaceOnUse"
+       y2="117"
+       id="lg6"
+       x1="-4"
+       y1="5">
+      <stop
+         stop-color="#dfeaf4"
+         offset="0"
+         id="stop61" />
+      <stop
+         stop-color="#c7daec"
+         offset="0.82"
+         id="stop63" />
+      <stop
+         stop-color="#b9d1e8"
+         offset="0.86"
+         id="stop65" />
+      <stop
+         stop-color="#97bee0"
+         offset="0.86"
+         id="stop67" />
+      <stop
+         stop-color="#97bee0"
+         offset="0.9"
+         id="stop69" />
+      <stop
+         stop-color="#b9d1e8"
+         offset="0.9"
+         id="stop71" />
+      <stop
+         stop-color="#c7daec"
+         offset="1"
+         id="stop73" />
+    </linearGradient>
+    <linearGradient
+       x2="154"
+       gradientUnits="userSpaceOnUse"
+       y2="110"
+       id="lg7"
+       x1="-1"
+       y1="2">
+      <stop
+         stop-color="#f4c3c6"
+         offset="0"
+         id="stop76" />
+      <stop
+         stop-color="#f4c3c6"
+         offset="0.6"
+         id="stop78" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="0.6"
+         id="stop80" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="1"
+         id="stop82" />
+    </linearGradient>
+    <linearGradient
+       x2="156"
+       gradientUnits="userSpaceOnUse"
+       y2="117"
+       id="lg8"
+       x1="-4"
+       y1="5">
+      <stop
+         stop-color="#eae5f2"
+         offset="0"
+         id="stop85" />
+      <stop
+         stop-color="#dad2e8"
+         offset="0.82"
+         id="stop87" />
+      <stop
+         stop-color="#d2c7e3"
+         offset="0.86"
+         id="stop89" />
+      <stop
+         stop-color="#bfafd9"
+         offset="0.86"
+         id="stop91" />
+      <stop
+         stop-color="#bfafd9"
+         offset="0.9"
+         id="stop93" />
+      <stop
+         stop-color="#d2c7e3"
+         offset="0.9"
+         id="stop95" />
+      <stop
+         stop-color="#dad2e8"
+         offset="1"
+         id="stop97" />
+    </linearGradient>
+    <linearGradient
+       x2="155"
+       gradientUnits="userSpaceOnUse"
+       y2="112"
+       id="lg9"
+       x1="-2"
+       y1="3">
+      <stop
+         stop-color="#eae5f2"
+         offset="0"
+         id="stop100" />
+      <stop
+         stop-color="#dad2e8"
+         offset="0.82"
+         id="stop102" />
+      <stop
+         stop-color="#d2c7e3"
+         offset="0.86"
+         id="stop104" />
+      <stop
+         stop-color="#bfafd9"
+         offset="0.86"
+         id="stop106" />
+      <stop
+         stop-color="#bfafd9"
+         offset="0.9"
+         id="stop108" />
+      <stop
+         stop-color="#d2c7e3"
+         offset="0.9"
+         id="stop110" />
+      <stop
+         stop-color="#dad2e8"
+         offset="1"
+         id="stop112" />
+    </linearGradient>
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg10"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#c1e0cc"
+         offset="0"
+         id="stop115" />
+      <stop
+         stop-color="#c1e0cc"
+         offset="0.6"
+         id="stop117" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="0.6"
+         id="stop119" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="1"
+         id="stop121" />
+    </linearGradient>
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg11"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#dadada"
+         offset="0"
+         id="stop124" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="0.82"
+         id="stop126" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.86"
+         id="stop128" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.86"
+         id="stop130" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.9"
+         id="stop132" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.9"
+         id="stop134" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="1"
+         id="stop136" />
+    </linearGradient>
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg12"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#fff6bc"
+         offset="0"
+         id="stop139" />
+      <stop
+         stop-color="#fff6bc"
+         offset="0.6"
+         id="stop141" />
+      <stop
+         stop-color="#fff8cb"
+         offset="0.6"
+         id="stop143" />
+      <stop
+         stop-color="#fff8cb"
+         offset="1"
+         id="stop145" />
+    </linearGradient>
+    <linearGradient
+       x2="155"
+       gradientUnits="userSpaceOnUse"
+       y2="112"
+       id="lg13"
+       x1="-2"
+       y1="3">
+      <stop
+         stop-color="#dadada"
+         offset="0"
+         id="stop148" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="0.82"
+         id="stop150" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.86"
+         id="stop152" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.86"
+         id="stop154" />
+      <stop
+         stop-color="#7c7c7c"
+         offset="0.9"
+         id="stop156" />
+      <stop
+         stop-color="#aaaaaa"
+         offset="0.9"
+         id="stop158" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="1"
+         id="stop160" />
+    </linearGradient>
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg14"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#bcbcbc"
+         offset="0"
+         id="stop163" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="0.6"
+         id="stop165" />
+      <stop
+         stop-color="#cbcbcb"
+         offset="0.6"
+         id="stop167" />
+      <stop
+         stop-color="#cbcbcb"
+         offset="1"
+         id="stop169" />
+    </linearGradient>
+    <linearGradient
+       x2="148"
+       gradientUnits="userSpaceOnUse"
+       y2="93"
+       id="lg15"
+       x1="5"
+       y1="-7">
+      <stop
+         stop-color="#f4c3c6"
+         offset="0"
+         id="stop172" />
+      <stop
+         stop-color="#f4c3c6"
+         offset="0.6"
+         id="stop174" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="0.6"
+         id="stop176" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="1"
+         id="stop178" />
+    </linearGradient>
+    <linearGradient
+       x2="155"
+       gradientUnits="userSpaceOnUse"
+       y2="112"
+       id="lg16"
+       x1="-2"
+       y1="3">
+      <stop
+         stop-color="#f5f5f5"
+         offset="0"
+         id="stop181" />
+      <stop
+         stop-color="#eeeeef"
+         offset="0.82"
+         id="stop183" />
+      <stop
+         stop-color="#ebebeb"
+         offset="0.86"
+         id="stop185" />
+      <stop
+         stop-color="#e4e4e4"
+         offset="0.86"
+         id="stop187" />
+      <stop
+         stop-color="#e4e4e4"
+         offset="0.9"
+         id="stop189" />
+      <stop
+         stop-color="#ebebeb"
+         offset="0.9"
+         id="stop191" />
+      <stop
+         stop-color="#eeeeef"
+         offset="1"
+         id="stop193" />
+    </linearGradient>
+    <linearGradient
+       x2="60"
+       gradientUnits="userSpaceOnUse"
+       y2="50"
+       id="lg17"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#c1e0cc"
+         offset="0"
+         id="stop196" />
+      <stop
+         stop-color="#c1e0cc"
+         offset="0.6"
+         id="stop198" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="0.6"
+         id="stop200" />
+      <stop
+         stop-color="#cfe7d7"
+         offset="1"
+         id="stop202" />
+    </linearGradient>
+    <linearGradient
+       x2="60"
+       gradientUnits="userSpaceOnUse"
+       y2="50"
+       id="lg18"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#f4c3c6"
+         offset="0"
+         id="stop205" />
+      <stop
+         stop-color="#f4c3c6"
+         offset="0.6"
+         id="stop207" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="0.6"
+         id="stop209" />
+      <stop
+         stop-color="#f6d1d3"
+         offset="1"
+         id="stop211" />
+    </linearGradient>
+    <linearGradient
+       x2="60"
+       gradientUnits="userSpaceOnUse"
+       y2="50"
+       id="lg19"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#bee6fb"
+         offset="0"
+         id="stop214" />
+      <stop
+         stop-color="#bee6fb"
+         offset="0.6"
+         id="stop216" />
+      <stop
+         stop-color="#cdebfc"
+         offset="0.6"
+         id="stop218" />
+      <stop
+         stop-color="#cdebfc"
+         offset="1"
+         id="stop220" />
+    </linearGradient>
+    <linearGradient
+       x2="57"
+       gradientUnits="userSpaceOnUse"
+       y2="48"
+       id="lg20"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#c7daec"
+         offset="0"
+         id="stop223" />
+      <stop
+         stop-color="#c7daec"
+         offset="0.6"
+         id="stop225" />
+      <stop
+         stop-color="#d4e2f0"
+         offset="0.6"
+         id="stop227" />
+      <stop
+         stop-color="#d4e2f0"
+         offset="1"
+         id="stop229" />
+    </linearGradient>
+    <linearGradient
+       x2="57"
+       gradientUnits="userSpaceOnUse"
+       y2="48"
+       id="lg21"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#dad2e8"
+         offset="0"
+         id="stop232" />
+      <stop
+         stop-color="#dad2e8"
+         offset="0.6"
+         id="stop234" />
+      <stop
+         stop-color="#e2dced"
+         offset="0.6"
+         id="stop236" />
+      <stop
+         stop-color="#e2dced"
+         offset="1"
+         id="stop238" />
+    </linearGradient>
+    <linearGradient
+       x2="57"
+       gradientUnits="userSpaceOnUse"
+       y2="48"
+       id="lg22"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#bcbcbc"
+         offset="0"
+         id="stop241" />
+      <stop
+         stop-color="#bcbcbc"
+         offset="0.6"
+         id="stop243" />
+      <stop
+         stop-color="#cbcbcb"
+         offset="0.6"
+         id="stop245" />
+      <stop
+         stop-color="#cbcbcb"
+         offset="1"
+         id="stop247" />
+    </linearGradient>
+    <linearGradient
+       x2="57"
+       gradientUnits="userSpaceOnUse"
+       y2="48"
+       id="lg23"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#e8e8e8"
+         offset="0"
+         id="stop250" />
+      <stop
+         stop-color="#e8e8e8"
+         offset="0.6"
+         id="stop252" />
+      <stop
+         stop-color="#ededed"
+         offset="0.6"
+         id="stop254" />
+      <stop
+         stop-color="#ededed"
+         offset="1"
+         id="stop256" />
+    </linearGradient>
+    <linearGradient
+       x2="57"
+       gradientUnits="userSpaceOnUse"
+       y2="49"
+       id="lg24"
+       x1="-4"
+       y1="6">
+      <stop
+         stop-color="#fff6bc"
+         offset="0"
+         id="stop259" />
+      <stop
+         stop-color="#fff6bc"
+         offset="0.6"
+         id="stop261" />
+      <stop
+         stop-color="#fff8cb"
+         offset="0.6"
+         id="stop263" />
+      <stop
+         stop-color="#fff8cb"
+         offset="1"
+         id="stop265" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg1"
+       id="linearGradient6646"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6648"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6650"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6652"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6654"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6656"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6658"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6660"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg2"
+       id="linearGradient6662"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg4"
+       id="linearGradient6664"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg4"
+       id="linearGradient6666"
+       gradientUnits="userSpaceOnUse"
+       x1="-1"
+       y1="2"
+       x2="154"
+       y2="110" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg5"
+       id="linearGradient6668"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg5"
+       id="linearGradient6670"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg5"
+       id="linearGradient6672"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg5"
+       id="linearGradient6674"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6676"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6678"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6680"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6682"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg8"
+       id="linearGradient6684"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg8"
+       id="linearGradient6686"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg8"
+       id="linearGradient6688"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg8"
+       id="linearGradient6690"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6692"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg8"
+       id="linearGradient6694"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6696"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6698"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6700"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6702"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6704"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg6"
+       id="linearGradient6706"
+       gradientUnits="userSpaceOnUse"
+       x1="-4"
+       y1="5"
+       x2="156"
+       y2="117" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg10"
+       id="linearGradient6708"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6710"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6712"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6714"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6716"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6718"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6720"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6722"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6724"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6726"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6728"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6730"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6732"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6734"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6736"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6738"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg12"
+       id="linearGradient6740"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6742"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6744"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg9"
+       id="linearGradient6746"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6748"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6750"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6752"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg15"
+       id="linearGradient6754"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg15"
+       id="linearGradient6756"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6758"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg10"
+       id="linearGradient6760"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6762"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg13"
+       id="linearGradient6764"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg15"
+       id="linearGradient6766"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6768"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6770"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6772"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg16"
+       id="linearGradient6774"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg16"
+       id="linearGradient6776"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg16"
+       id="linearGradient6778"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg16"
+       id="linearGradient6780"
+       gradientUnits="userSpaceOnUse"
+       x1="-2"
+       y1="3"
+       x2="155"
+       y2="112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg11"
+       id="linearGradient6782"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#lg1"
+       id="linearGradient6784"
+       gradientUnits="userSpaceOnUse"
+       x1="5"
+       y1="-7"
+       x2="148"
+       y2="93" />
+  </defs>
+  <g
+     transform="translate(-32.929999,-10.925781)"
+     id="page1">
+    <g
+       transform="translate(78.63,48.06)"
+       id="g281">
+      <g
+         id="shape1">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path272"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path274"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6646);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text279"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="58.400002"
+           y="45.900002"
+           id="tspan277">DEBUT</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,133.85)"
+       id="shape2">
+      <path
+         d="M 0,0 V 74.5"
+         id="path283"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,78.9 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path285"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,212.74)"
+       id="g293">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape3"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6648);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text291"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="8.3999996"
+           y="58.900002"
+           id="tspan289">Importation des packages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(78.63,591.65)"
+       id="g304">
+      <g
+         id="shape4">
+        <path
+           d="M 78.4,113.8 154.8,57.9 78.4,2 2,57.9 Z"
+           id="path295"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,111.8 152.8,55.9 76.4,0 0,55.9 Z"
+           id="path297"
+           inkscape:connector-curvature="0"
+           style="fill:url(#lg3);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text302"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="23.4"
+           y="58.900002"
+           id="tspan300">importer_carte == 1</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,703.48)"
+       id="shape5">
+      <path
+         d="M 0,0 V 60.1"
+         id="path306"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path308"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="12"
+         id="rect310"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text314"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="23"
+           id="tspan312">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(78.63,767.97)"
+       id="g324">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape6"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6650);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text322"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="16.4"
+           y="50.900002"
+           id="tspan318">Importation des cartes</tspan>
+        <tspan
+           x="45.400002"
+           y="66.900002"
+           id="tspan320">(polygones)</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,879.8)"
+       id="shape7">
+      <path
+         d="M 0,0 V 60.1"
+         id="path326"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path328"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,944.29)"
+       id="g338">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape8"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6652);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text336"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="16.4"
+           y="50.900002"
+           id="tspan332">Encodage des noms de</tspan>
+        <tspan
+           x="32.400002"
+           y="66.900002"
+           id="tspan334">régions en UTF-8</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,1056.12)"
+       id="shape9">
+      <path
+         d="M 0,0 V 60.1"
+         id="path340"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path342"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,1120.6)"
+       id="g352">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape10"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6654);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text350"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="16.4"
+           y="50.900002"
+           id="tspan346">Importation des cartes</tspan>
+        <tspan
+           x="46.400002"
+           y="66.900002"
+           id="tspan348">(frontières)</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,1232.43)"
+       id="shape11">
+      <path
+         d="M 0,0 V 60.1"
+         id="path354"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path356"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,1296.92)"
+       id="g368">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape12"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6656);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text366"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="11.4"
+           y="42.900002"
+           id="tspan360">Création des 4 tables qui</tspan>
+        <tspan
+           x="8.3999996"
+           y="58.900002"
+           id="tspan362">vont recevoir les données</tspan>
+        <tspan
+           x="52.400002"
+           y="74.900002"
+           id="tspan364">agrégées</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,324.57)"
+       id="shape13">
+      <path
+         d="M 0,0 V 60.1"
+         id="path370"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path372"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,389.06)"
+       id="g386">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape14"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6658);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text384"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="34.400002"
+           y="34.900002"
+           id="tspan376">Importation des</tspan>
+        <tspan
+           x="7.4000001"
+           y="50.900002"
+           id="tspan378">dictionnaires (corrections)</tspan>
+        <tspan
+           x="29.4"
+           y="66.900002"
+           id="tspan380">et listes (variables</tspan>
+        <tspan
+           x="51.400002"
+           y="82.900002"
+           id="tspan382">retenues)</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(155.05,500.89)"
+       id="shape15">
+      <path
+         d="M 0,0 V 86.4"
+         id="path388"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,90.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path390"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(78.63,647.57)"
+       id="shape16">
+      <path
+         d="m 0,0 c -32,0 -32,164 -32,328.1 0,160.5 0,321 30,373.8"
+         id="path393"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,705.3 -0.1,-6 c -0.5,0.9 -1.2,1.6 -2.2,2.2 -0.9,0.6 -1.9,0.9 -3,0.9 l 5.3,2.9"
+         id="path395"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-45.700001"
+         width="27.6"
+         y="314.10001"
+         id="rect397"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text401"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-45.799999"
+           y="325.10001"
+           id="tspan399">FAUX</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(299.92,1120.6)"
+       id="g411">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape17"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6660);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text409"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="6.4000001"
+           y="50.900002"
+           id="tspan405">Récupération de la liste de</tspan>
+        <tspan
+           x="22.4"
+           y="66.900002"
+           id="tspan407">tous les pays sondés</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(376.34,1120.6)"
+       id="shape18">
+      <path
+         d="M 0,0 V -60.1"
+         id="path413"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path415"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(299.92,944.29)"
+       id="g429">
+      <path
+         d="M 152.8,111.8 V 0 H 0 v 111.8 z"
+         id="shape19"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6662);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text427"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="12.4"
+           y="34.900002"
+           id="tspan419">Création/Réinitialisation</tspan>
+        <tspan
+           x="22.4"
+           y="50.900002"
+           id="tspan421">des 4 tables qui vont</tspan>
+        <tspan
+           x="12.4"
+           y="66.900002"
+           id="tspan423">recevoir chaque type de</tspan>
+        <tspan
+           x="31.4"
+           y="82.900002"
+           id="tspan425">fichier (H, D, P, R)</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(231.47,1352.83)"
+       id="shape20">
+      <path
+         d="M 0,0 H 64.1"
+         id="path431"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path433"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(299.92,1296.92)"
+       id="g447">
+      <g
+         id="shape21">
+        <path
+           d="m 40.2,113.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,57.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path436"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,111.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,55.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path438"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6664);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text445"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="19.4"
+           y="50.900002"
+           id="tspan441">Entrée dans la boucle</tspan>
+        <tspan
+           x="13.4"
+           y="66.900002"
+           id="tspan443">&quot;Pour chaque année ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(376.34,1296.92)"
+       id="shape22">
+      <path
+         d="M 0,0 V -60.1"
+         id="path449"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path451"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(452.76,1000.2)"
+       id="shape23">
+      <path
+         d="M 0,0 H 64.1"
+         id="path454"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path456"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(521.2,944.29)"
+       id="g470">
+      <g
+         id="shape24">
+        <path
+           d="m 40.2,113.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,57.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path459"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,111.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,55.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path461"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6666);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text468"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="19.4"
+           y="50.900002"
+           id="tspan464">Entrée dans la boucle</tspan>
+        <tspan
+           x="18.4"
+           y="66.900002"
+           id="tspan466">&quot;Pour chaque pays ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(597.62,944.29)"
+       id="shape25">
+      <path
+         d="M 0,0 V -65.1"
+         id="path472"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-69.5 -3,5.2 c 0.9,-0.6 1.9,-0.8 3,-0.8 1.1,0 2.1,0.2 3,0.8 l -3,-5.2"
+         id="path474"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(521.2,752.47)"
+       id="shape26">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path477"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6668)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path479"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text483"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="13.4"
+           y="72.599998"
+           id="tspan481">Importation du fichier H</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text487"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan485">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(597.62,752.47)"
+       id="shape27">
+      <path
+         d="M 0,0 V -53"
+         id="path490"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-57.4 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path492"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(521.2,572.78)"
+       id="shape28">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path495"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6670)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path497"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text503"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="64.599998"
+           id="tspan499">Concaténation avec la</tspan>
+        <tspan
+           x="29.4"
+           y="80.599998"
+           id="tspan501">table H commune</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text507"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan505">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(597.62,572.78)"
+       id="shape29">
+      <path
+         d="M 0,0 V -53"
+         id="path510"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-57.4 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path512"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(521.2,393.1)"
+       id="shape30">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path515"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6672)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path517"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text521"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="13.4"
+           y="72.599998"
+           id="tspan519">Importation du fichier D</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text525"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan523">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(597.62,393.1)"
+       id="shape31">
+      <path
+         d="M 0,0 V -49.5"
+         id="path528"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-53.9 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path530"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(521.2,216.95)"
+       id="shape32">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path533"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6674)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path535"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text541"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="64.599998"
+           id="tspan537">Concaténation avec la</tspan>
+        <tspan
+           x="29.4"
+           y="80.599998"
+           id="tspan539">table D commune</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text545"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan543">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(674.05,278.09)"
+       id="shape33">
+      <path
+         d="M 0,0 H 64.1"
+         id="path548"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path550"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,216.95)"
+       id="shape34">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path553"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6676)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path555"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text559"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="13.4"
+           y="72.599998"
+           id="tspan557">Importation du fichier P</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text563"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan561">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(818.91,339.22)"
+       id="shape35">
+      <path
+         d="M 0,0 V 49.5"
+         id="path566"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,53.9 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path568"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,393.1)"
+       id="shape36">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path571"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6678)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path573"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text579"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="64.599998"
+           id="tspan575">Concaténation avec la</tspan>
+        <tspan
+           x="30.4"
+           y="80.599998"
+           id="tspan577">table P commune</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text583"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan581">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(818.91,515.37)"
+       id="shape37">
+      <path
+         d="M 0,0 V 53"
+         id="path586"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,57.4 3,52.2 C 2.1,52.7 1.1,53 0,53 -1.1,53 -2.1,52.7 -3,52.2 l 3,5.2"
+         id="path588"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,572.78)"
+       id="shape38">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path591"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6680)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path593"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text597"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="13.4"
+           y="72.599998"
+           id="tspan595">Importation du fichier R</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text601"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan599">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(818.91,695.06)"
+       id="shape39">
+      <path
+         d="M 0,0 V 53"
+         id="path604"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,57.4 3,52.2 C 2.1,52.7 1.1,53 0,53 -1.1,53 -2.1,52.7 -3,52.2 l 3,5.2"
+         id="path606"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,752.47)"
+       id="shape40">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path609"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6682)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path611"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text617"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="64.599998"
+           id="tspan613">Concaténation avec la</tspan>
+        <tspan
+           x="30.4"
+           y="80.599998"
+           id="tspan615">table R commune</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text621"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan619">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(818.91,874.74)"
+       id="shape41">
+      <path
+         d="M 0,0 V 65.1"
+         id="path624"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-dasharray:11, 5" />
+      <path
+         d="m 0,69.5 3,-5.2 c -0.9,0.6 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.2 -3,-0.8 l 3,5.2"
+         id="path626"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-78.099998"
+         width="159.39999"
+         y="26.799999"
+         id="rect628"
+         style="fill:#ffffff" />
+      <text
+         class="st2"
+         id="text632"
+         style="font-style:italic;font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-78.199997"
+           y="37.799999"
+           id="tspan630">tous les pays ont été traités ...</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(742.49,944.29)"
+       id="g646">
+      <g
+         id="shape42">
+        <path
+           d="m 40.2,113.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,57.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path635"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,111.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-55.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,55.9 c 0,38.8 17.1,55.9 38.2,55.9 z"
+           id="path637"
+           inkscape:connector-curvature="0"
+           style="fill:url(#lg7);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text644"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="11.4"
+           y="50.900002"
+           id="tspan640">Sortie de la boucle &quot;Pour</tspan>
+        <tspan
+           x="34.400002"
+           y="66.900002"
+           id="tspan642">chaque pays ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(742.49,813.61)"
+       id="shape43">
+      <path
+         d="M 0,0 H -64.1"
+         id="path648"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m -68.4,0 5.1,3 c -0.5,-0.9 -0.8,-1.9 -0.8,-3 0,-1.1 0.3,-2.1 0.8,-3 l -5.1,3"
+         id="path650"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(818.91,1056.12)"
+       id="shape44">
+      <path
+         d="M 0,0 V 54.9"
+         id="path653"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,59.3 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path655"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,1115.38)"
+       id="shape45">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path658"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6684)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path660"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text666"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="11.4"
+           y="64.599998"
+           id="tspan662">Fusion de la table H avec</tspan>
+        <tspan
+           x="51.400002"
+           y="80.599998"
+           id="tspan664">la table D</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text670"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan668">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(818.91,1237.65)"
+       id="shape46">
+      <path
+         d="M 0,0 V 53"
+         id="path673"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,57.4 3,52.2 C 2.1,52.7 1.1,53 0,53 -1.1,53 -2.1,52.7 -3,52.2 l 3,5.2"
+         id="path675"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(742.49,1295.07)"
+       id="shape47">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path678"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6686)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path680"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text688"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="15.4"
+           y="56.599998"
+           id="tspan682">Récupération de la liste</tspan>
+        <tspan
+           x="20.4"
+           y="72.599998"
+           id="tspan684">des variables binaires</tspan>
+        <tspan
+           x="14.4"
+           y="88.599998"
+           id="tspan686">(existantes et retenues)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text692"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan690">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(895.33,1356.2)"
+       id="shape48">
+      <path
+         d="M 0,0 H 64.1"
+         id="path695"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path697"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,1295.07)"
+       id="shape49">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path700"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6688)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path702"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text710"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="15.4"
+           y="56.599998"
+           id="tspan704">Récupération de la liste</tspan>
+        <tspan
+           x="10.4"
+           y="72.599998"
+           id="tspan706">des variables qualitatives</tspan>
+        <tspan
+           x="14.4"
+           y="88.599998"
+           id="tspan708">(existantes et retenues)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text714"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan712">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,1295.07)"
+       id="shape50">
+      <path
+         d="M 0,0 V -53"
+         id="path717"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-57.4 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path719"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,1115.38)"
+       id="shape51">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path722"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6690)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path724"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text734"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="26.4"
+           y="48.599998"
+           id="tspan726">Remplacement des</tspan>
+        <tspan
+           x="22.4"
+           y="64.599998"
+           id="tspan728">valeurs parasites* et</tspan>
+        <tspan
+           x="14.4"
+           y="80.599998"
+           id="tspan730">recodage des modalités</tspan>
+        <tspan
+           x="20.4"
+           y="96.599998"
+           id="tspan732">des variables binaires</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text738"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan736">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,1115.38)"
+       id="shape52">
+      <path
+         d="M 0,0 V -56.6"
+         id="path741"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-60.9 -3,5.1 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.1"
+         id="path743"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,939.23)"
+       id="shape53">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path746"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6692)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path748"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text756"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="26.4"
+           y="53.099998"
+           id="tspan750">Remplacement des</tspan>
+        <tspan
+           x="15.4"
+           y="69.099998"
+           id="tspan752">valeurs parasites* pour</tspan>
+        <tspan
+           x="10.4"
+           y="85.099998"
+           id="tspan754">les variables non binaires</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text760"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan758">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,939.23)"
+       id="shape54">
+      <path
+         d="M 0,0 V -60.1"
+         id="path763"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path765"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,752.47)"
+       id="shape55">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path768"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6694)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path770"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text780"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="22.4"
+           y="48.599998"
+           id="tspan772">Dichotomisation des</tspan>
+        <tspan
+           x="21.4"
+           y="64.599998"
+           id="tspan774">variables qualitatives</tspan>
+        <tspan
+           x="29.4"
+           y="80.599998"
+           id="tspan776">(tableau disjonctif</tspan>
+        <tspan
+           x="52.400002"
+           y="96.599998"
+           id="tspan778">complet)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text784"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan782">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,752.47)"
+       id="shape56">
+      <path
+         d="M 0,0 V -53"
+         id="path787"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-57.4 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path789"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,572.78)"
+       id="shape57">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path792"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6696)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path794"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text800"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="11.4"
+           y="64.599998"
+           id="tspan796">Fusion de la table R avec</tspan>
+        <tspan
+           x="52.400002"
+           y="80.599998"
+           id="tspan798">la table P</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text804"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan802">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,572.78)"
+       id="shape58">
+      <path
+         d="M 0,0 V -53"
+         id="path807"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-57.4 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path809"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,393.1)"
+       id="shape59">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path812"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6698)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path814"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text822"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="15.4"
+           y="56.599998"
+           id="tspan816">Récupération de la liste</tspan>
+        <tspan
+           x="20.4"
+           y="72.599998"
+           id="tspan818">des variables binaires</tspan>
+        <tspan
+           x="14.4"
+           y="88.599998"
+           id="tspan820">(existantes et retenues)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text826"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan824">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1040.2,393.1)"
+       id="shape60">
+      <path
+         d="M 0,0 V -49.5"
+         id="path829"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-53.9 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path831"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(963.78,216.95)"
+       id="shape61">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path834"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6700)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path836"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text844"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="15.4"
+           y="56.599998"
+           id="tspan838">Récupération de la liste</tspan>
+        <tspan
+           x="10.4"
+           y="72.599998"
+           id="tspan840">des variables qualitatives</tspan>
+        <tspan
+           x="14.4"
+           y="88.599998"
+           id="tspan842">(existantes et retenues)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text848"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan846">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1116.62,278.09)"
+       id="shape62">
+      <path
+         d="M 0,0 H 64.1"
+         id="path851"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path853"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1185.07,216.95)"
+       id="shape63">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path856"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6702)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path858"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text868"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="26.4"
+           y="48.599998"
+           id="tspan860">Remplacement des</tspan>
+        <tspan
+           x="22.4"
+           y="64.599998"
+           id="tspan862">valeurs parasites* et</tspan>
+        <tspan
+           x="14.4"
+           y="80.599998"
+           id="tspan864">recodage des modalités</tspan>
+        <tspan
+           x="20.4"
+           y="96.599998"
+           id="tspan866">des variables binaires</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text872"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan870">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1261.49,339.22)"
+       id="shape64">
+      <path
+         d="M 0,0 V 49.5"
+         id="path875"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,53.9 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path877"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1185.07,393.1)"
+       id="shape65">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path880"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6704)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path882"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text890"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="26.4"
+           y="56.599998"
+           id="tspan884">Remplacement des</tspan>
+        <tspan
+           x="15.4"
+           y="72.599998"
+           id="tspan886">valeurs parasites* pour</tspan>
+        <tspan
+           x="10.4"
+           y="88.599998"
+           id="tspan888">les variables non binaires</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text894"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan892">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1261.49,515.37)"
+       id="shape66">
+      <path
+         d="M 0,0 V 53"
+         id="path897"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,57.4 3,52.2 C 2.1,52.7 1.1,53 0,53 -1.1,53 -2.1,52.7 -3,52.2 l 3,5.2"
+         id="path899"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1185.07,572.78)"
+       id="shape67">
+      <path
+         d="M 152.8,122.3 V 0 H 0 v 122.3 z"
+         id="path902"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6706)" />
+      <path
+         d="M 152.8,122.3 V 0 H 0 V 122.3 Z M 0,17 h 152.8 z"
+         id="path904"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text914"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="22.4"
+           y="48.599998"
+           id="tspan906">Dichotomisation des</tspan>
+        <tspan
+           x="21.4"
+           y="64.599998"
+           id="tspan908">variables qualitatives</tspan>
+        <tspan
+           x="29.4"
+           y="80.599998"
+           id="tspan910">(tableau disjonctif</tspan>
+        <tspan
+           x="52.400002"
+           y="96.599998"
+           id="tspan912">complet)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text918"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan916">Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1337.91,633.92)"
+       id="shape68">
+      <path
+         d="M 0,0 H 36.4 L 64.1,0.5"
+         id="path921"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0.5 -5.1,-3 c 0.5,0.8 0.8,1.9 0.8,3 -0.1,1.1 -0.4,2.1 -0.9,2.9 l 5.2,-2.9"
+         id="path923"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1406.36,591.57)"
+       id="g937">
+      <g
+         id="shape69">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path926"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path928"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6708);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text935"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="10.4"
+           y="37.900002"
+           id="tspan931">Début de la boucle &quot;Pour</tspan>
+        <tspan
+           x="32.400002"
+           y="53.900002"
+           id="tspan933">chaque NUTS ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1482.78,677.35)"
+       id="shape70">
+      <path
+         d="M 0,0 V 63.1"
+         id="path939"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,67.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path941"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1406.36,744.84)"
+       id="g951">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape71"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6710);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text949"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="9.3999996"
+           y="37.900002"
+           id="tspan945">Identification de la bonne</tspan>
+        <tspan
+           x="39.400002"
+           y="53.900002"
+           id="tspan947">carte à utiliser</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1482.78,830.63)"
+       id="shape72">
+      <path
+         d="M 0,0 V 60.1"
+         id="path953"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path955"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1406.36,895.11)"
+       id="g967">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape73"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6712);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text965"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="26.4"
+           y="29.9"
+           id="tspan959">Copie des bases de</tspan>
+        <tspan
+           x="5.4000001"
+           y="45.900002"
+           id="tspan961">données fusionnées (HD et</tspan>
+        <tspan
+           x="67.400002"
+           y="61.900002"
+           id="tspan963">RP)</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1482.78,980.9)"
+       id="shape74">
+      <path
+         d="M 0,0 V 60.1"
+         id="path969"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path971"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1406.36,1045.39)"
+       id="g987">
+      <g
+         id="shape75">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path974"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path976"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6714);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text985"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="47.400002"
+           y="29.9"
+           id="tspan979">NUTS == 0</tspan>
+        <tspan
+           x="70.400002"
+           y="45.900002"
+           id="tspan981">&amp;</tspan>
+        <tspan
+           x="41.400002"
+           y="61.900002"
+           id="tspan983">REGION == &quot;&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1482.78,1131.17)"
+       id="shape76">
+      <path
+         d="M 0,0 V 45.4"
+         id="path989"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path991"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="16.9"
+         id="rect993"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text997"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="27.9"
+           id="tspan995">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1406.36,1180.95)"
+       id="shape77">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1000"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6716)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1002"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1008"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="50.400002"
+           y="61.099998"
+           id="tspan1004">Recodage</tspan>
+        <tspan
+           x="23.4"
+           y="77.099998"
+           id="tspan1006">REGION = COUNTRY</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1012"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1010">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1559.2,1088.28)"
+       id="shape78">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1015"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1017"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="20.5"
+         width="27.6"
+         y="-8"
+         id="rect1019"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1023"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="20.4"
+           y="3"
+           id="tspan1021">FAUX</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1627.65,1045.39)"
+       id="g1039">
+      <g
+         id="shape79">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path1026"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path1028"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6718);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1037"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="47.400002"
+           y="29.9"
+           id="tspan1031">NUTS == 2</tspan>
+        <tspan
+           x="72.400002"
+           y="45.900002"
+           id="tspan1033">&amp;</tspan>
+        <tspan
+           x="38.400002"
+           y="61.900002"
+           id="tspan1035">YEAR &gt;= 2010</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1559.2,1238.55)"
+       id="shape80">
+      <path
+         d="M 0,0 H 144.9 V -103"
+         id="path1041"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 144.9,-107.4 -3,5.2 c 0.8,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1043"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1704.07,1045.39)"
+       id="shape81">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1046"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1048"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="-28"
+         id="rect1050"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1054"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="-17"
+           id="tspan1052">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1627.65,880.41)"
+       id="shape82">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1057"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6720)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1059"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1065"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="14.4"
+           y="61.099998"
+           id="tspan1061">Recodage REGION de la</tspan>
+        <tspan
+           x="57.400002"
+           y="77.099998"
+           id="tspan1063">Croatie</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1069"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1067">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1704.07,880.41)"
+       id="shape83">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1072"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1074"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1627.65,744.84)"
+       id="g1090">
+      <g
+         id="shape84">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path1077"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path1079"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6722);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1088"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="47.400002"
+           y="29.9"
+           id="tspan1082">NUTS == 2</tspan>
+        <tspan
+           x="72.400002"
+           y="45.900002"
+           id="tspan1084">&amp;</tspan>
+        <tspan
+           x="38.400002"
+           y="61.900002"
+           id="tspan1086">YEAR &gt;= 2013</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1704.07,744.84)"
+       id="shape85">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1092"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1094"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="-32.900002"
+         id="rect1096"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1100"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="-21.9"
+           id="tspan1098">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1627.65,579.86)"
+       id="shape86">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1103"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6724)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1105"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1111"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="20.4"
+           y="61.099998"
+           id="tspan1107">Recodage REGION du</tspan>
+        <tspan
+           x="40.400002"
+           y="77.099998"
+           id="tspan1109">Royaume-Uni</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1115"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1113">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1704.07,579.86)"
+       id="shape87">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1118"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1120"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1627.65,444.29)"
+       id="g1132">
+      <g
+         id="shape88">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path1123"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path1125"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6726);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1130"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="43.400002"
+           y="45.900002"
+           id="tspan1128">YEAR &lt; 2010</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1704.07,444.29)"
+       id="shape89">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1134"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1136"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="-32.900002"
+         id="rect1138"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1142"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="-21.9"
+           id="tspan1140">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1627.65,279.31)"
+       id="shape90">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1145"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6728)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1147"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1153"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="20.4"
+           y="61.099998"
+           id="tspan1149">Recodage REGION en</tspan>
+        <tspan
+           x="48.400002"
+           y="77.099998"
+           id="tspan1151">tout genre</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1157"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1155">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1780.49,787.73)"
+       id="shape91">
+      <path
+         d="m 0,0 c 32,0 32,-75.1 32,-150.3 0,-72.2 0,-144.4 -28.4,-149.9"
+         id="path1160"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-300.5 4.9,3.4 c -0.4,-0.9 -0.6,-1.9 -0.5,-3 0.1,-1.1 0.5,-2.1 1.1,-2.9 l -5.5,2.5"
+         id="path1162"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="18.299999"
+         width="27.6"
+         y="-129.60001"
+         id="rect1164"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1168"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.200001"
+           y="-118.6"
+           id="tspan1166">FAUX</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1780.49,1088.28)"
+       id="shape92">
+      <path
+         d="m 0,0 c 32,0 32,-75.1 32,-150.3 0,-72.2 0,-144.4 -28.4,-149.9"
+         id="path1171"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-300.5 4.9,3.4 c -0.4,-0.9 -0.6,-1.9 -0.5,-3 0.1,-1.1 0.5,-2.1 1.1,-2.9 l -5.5,2.5"
+         id="path1173"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="18.299999"
+         width="27.6"
+         y="-129.60001"
+         id="rect1175"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1179"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.200001"
+           y="-118.6"
+           id="tspan1177">FAUX</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1780.49,336.91)"
+       id="shape93">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1182"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1184"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,294.02)"
+       id="g1200">
+      <g
+         id="shape94">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path1187"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path1189"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6730);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1198"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="38.400002"
+           y="29.9"
+           id="tspan1192">YEAR &gt;= 2010</tspan>
+        <tspan
+           x="72.400002"
+           y="45.900002"
+           id="tspan1194">&amp;</tspan>
+        <tspan
+           x="40.400002"
+           y="61.900002"
+           id="tspan1196">YEAR &lt; 2013</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1925.36,379.81)"
+       id="shape95">
+      <path
+         d="M 0,0 V 45.4"
+         id="path1202"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1204"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,429.59)"
+       id="shape96">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1207"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6732)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1209"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1215"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="20.4"
+           y="61.099998"
+           id="tspan1211">Recodage REGION en</tspan>
+        <tspan
+           x="48.400002"
+           y="77.099998"
+           id="tspan1213">tout genre</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1219"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1217">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1925.36,544.78)"
+       id="shape97">
+      <path
+         d="M 0,0 V 30.7"
+         id="path1222"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,35.1 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1224"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,579.86)"
+       id="shape98">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1227"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6734)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1229"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1237"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="16.4"
+           y="53.099998"
+           id="tspan1231">Sélection des variables</tspan>
+        <tspan
+           x="15.4"
+           y="69.099998"
+           id="tspan1233">(on ne garde que celles</tspan>
+        <tspan
+           x="51.400002"
+           y="85.099998"
+           id="tspan1235">retenues)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1241"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1239">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1925.36,695.06)"
+       id="shape99">
+      <path
+         d="M 0,0 V 30.7"
+         id="path1244"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,35.1 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1246"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,730.13)"
+       id="shape100">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1249"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6736)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1251"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1263"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="19.4"
+           y="37.099998"
+           id="tspan1253">Calcul et création de :</tspan>
+        <tspan
+           x="52.400002"
+           y="53.099998"
+           id="tspan1255">- REGION</tspan>
+        <tspan
+           x="51.400002"
+           y="69.099998"
+           id="tspan1257">- NB_OBS</tspan>
+        <tspan
+           x="45.400002"
+           y="85.099998"
+           id="tspan1259">- Moyennes</tspan>
+        <tspan
+           x="33.400002"
+           y="101.1"
+           id="tspan1261">- Nombre de NA</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1267"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1265">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1925.36,845.33)"
+       id="shape101">
+      <path
+         d="M 0,0 V 45.4"
+         id="path1270"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1272"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,895.11)"
+       id="g1288">
+      <g
+         id="shape102">
+        <path
+           d="M 154.8,87.8 V 2 H 2 v 85.8 z"
+           id="path1275"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+           id="path1277"
+           inkscape:connector-curvature="0"
+           style="fill:url(#lg14);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1286"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="15.4"
+           y="29.9"
+           id="tspan1280">Récupération de la liste</tspan>
+        <tspan
+           x="11.4"
+           y="45.900002"
+           id="tspan1282">des régions à partir de la</tspan>
+        <tspan
+           x="63.400002"
+           y="61.900002"
+           id="tspan1284">carte</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1925.36,980.9)"
+       id="shape103">
+      <path
+         d="M 0,0 V 45.4"
+         id="path1290"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1292"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(1848.94,1030.68)"
+       id="shape104">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1295"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6738)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1297"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1305"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="8.3999996"
+           y="53.099998"
+           id="tspan1299">Jointure liste régions avec</tspan>
+        <tspan
+           x="10.4"
+           y="69.099998"
+           id="tspan1301">liste moyennes (et autres</tspan>
+        <tspan
+           x="51.400002"
+           y="85.099998"
+           id="tspan1303">variables)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1309"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1307">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2001.78,1088.28)"
+       id="shape105">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1312"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1314"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2070.22,1045.39)"
+       id="g1330">
+      <g
+         id="shape106">
+        <path
+           d="M 78.4,87.8 154.8,44.9 78.4,2 2,44.9 Z"
+           id="path1317"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 76.4,85.8 152.8,42.9 76.4,0 0,42.9 Z"
+           id="path1319"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6740);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1328"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="47.400002"
+           y="29.9"
+           id="tspan1322">NUTS == 2</tspan>
+        <tspan
+           x="72.400002"
+           y="45.900002"
+           id="tspan1324">&amp;</tspan>
+        <tspan
+           x="38.400002"
+           y="61.900002"
+           id="tspan1326">YEAR &gt;= 2010</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,1045.39)"
+       id="shape107">
+      <path
+         d="M 0,0 V -45.4"
+         id="path1332"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-49.8 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1334"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-12.5"
+         width="25.6"
+         y="-28"
+         id="rect1336"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1340"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-12.6"
+           y="-17"
+           id="tspan1338">VRAI</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2070.22,880.41)"
+       id="shape108">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1343"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6742)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1345"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1351"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="20.4"
+           y="61.099998"
+           id="tspan1347">Recodage REGION de</tspan>
+        <tspan
+           x="55.400002"
+           y="77.099998"
+           id="tspan1349">Londres</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1355"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1353">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,880.41)"
+       id="shape109">
+      <path
+         d="M 0,0 V -30.7"
+         id="path1358"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-35.1 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1360"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2070.22,730.13)"
+       id="shape110">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1363"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6744)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1365"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1377"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="19.4"
+           y="29.1"
+           id="tspan1367">Calcul et création de :</tspan>
+        <tspan
+           x="52.400002"
+           y="45.099998"
+           id="tspan1369">- REGION</tspan>
+        <tspan
+           x="51.400002"
+           y="61.099998"
+           id="tspan1371">- NB_OBS</tspan>
+        <tspan
+           x="45.400002"
+           y="77.099998"
+           id="tspan1373">- Moyennes</tspan>
+        <tspan
+           x="33.400002"
+           y="93.099998"
+           id="tspan1375">- Nombre de NA</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1381"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1379">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,730.13)"
+       id="shape111">
+      <path
+         d="M 0,0 V -30.7"
+         id="path1384"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-35.1 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1386"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2070.22,579.86)"
+       id="shape112">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1389"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6746)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1391"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1397"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="11.4"
+           y="61.099998"
+           id="tspan1393">Jointure de Londres avec</tspan>
+        <tspan
+           x="28.4"
+           y="77.099998"
+           id="tspan1395">la liste des régions</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1401"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="52.400002"
+           y="11.5"
+           id="tspan1399">Ménages</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,579.86)"
+       id="shape113">
+      <path
+         d="M 0,0 V -30.7"
+         id="path1404"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-35.1 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1406"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2070.22,429.59)"
+       id="shape114">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1409"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6748)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1411"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1417"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="61.099998"
+           id="tspan1413">Création des colonnes</tspan>
+        <tspan
+           x="25.4"
+           y="77.099998"
+           id="tspan1415">NUTS, ANNEE, PAYS</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1421"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1419">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,429.59)"
+       id="shape115">
+      <path
+         d="M 0,0 V -30.7"
+         id="path1424"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-35.1 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1426"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2070.22,279.31)"
+       id="shape116">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1429"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6750)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1431"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1439"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="46.400002"
+           y="53.099998"
+           id="tspan1433">Mise à jour</tspan>
+        <tspan
+           x="20.4"
+           y="69.099998"
+           id="tspan1435">(concaténation) de la</tspan>
+        <tspan
+           x="47.400002"
+           y="85.099998"
+           id="tspan1437">table finale</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1443"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1441">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2223.07,1088.28)"
+       id="shape117">
+      <path
+         d="M 0,0 C 32,0 32,-150.3 32,-300.5 32,-444.4 32,-588.3 3.9,-600.3"
+         id="path1446"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-601.1 4.5,4 c -0.3,-1 -0.4,-2 -0.2,-3.1 0.2,-1.1 0.7,-2 1.4,-2.8 l -5.7,1.9"
+         id="path1448"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="18.299999"
+         width="27.6"
+         y="-278.20001"
+         id="rect1450"
+         style="fill:#ffffff" />
+      <text
+         class="st1"
+         id="text1454"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.200001"
+           y="-267.20001"
+           id="tspan1452">FAUX</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2291.51,580.86)"
+       id="shape118">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1457"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6752)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1459"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1467"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="17.4"
+           y="53.099998"
+           id="tspan1461">Création de la colonne</tspan>
+        <tspan
+           x="18.4"
+           y="69.099998"
+           id="tspan1463">donnant la proportion</tspan>
+        <tspan
+           x="25.4"
+           y="85.099998"
+           id="tspan1465">des NA par variable</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1471"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1469">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2146.65,279.31)"
+       id="shape119">
+      <path
+         d="m 0,0 v -60.1 h -555.4 v 568.5 h -27.7"
+         id="path1474"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m -587.4,508.4 5.2,3 c -0.6,-0.9 -0.9,-1.9 -0.9,-3 0,-1.1 0.3,-2.1 0.9,-3 l -5.2,3"
+         id="path1476"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2223.07,335.91)"
+       id="shape120">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1479"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-dasharray:11, 5" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1481"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="6.5999999"
+         width="96.099998"
+         transform="matrix(0.87,-0.5,0.5,0.87,24.6,22.3)"
+         y="-50.700001"
+         id="rect1483"
+         style="fill:#ffffff" />
+      <rect
+         height="16"
+         x="20.9"
+         width="67.5"
+         transform="matrix(0.87,-0.5,0.5,0.87,24.6,22.3)"
+         y="-34.700001"
+         id="rect1485"
+         style="fill:#ffffff" />
+      <text
+         class="st2"
+         transform="matrix(0.87,-0.5,0.5,0.87,24.6,22.3)"
+         id="text1491"
+         style="font-style:italic;font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="6.4000001"
+           y="-39.700001"
+           id="tspan1487">tous les NUTS ont</tspan>
+        <tspan
+           x="20.4"
+           y="-23.700001"
+           id="tspan1489">été traités ...</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2291.51,295.02)"
+       id="g1505">
+      <g
+         id="shape121">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path1494"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path1496"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6754);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1503"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="37.900002"
+           id="tspan1499">Fin de la boucle &quot;Pour</tspan>
+        <tspan
+           x="32.400002"
+           y="53.900002"
+           id="tspan1501">chaque NUTS ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2367.93,295.02)"
+       id="shape122">
+      <path
+         d="M 0,0 V -131.8 H -2100 V 881.5 h 27.6"
+         id="path1507"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m -2068,881.5 -5.2,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.2,-3"
+         id="path1509"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2367.93,380.81)"
+       id="shape123">
+      <path
+         d="M 0,0 V 60.1"
+         id="path1512"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-dasharray:11, 5" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1514"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-93.099998"
+         width="190.10001"
+         y="24.200001"
+         id="rect1516"
+         style="fill:#ffffff" />
+      <text
+         class="st2"
+         id="text1520"
+         style="font-style:italic;font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-93.199997"
+           y="35.200001"
+           id="tspan1518">toutes les années ont été traitées ...</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2291.51,445.29)"
+       id="g1534">
+      <g
+         id="shape124">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path1523"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path1525"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6756);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1532"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="37.900002"
+           id="tspan1528">Fin de la boucle &quot;Pour</tspan>
+        <tspan
+           x="30.4"
+           y="53.900002"
+           id="tspan1530">chaque année ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2367.93,696.06)"
+       id="shape125">
+      <path
+         d="M 0,0 V 60.1"
+         id="path1536"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1538"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2291.51,760.55)"
+       id="shape126">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1541"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6758)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1543"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1549"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="61.099998"
+           id="tspan1545">Création des 2 tables</tspan>
+        <tspan
+           x="30.4"
+           y="77.099998"
+           id="tspan1547">pour les périodes</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1553"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1551">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2367.93,531.08)"
+       id="shape127">
+      <path
+         d="M 0,0 V 45.4"
+         id="path1556"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1558"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2367.93,875.74)"
+       id="shape128">
+      <path
+         d="M 0,0 V 74.8"
+         id="path1561"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,79.2 3,74 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1563"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2291.51,954.94)"
+       id="g1577">
+      <g
+         id="shape129">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path1566"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path1568"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6760);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1575"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="10.4"
+           y="37.900002"
+           id="tspan1571">Début de la boucle &quot;Pour</tspan>
+        <tspan
+           x="26.4"
+           y="53.900002"
+           id="tspan1573">chaque période ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2444.36,997.83)"
+       id="shape130">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1579"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1581"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2512.8,940.23)"
+       id="shape131">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1584"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6762)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1586"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1594"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="53.099998"
+           id="tspan1588">Calcul des moyennes</tspan>
+        <tspan
+           x="18.4"
+           y="69.099998"
+           id="tspan1590">pondérées et création</tspan>
+        <tspan
+           x="22.4"
+           y="85.099998"
+           id="tspan1592">ANNEES_PRESENTES</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1598"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1596">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2512.8,760.55)"
+       id="shape132">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1601"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6764)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1603"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1609"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="61.099998"
+           id="tspan1605">Concaténation avec la</tspan>
+        <tspan
+           x="11.4"
+           y="77.099998"
+           id="tspan1607">table finale des périodes</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1613"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="21.4"
+           y="11.5"
+           id="tspan1611">Ménages &amp; Individus</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2589.22,940.23)"
+       id="shape133">
+      <path
+         d="M 0,0 V -60.1"
+         id="path1616"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1618"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2665.64,818.14)"
+       id="shape134">
+      <path
+         d="M 0,0 H 32 V 179.7 H 4.4"
+         id="path1621"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,179.7 5.2,3 c -0.5,-0.9 -0.8,-1.9 -0.8,-3 0,-1.1 0.3,-2.1 0.8,-3 l -5.2,3"
+         id="path1623"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2589.22,760.55)"
+       id="shape135">
+      <path
+         d="M 0,0 V -74.8"
+         id="path1626"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-dasharray:11, 5" />
+      <path
+         d="m 0,-79.2 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1628"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+      <rect
+         height="16"
+         x="-90.400002"
+         width="184"
+         y="-47.599998"
+         id="rect1630"
+         style="fill:#ffffff" />
+      <text
+         class="st2"
+         id="text1634"
+         style="font-style:italic;font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="-90.5"
+           y="-36.599998"
+           id="tspan1632">toutes les périodes ont été traitées</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2512.8,595.57)"
+       id="g1648">
+      <g
+         id="shape136">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path1637"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path1639"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6766);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1646"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="18.4"
+           y="37.900002"
+           id="tspan1642">Fin de la boucle &quot;Pour</tspan>
+        <tspan
+           x="26.4"
+           y="53.900002"
+           id="tspan1644">chaque période ...&quot;</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2589.22,595.57)"
+       id="shape137">
+      <path
+         d="M 0,0 V -60.1"
+         id="path1650"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1652"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2512.8,445.29)"
+       id="g1662">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape138"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6768);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text1660"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="6.4000001"
+           y="37.900002"
+           id="tspan1656">Concaténation des 4 bases</tspan>
+        <tspan
+           x="57.400002"
+           y="53.900002"
+           id="tspan1658">finales</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2589.22,445.29)"
+       id="shape139">
+      <path
+         d="M 0,0 V -60.1"
+         id="path1664"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,-64.5 -3,5.2 c 0.9,-0.5 1.9,-0.8 3,-0.8 1.1,0 2.1,0.3 3,0.8 l -3,-5.2"
+         id="path1666"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2512.8,295.02)"
+       id="g1674">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape140"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6770);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text1672"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="9.3999996"
+           y="45.900002"
+           id="tspan1670">Exportation de cette base</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2665.64,337.91)"
+       id="shape141">
+      <path
+         d="M 0,0 H 64.1"
+         id="path1676"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 68.4,0 -5.1,-3 c 0.5,0.9 0.8,1.9 0.8,3 0,1.1 -0.3,2.1 -0.8,3 l 5.1,-3"
+         id="path1678"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,295.02)"
+       id="g1688">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape142"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6772);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text1686"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="12.4"
+           y="37.900002"
+           id="tspan1682">Exportation des listes de</tspan>
+        <tspan
+           x="53.400002"
+           y="53.900002"
+           id="tspan1684">variables</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,380.81)"
+       id="shape143">
+      <path
+         d="M 0,0 V 45.4"
+         id="path1690"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,49.8 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1692"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,430.59)"
+       id="shape144">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1695"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6774)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1697"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1705"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="9.3999996"
+           y="53.099998"
+           id="tspan1699">Importation de nouveaux</tspan>
+        <tspan
+           x="21.4"
+           y="69.099998"
+           id="tspan1701">correctifs propre à la</tspan>
+        <tspan
+           x="44.400002"
+           y="85.099998"
+           id="tspan1703">partie STATS</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1709"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="61.400002"
+           y="11.5"
+           id="tspan1707">STATS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,545.78)"
+       id="shape145">
+      <path
+         d="M 0,0 V 30.7"
+         id="path1712"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,35.1 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1714"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,580.86)"
+       id="shape146">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1717"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6776)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1719"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1727"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="12.4"
+           y="53.099998"
+           id="tspan1721">Recodage de REGION en</tspan>
+        <tspan
+           x="20.4"
+           y="69.099998"
+           id="tspan1723">le dernier code NUTS</tspan>
+        <tspan
+           x="59.400002"
+           y="85.099998"
+           id="tspan1725">(2013)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1731"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="61.400002"
+           y="11.5"
+           id="tspan1729">STATS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,696.06)"
+       id="shape147">
+      <path
+         d="M 0,0 V 30.7"
+         id="path1734"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,35.1 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1736"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,731.13)"
+       id="shape148">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1739"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6778)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1741"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1747"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="17.4"
+           y="61.099998"
+           id="tspan1743">Exportation de la base</tspan>
+        <tspan
+           x="34.400002"
+           y="77.099998"
+           id="tspan1745">finale des STATS</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1751"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="61.400002"
+           y="11.5"
+           id="tspan1749">STATS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,846.33)"
+       id="shape149">
+      <path
+         d="M 0,0 V 60.1"
+         id="path1754"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,64.5 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1756"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,910.82)"
+       id="shape150">
+      <path
+         d="M 152.8,115.2 V 0 H 0 v 115.2 z"
+         id="path1759"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6780)" />
+      <path
+         d="M 152.8,115.2 V 0 H 0 V 115.2 Z M 0,17 h 152.8 z"
+         id="path1761"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <text
+         class="st1"
+         id="text1769"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="8.3999996"
+           y="53.099998"
+           id="tspan1763">Exportation de la liste des</tspan>
+        <tspan
+           x="8.3999996"
+           y="69.099998"
+           id="tspan1765">régions (3 listes, une pour</tspan>
+        <tspan
+           x="39.400002"
+           y="85.099998"
+           id="tspan1767">chaque NUTS)</tspan>
+      </text>
+      <text
+         class="st1"
+         id="text1773"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="61.400002"
+           y="11.5"
+           id="tspan1771">STATS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,1026.02)"
+       id="shape151">
+      <path
+         d="M 0,0 V 74.8"
+         id="path1776"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="M 0,79.2 3,74 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 l 3,5.2"
+         id="path1778"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,1105.21)"
+       id="g1786">
+      <path
+         d="M 152.8,85.8 V 0 H 0 v 85.8 z"
+         id="shape152"
+         inkscape:connector-curvature="0"
+         style="fill:url(#linearGradient6782);stroke:#08488f" />
+      <text
+         class="st1"
+         id="text1784"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="9.3999996"
+           y="45.900002"
+           id="tspan1782">Nettoyage de la session R</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2810.51,1191)"
+       id="shape153">
+      <path
+         d="M 0,0 V 55.6"
+         id="path1788"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000" />
+      <path
+         d="m 0,60 3,-5.2 c -0.9,0.5 -1.9,0.8 -3,0.8 -1.1,0 -2.1,-0.3 -3,-0.8 L 0,60"
+         id="path1790"
+         inkscape:connector-curvature="0"
+         style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:round" />
+    </g>
+    <g
+       transform="translate(2734.09,1251)"
+       id="g1802">
+      <g
+         id="shape154">
+        <path
+           d="m 40.2,87.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 154.8,19.1 137.7,2 116.6,2 H 40.2 C 19.1,2 2,19.1 2,44.9 2,70.7 19.1,87.8 40.2,87.8 Z"
+           id="path1793"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="m 38.2,85.8 h 76.4 c 21.1,0 38.2,-17.1 38.2,-42.9 C 152.8,17.1 135.7,0 114.6,0 H 38.2 C 17.1,0 0,17.1 0,42.9 0,68.7 17.1,85.8 38.2,85.8 Z"
+           id="path1795"
+           inkscape:connector-curvature="0"
+           style="fill:url(#linearGradient6784);stroke:#000000" />
+      </g>
+      <text
+         class="st1"
+         id="text1800"
+         style="font-size:13.33333302px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="67.400002"
+           y="45.900002"
+           id="tspan1798">FIN</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1031.61,15)"
+       id="g1807">
+      <path
+         d="M 56,28 C 56,43.5 43.5,56 28,56 12.5,56 0,43.5 0,28 0,12.5 12.5,0 28,0 43.5,0 56,12.5 56,28 Z"
+         id="shape155"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg17);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(1331.18,15)"
+       id="g1812">
+      <path
+         d="M 56,28 C 56,43.5 43.5,56 28,56 12.5,56 0,43.5 0,28 0,12.5 12.5,0 28,0 43.5,0 56,12.5 56,28 Z"
+         id="shape156"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg18);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(732.03,15)"
+       id="g1817">
+      <path
+         d="M 56,28 C 56,43.5 43.5,56 28,56 12.5,56 0,43.5 0,28 0,12.5 12.5,0 28,0 43.5,0 56,12.5 56,28 Z"
+         id="shape157"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg19);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(1630.75,16)"
+       id="shape158">
+      <path
+         d="M 54.9,56 V 2 H 2 v 54 z"
+         id="path1819"
+         inkscape:connector-curvature="0"
+         style="fill:#bebebe;fill-opacity:0.5" />
+      <path
+         d="M 52.9,54 V 0 H 0 v 54 z"
+         id="path1821"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg20);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(1930.32,16)"
+       id="shape159">
+      <path
+         d="M 54.9,56 V 2 H 2 v 54 z"
+         id="path1824"
+         inkscape:connector-curvature="0"
+         style="fill:#bebebe;fill-opacity:0.5" />
+      <path
+         d="M 52.9,54 V 0 H 0 v 54 z"
+         id="path1826"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg21);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(2229.89,16)"
+       id="shape160">
+      <path
+         d="M 54.9,56 V 2 H 2 v 54 z"
+         id="path1829"
+         inkscape:connector-curvature="0"
+         style="fill:#bebebe;fill-opacity:0.5" />
+      <path
+         d="M 52.9,54 V 0 H 0 v 54 z"
+         id="path1831"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg22);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(2529.46,16)"
+       id="shape161">
+      <path
+         d="M 54.9,56 V 2 H 2 v 54 z"
+         id="path1834"
+         inkscape:connector-curvature="0"
+         style="fill:#bebebe;fill-opacity:0.5" />
+      <path
+         d="M 52.9,54 V 0 H 0 v 54 z"
+         id="path1836"
+         inkscape:connector-curvature="0"
+         style="fill:url(#lg23);stroke:#000000" />
+    </g>
+    <g
+       transform="translate(2829.03,15.5)"
+       id="g1844">
+      <g
+         id="shape162">
+        <path
+           d="M 28.5,57 54.9,29.5 28.5,2 2,29.5 Z"
+           id="path1839"
+           inkscape:connector-curvature="0"
+           style="fill:#bebebe;fill-opacity:0.5" />
+        <path
+           d="M 26.5,55 52.9,27.5 26.5,0 0,27.5 Z"
+           id="path1841"
+           inkscape:connector-curvature="0"
+           style="fill:url(#lg24);stroke:#000000" />
+      </g>
+    </g>
+    <g
+       transform="translate(517,15)"
+       id="shape163">
+      <text
+         class="st3"
+         id="text1850"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="45"
+           y="26"
+           id="tspan1846">DEBUT/FIN DU</tspan>
+        <tspan
+           x="74"
+           y="55"
+           id="tspan1848">PROCESSUS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(810,15)"
+       id="shape164">
+      <text
+         class="st3"
+         id="text1857"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="53"
+           y="26"
+           id="tspan1853">DEBUT D'UNE</tspan>
+        <tspan
+           x="109"
+           y="55"
+           id="tspan1855">BOUCLE</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1112,15)"
+       id="shape165">
+      <text
+         class="st3"
+         id="text1864"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="87"
+           y="26"
+           id="tspan1860">FIN D'UNE</tspan>
+        <tspan
+           x="109"
+           y="55"
+           id="tspan1862">BOUCLE</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1406.36,15)"
+       id="shape166">
+      <text
+         class="st3"
+         id="text1871"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="41"
+           y="26"
+           id="tspan1867">CONCERNE LES</tspan>
+        <tspan
+           x="85"
+           y="55"
+           id="tspan1869">INDIVIDUS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(1711,15)"
+       id="shape167">
+      <text
+         class="st3"
+         id="text1878"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="41"
+           y="26"
+           id="tspan1874">CONCERNE LES</tspan>
+        <tspan
+           x="89"
+           y="55"
+           id="tspan1876">MÉNAGES</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2010,15)"
+       id="shape168">
+      <text
+         class="st3"
+         id="text1887"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="41"
+           y="11.5"
+           id="tspan1881">CONCERNE LES</tspan>
+        <tspan
+           x="56"
+           y="40.5"
+           id="tspan1883">INDIVIDUS ET</tspan>
+        <tspan
+           x="89"
+           y="69.5"
+           id="tspan1885">MÉNAGES</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2312,15)"
+       id="shape169">
+      <text
+         class="st3"
+         id="text1894"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="50"
+           y="26"
+           id="tspan1890">CONCERNE LA</tspan>
+        <tspan
+           x="61"
+           y="55"
+           id="tspan1892">PARTIE STATS</tspan>
+      </text>
+    </g>
+    <g
+       transform="translate(2618,15)"
+       id="shape170">
+      <text
+         class="st3"
+         id="text1899"
+         style="font-size:24px;font-family:Calibri;fill:#000000">
+        <tspan
+           x="74"
+           y="40.5"
+           id="tspan1897">CONDITION</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

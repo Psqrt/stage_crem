@@ -274,7 +274,7 @@ contenu_UI <- shinyUI(
                                          
                                          conditionalPanel("input.animation_frame_stats_scatter_plot != 1",
                                                           pickerInput(
-                                                              inputId = "choix_annee_scatterplot",
+                                                              inputId = "choix_annee_scatter_plot",
                                                               label = "YEARS",
                                                               choices= unique(na.omit(moyenne_region$ANNEE)),
                                                               selected = NA,

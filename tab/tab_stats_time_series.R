@@ -53,7 +53,7 @@ subtab_stats_time_series = tabPanel("", # Chaine vide pour éviter un pop-up inu
                                                             plotlyOutput("plotly_ts_nuts0",height = "800px")
                                            ),
                                            conditionalPanel("input.choix_nuts_stats_time_series != 'NUTS 0'",
-                                                            # OUTPUT : Graphique si on n'est pas à 'échelle des pays
+                                                            # OUTPUT : Graphique si on n'est pas à l'échelle des pays
                                                             plotlyOutput("plotly_ts_nuts12",height = "800px")
                                            )
                                        )

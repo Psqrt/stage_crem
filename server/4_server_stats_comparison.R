@@ -223,7 +223,7 @@ observe({
   df_init_1ligne = data.frame(Region = c("0"))
   df_init_2lignes = data.frame(Region = c("0", "0"))
   
-  output$barplot = renderAmCharts({
+  output$amchart_barplot = renderAmCharts({
     var1 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_ts1])
     region1 = names(liste_tout_nuts_stat[liste_tout_nuts_stat == choix_region_ts1])
     var2 = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var_ts2])
@@ -437,14 +437,14 @@ observe({
 # })
 
 # Réactivité lorsque l'utilisateur actionne le switch pour la seconde région
-observeEvent(input$switch_region_stat, {
+observeEvent(input$switch_region_stats_comparison, {
   reset("choix_region_ts2a")
   reset("choix_region_ts2b")
   reset("choix_region_ts2c")
 })
 
 # Réactivité lorsque l'utilisateur actionne le switch pour la seconde variable
-observeEvent(input$switch_variable_stat, {
+observeEvent(input$switch_variable_stats_comparison, {
   reset("choix_var_ts2")
   reset("choix_var_ts2")
   reset("choix_var_ts2")

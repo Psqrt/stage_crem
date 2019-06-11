@@ -57,7 +57,7 @@ observe({
     if (input$choix_var1_stats_scatter_plot != "XXXX" | input$choix_var2_stats_scatter_plot != "XXXX"){
       filtre_df_scatter = moyenne_region_stat %>% 
         filter(NUTS == input$choix_nuts_stats_scatter_plot &
-                 ANNEE %in% input$choix_annee_scatterplot) %>%
+                 ANNEE %in% input$choix_annee_scatter_plot) %>%
         mutate(ANNEE = as.factor(ANNEE))
       
       if (input$choix_var1_stats_scatter_plot != "XXXX"){
@@ -146,7 +146,7 @@ output$plotly_scatter <- renderPlotly({
         # 2. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
         filtre_df_scatter = moyenne_region_stat %>% 
           filter(NUTS == input$choix_nuts_stats_scatter_plot &
-                   ANNEE %in% input$choix_annee_scatterplot) %>%
+                   ANNEE %in% input$choix_annee_scatter_plot) %>%
           mutate(ANNEE = as.factor(ANNEE))
         
         filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_stats_scatter_plot),
