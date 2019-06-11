@@ -31,48 +31,99 @@ observeEvent(input$choix_nuts_stats_scatter_plot, {
 })
 
 
+# Incompatibilité des modes à selectionner : si l'un est sélectionné, déselectionner l'autre.
+observeEvent(input$switch_3d_stats_scatter_plot, {
+  if (input$switch_3d_stats_scatter_plot == 1){
+    updateSwitchInput(session, "animation_frame_stats_scatter_plot",
+                      value = 0)
+  }
+})
+
+# Incompatibilité des modes à selectionner : si l'un est sélectionné, déselectionner l'autre.
+observeEvent(input$animation_frame_stats_scatter_plot, {
+  if (input$animation_frame_stats_scatter_plot == 1){
+    updateSwitchInput(session, "switch_3d_stats_scatter_plot",
+                      value = 0)
+  }
+})
 
 
 # == Sortie table pour scatter plot  ======================================================================
 observe({
   label_var1_stats_scatter_plot = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_stats_scatter_plot])
   label_var2_stats_scatter_plot = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_stats_scatter_plot])
-
   
-  if (input$choix_var1_stats_scatter_plot != "XXXX" | input$choix_var2_stats_scatter_plot != "XXXX"){
-    filtre_df_scatter = moyenne_region_stat %>% 
-      filter(NUTS == input$choix_nuts_stats_scatter_plot &
-               ANNEE %in% input$choix_annee_scatterplot) %>%
-      mutate(ANNEE = as.factor(ANNEE))
-    
-    if (input$choix_var1_stats_scatter_plot != "XXXX"){
-      if (input$choix_var2_stats_scatter_plot != "XXXX"){
-        filtre_df_scatter = filtre_df_scatter %>% 
-          select(Country = NOM_PAYS, 
-                 Region = NOM_REGION, 
-                 Year = ANNEE, 
-                 !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot, 
-                 !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
+  if (input$animation_frame_stats_scatter_plot != 1 & input$switch_3d_stats_scatter_plot != 1){
+    if (input$choix_var1_stats_scatter_plot != "XXXX" | input$choix_var2_stats_scatter_plot != "XXXX"){
+      filtre_df_scatter = moyenne_region_stat %>% 
+        filter(NUTS == input$choix_nuts_stats_scatter_plot &
+                 ANNEE %in% input$choix_annee_scatterplot) %>%
+        mutate(ANNEE = as.factor(ANNEE))
+      
+      if (input$choix_var1_stats_scatter_plot != "XXXX"){
+        if (input$choix_var2_stats_scatter_plot != "XXXX"){
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot, 
+                   !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
+        } else {
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot)
+        }
       } else {
-        filtre_df_scatter = filtre_df_scatter %>% 
-          select(Country = NOM_PAYS, 
-                 Region = NOM_REGION, 
-                 Year = ANNEE, 
-                 !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot)
+        if (input$choix_var2_stats_scatter_plot != "XXXX"){
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
+        } else {
+          filtre_df_scatter = data.frame()
+        }
       }
     } else {
-      if (input$choix_var2_stats_scatter_plot != "XXXX"){
-        filtre_df_scatter = filtre_df_scatter %>% 
-          select(Country = NOM_PAYS, 
-                 Region = NOM_REGION, 
-                 Year = ANNEE, 
-                 !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
-      } else {
-        filtre_df_scatter = data.frame()
-      }
+      filtre_df_scatter = data.frame()
     }
-  } else {
-    filtre_df_scatter = data.frame()
+  } else { # cas en animation
+    if (input$choix_var1_stats_scatter_plot != "XXXX" | input$choix_var2_stats_scatter_plot != "XXXX"){
+      filtre_df_scatter = moyenne_region_stat %>% 
+        filter(NUTS == input$choix_nuts_stats_scatter_plot) %>%
+        mutate(ANNEE = as.factor(ANNEE))
+      
+      if (input$choix_var1_stats_scatter_plot != "XXXX"){
+        if (input$choix_var2_stats_scatter_plot != "XXXX"){
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot, 
+                   !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
+        } else {
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var1_stats_scatter_plot := input$choix_var1_stats_scatter_plot)
+        }
+      } else {
+        if (input$choix_var2_stats_scatter_plot != "XXXX"){
+          filtre_df_scatter = filtre_df_scatter %>% 
+            select(Country = NOM_PAYS, 
+                   Region = NOM_REGION, 
+                   Year = ANNEE, 
+                   !!label_var2_stats_scatter_plot := input$choix_var2_stats_scatter_plot)
+        } else {
+          filtre_df_scatter = data.frame()
+        }
+      }
+    } else {
+      filtre_df_scatter = data.frame()
+    }
   }
   
   output$table_scatter = renderDataTable(
@@ -85,37 +136,72 @@ observe({
 # == SCATTER PLOT ======================================================================================
 output$plotly_scatter <- renderPlotly({
   
-  # 1. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
-  filtre_df_scatter = moyenne_region_stat %>% 
-    filter(NUTS == input$choix_nuts_stats_scatter_plot &
-             ANNEE %in% input$choix_annee_scatterplot) %>%
-    mutate(ANNEE = as.factor(ANNEE))
   
-  # 2. Ne tracer le graphique que si les deux variables sont choisies
+  # 1. Ne tracer le graphique que si les deux variables sont choisies
   if(input$choix_var1_stats_scatter_plot != 'XXXX' & input$choix_var2_stats_scatter_plot != 'XXXX'){
-    # 2.1. Si on est en mode 2D ...
-    if(input$switch_3d_stats_scatter_plot != 1){
-      
-      filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_stats_scatter_plot),
-                                    y = ~get(input$choix_var2_stats_scatter_plot),
-                                    color = ~PAYS,
-                                    # symbol = ~ANNEE,
-                                    mode = "markers",
-                                    # frame = ~ANNEE,
-                                    colors = "Set3",
-                                    type = 'scatter',
-                                    # Constitution du pop-up (hover)
-                                    text = ~paste("[", PAYS, "/", ANNEE, "] ", NOM_REGION, "\n", 
-                                                  "Value variable 1: ", get(input$choix_var1_stats_scatter_plot), "\n", 
-                                                  "Value variable 2: ", get(input$choix_var2_stats_scatter_plot), 
-                                                  sep = ""),
-                                    hoverinfo = "text") %>%
-        # Renommage des noms des axes (utilisation du label plutot que le code)
-        layout(xaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_stats_scatter_plot])),
-               yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_stats_scatter_plot])))
-      
+    # 1.1. Si on est en mode 2D ...
+    if (input$switch_3d_stats_scatter_plot != 1){
+      if (input$animation_frame_stats_scatter_plot != 1){
+        
+        # 2. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
+        filtre_df_scatter = moyenne_region_stat %>% 
+          filter(NUTS == input$choix_nuts_stats_scatter_plot &
+                   ANNEE %in% input$choix_annee_scatterplot) %>%
+          mutate(ANNEE = as.factor(ANNEE))
+        
+        filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_stats_scatter_plot),
+                                      y = ~get(input$choix_var2_stats_scatter_plot),
+                                      color = ~PAYS,
+                                      # symbol = ~ANNEE,
+                                      mode = "markers",
+                                      # frame = ~ANNEE,
+                                      colors = "Set3",
+                                      type = 'scatter',
+                                      # Constitution du pop-up (hover)
+                                      text = ~paste("[", PAYS, "/", ANNEE, "] ", NOM_REGION, "\n", 
+                                                    "Value variable 1: ", get(input$choix_var1_stats_scatter_plot), "\n", 
+                                                    "Value variable 2: ", get(input$choix_var2_stats_scatter_plot), 
+                                                    sep = ""),
+                                      hoverinfo = "text") %>%
+          # Renommage des noms des axes (utilisation du label plutot que le code)
+          layout(xaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_stats_scatter_plot])),
+                 yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_stats_scatter_plot])))
+      } else {
+        # 1. Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
+        filtre_df_scatter = moyenne_region_stat %>% 
+          filter(NUTS == input$choix_nuts_stats_scatter_plot) %>%
+          mutate(YEAR = as.factor(ANNEE))
+        
+        filtre_df_scatter %>% plot_ly(x = ~get(input$choix_var1_stats_scatter_plot),
+                                      y = ~get(input$choix_var2_stats_scatter_plot),
+                                      color = ~PAYS,
+                                      mode = "markers",
+                                      frame = ~YEAR,
+                                      colors = "Set3",
+                                      type = 'scatter',
+                                      # Constitution du pop-up (hover)
+                                      text = ~paste("[", PAYS, "/", YEAR, "] ", NOM_REGION, "\n", 
+                                                    "Value variable 1: ", get(input$choix_var1_stats_scatter_plot), "\n", 
+                                                    "Value variable 2: ", get(input$choix_var2_stats_scatter_plot), 
+                                                    sep = ""),
+                                      hoverinfo = "text") %>%
+          # Renommage des noms des axes (utilisation du label plutot que le code)
+          layout(xaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var1_stats_scatter_plot])),
+                 yaxis = list(title = names(liste_deroulante_map_applatie[liste_deroulante_map_applatie == input$choix_var2_stats_scatter_plot]))) %>%
+          # Gestion de l'animation (timelapse)
+          animation_opts(
+            frame = 1500, # millisecondes
+            transition = 1500
+          )
+      }
     } else {
       # 2.2. Sinon (mode 3D) ...
+      
+      # Filtrage de la base à représenter (inputs considérés : choix niveaux NUTS)
+      filtre_df_scatter = moyenne_region_stat %>% 
+        filter(NUTS == input$choix_nuts_stats_scatter_plot) %>%
+        mutate(ANNEE = as.factor(ANNEE))
+      
       filtre_df_scatter %>% plot_ly(x = ~ANNEE,
                                     y = ~get(input$choix_var1_stats_scatter_plot),
                                     z = ~get(input$choix_var2_stats_scatter_plot),

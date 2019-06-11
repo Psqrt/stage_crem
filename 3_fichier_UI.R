@@ -272,20 +272,29 @@ contenu_UI <- shinyUI(
                                              selected = "XXXX",
                                              width = "410px"),
                                          
-                                         
-                                         pickerInput(
-                                             inputId = "choix_annee_scatterplot",
-                                             label = "YEARS",
-                                             choices= unique(na.omit(moyenne_region$ANNEE)),
-                                             selected = NA,
-                                             multiple = TRUE,
-                                             options = list(
-                                                 'actions-box' = TRUE)
+                                         conditionalPanel("input.animation_frame_stats_scatter_plot != 1",
+                                                          pickerInput(
+                                                              inputId = "choix_annee_scatterplot",
+                                                              label = "YEARS",
+                                                              choices= unique(na.omit(moyenne_region$ANNEE)),
+                                                              selected = NA,
+                                                              multiple = TRUE,
+                                                              options = list(
+                                                                  'actions-box' = TRUE)
+                                                          )
                                          ),
                                          
                                          materialSwitch(
                                              inputId = "switch_3d_stats_scatter_plot",
                                              label = "3D CHART", 
+                                             value = FALSE,
+                                             right = TRUE,
+                                             status = "success"
+                                         ),
+                                         
+                                         materialSwitch(
+                                             inputId = "animation_frame_stats_scatter_plot",
+                                             label = "TIMELAPSE", 
                                              value = FALSE,
                                              right = TRUE,
                                              status = "success"

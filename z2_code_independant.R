@@ -1,28 +1,38 @@
-###################################################################################################
+########################################################################################################
+# z2_code_independant.R -- Docstring (documentation)
+########################################################################################################
+#           Ce fichier permet de construire la base de données contenant les informations centrales
+#           (moyennes, effectifs, régions, etc.) pour être repris par les fichiers z suivants (z3, z4)
+#           afin d'alimenter l'application Shiny à partir d'une base de données agregées.
+#          
+#           À la fin du processus, les données de grande taille sont supprimées afin d'alléger
+#           la mémoire vive pour la suite du processus de traitement des données.
+########################################################################################################
+
+########################################################################################################
 # Packages
-###################################################################################################
+########################################################################################################
 library(tidyverse) # traitements en tout genre
-library(crayon) # print coloré dans la console
+library(crayon) # affichage coloré dans la console
 library(ade4) # tableau disjonctif complet
 
-
-###################################################################################################
+########################################################################################################
 # Setup global
-###################################################################################################
+########################################################################################################
 
-# Pour résoudre des problèmes d'encodage ...
+# Pour résoudre des problèmes d'encodage sur Windows ...
 if (Sys.info()[1] == "Windows"){
     Sys.setlocale("LC_ALL","English")
 }
 
-# Si on ne lance pas depuis le fichier pilote, executer ceci (la condition n'est pas tout à fait équivalente...)
+# Si on ne lance pas depuis le fichier pilote, executer ceci :
 if (!exists("execution_pilote")){
     importer_carte = 1 # choix : 0 ou 1
-    precision = 60 # choix : 1 ou 60
-    chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif
+    precision = 60 # choix : 1 ou 60 # /!\ L'option precision = 1 n'est plus disponible
+    chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif vers les données de l'enquête
     date_premiere_enquete = 2004
     date_derniere_enquete = 2013
-    nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1
+    nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1 # ne pas toucher
     
     # une période ne doit pas chevaucher une modification de la norme NUTS
     liste_periode = list(c(2004:2005),
@@ -32,6 +42,7 @@ if (!exists("execution_pilote")){
 }
 
 date_debut_code_indep = Sys.time()
+
 cat(green("######################################################################################
 Paramètres d'importation :
     * Importer les fichiers geojson des cartes : ", as.logical(importer_carte), "
@@ -41,11 +52,13 @@ Paramètres d'importation :
 ######################################################################################\n"),
     sep = "")
 
-###################################################################################################
-# Importations
-###################################################################################################
 
-# DONNEES - DICTIONNAIRES =========================================================================
+
+########################################################################################################
+# Importations
+########################################################################################################
+
+# DONNEES - DICTIONNAIRES ==============================================================================
 
 # Importation du dictionnaire - codage avant 2010
 # permet de corriger (harmoniser) le code des pays suivants sur les cartes de 2003 et 2006 :
@@ -62,8 +75,8 @@ dico_enquete_avant_2010 = read.csv(file = "./data/dictionnaire_codage_avant_2010
 dico_enquete_avant_2010 = setNames(dico_enquete_avant_2010$code_carte, 
                                    dico_enquete_avant_2010$code_enquete)
 
-# Importation du dictionnaire - codage après 2010
-# permet de corriger (harmoniser) le code des pays suivants sur les cartes de 2010, 2013 :
+# Importation du dictionnaire - codage entre 2010 et 2013
+# permet de corriger (harmoniser) le code des pays suivants sur les cartes de 2010 (2010, 2011, 2012) :
 # Grêce
 dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre_2010_2013.csv",
                                         sep = ",",
@@ -93,7 +106,7 @@ dico_enquete_croatie_apres_2010 = setNames(dico_enquete_croatie_apres_2010$code_
                                            dico_enquete_croatie_apres_2010$code_enquete)
 
 
-# Importation du dictionnaire - codage Royaume Uni après 2010
+# Importation du dictionnaire - codage Royaume Uni après 2013
 # permet de corriger le cas du Royaume-Uni (Londres plus précisement) 
 dico_enquete_uk_apres_2013 = read.csv(file = "./data/dictionnaire_codage_uk_apres_2013.csv",
                                       sep = ",",
@@ -144,7 +157,7 @@ dico_nom_pays = read.csv(file =  "./data/dico_pays_stats.csv",
                           fileEncoding = "UTF-8")
 cat(green("[...] Terminé !\n"))
 
-# DONNEES - CARTES ================================================================================
+# DONNEES - CARTES =====================================================================================
 
 if (importer_carte == 1){
     cat(blue("Importation des cartes [...]\n"))
@@ -174,7 +187,8 @@ if (importer_carte == 1){
         
         liste_carte = ls()[grep("data_map", ls())]
         
-        ma_func = function(carte){
+        recodage_cartes = function(carte){
+            # Docstring : cette fonction permet de réencoder correctement les caratères en UTF-8
             if (is.factor(carte@data[["NUTS_NAME"]])) {
                 char <- as.character(carte@data[["NUTS_NAME"]])
                 Encoding(char) <- 'UTF-8'
@@ -183,56 +197,52 @@ if (importer_carte == 1){
             }
         }
 
+        data_map2003_nuts0 = recodage_cartes(data_map2003_nuts0)
+        data_map2003_nuts1 = recodage_cartes(data_map2003_nuts1)
+        data_map2003_nuts2 = recodage_cartes(data_map2003_nuts2)
         
+        data_map2006_nuts0 = recodage_cartes(data_map2006_nuts0)
+        data_map2006_nuts1 = recodage_cartes(data_map2006_nuts1)
+        data_map2006_nuts2 = recodage_cartes(data_map2006_nuts2)
         
-        data_map2003_nuts0 = ma_func(data_map2003_nuts0)
-        data_map2003_nuts1 = ma_func(data_map2003_nuts1)
-        data_map2003_nuts2 = ma_func(data_map2003_nuts2)
+        data_map2010_nuts0 = recodage_cartes(data_map2010_nuts0)
+        data_map2010_nuts1 = recodage_cartes(data_map2010_nuts1)
+        data_map2010_nuts2 = recodage_cartes(data_map2010_nuts2)
         
-        data_map2006_nuts0 = ma_func(data_map2006_nuts0)
-        data_map2006_nuts1 = ma_func(data_map2006_nuts1)
-        data_map2006_nuts2 = ma_func(data_map2006_nuts2)
+        data_map2013_nuts0 = recodage_cartes(data_map2013_nuts0)
+        data_map2013_nuts1 = recodage_cartes(data_map2013_nuts1)
+        data_map2013_nuts2 = recodage_cartes(data_map2013_nuts2)
         
-        data_map2010_nuts0 = ma_func(data_map2010_nuts0)
-        data_map2010_nuts1 = ma_func(data_map2010_nuts1)
-        data_map2010_nuts2 = ma_func(data_map2010_nuts2)
-        
-        data_map2013_nuts0 = ma_func(data_map2013_nuts0)
-        data_map2013_nuts1 = ma_func(data_map2013_nuts1)
-        data_map2013_nuts2 = ma_func(data_map2013_nuts2)
-        
-        data_map2016_nuts0 = ma_func(data_map2016_nuts0)
-        data_map2016_nuts1 = ma_func(data_map2016_nuts1)
-        data_map2016_nuts2 = ma_func(data_map2016_nuts2)
+        data_map2016_nuts0 = recodage_cartes(data_map2016_nuts0)
+        data_map2016_nuts1 = recodage_cartes(data_map2016_nuts1)
+        data_map2016_nuts2 = recodage_cartes(data_map2016_nuts2)
 
         
-
-        # FRONTIERES (remarque : les frontires sont inutiles pour ce fichier, mais au moins a vite d'importer manuellement depuis shiny)
+        # FRONTIERES (remarque : les frontires sont inutiles pour ce fichier, mais au moins on évite d'importer manuellement depuis shiny)
         data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
         data_map2006_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2006_4326_LEVL_0.geojson", what = "sp")
         data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    } else if (precision == 1){
-        # DONNEES - CARTE NUTS2
-        data_map2003_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
-        data_map2006_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_2.geojson", what = "sp")
-        data_map2010_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_2.geojson", what = "sp")
-        data_map2013_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_2.geojson", what = "sp")
-        data_map2016_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_2.geojson", what = "sp")
-        # DONNEES - CARTE NUTS1
-        data_map2003_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_1.geojson", what = "sp")
-        data_map2006_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_1.geojson", what = "sp")
-        data_map2010_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_1.geojson", what = "sp")
-        data_map2013_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_1.geojson", what = "sp")
-        data_map2016_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_1.geojson", what = "sp")
-        # DONNEES - CARTE NUTS0
-        data_map2003_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_0.geojson", what = "sp")
-        data_map2006_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_0.geojson", what = "sp")
-        data_map2010_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_0.geojson", what = "sp")
-        data_map2013_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_0.geojson", what = "sp")
-        data_map2016_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_0.geojson", what = "sp")
+    } else if (precision == 1){ # /!\ Fonctionnalité non maintenue car inutile (la précision 60 est largement correcte)
+        # # DONNEES - CARTE NUTS2
+        # data_map2003_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
+        # data_map2006_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_2.geojson", what = "sp")
+        # data_map2010_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_2.geojson", what = "sp")
+        # data_map2013_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_2.geojson", what = "sp")
+        # data_map2016_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_2.geojson", what = "sp")
+        # # DONNEES - CARTE NUTS1
+        # data_map2003_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_1.geojson", what = "sp")
+        # data_map2006_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_1.geojson", what = "sp")
+        # data_map2010_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_1.geojson", what = "sp")
+        # data_map2013_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_1.geojson", what = "sp")
+        # data_map2016_nuts1 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_1.geojson", what = "sp")
+        # # DONNEES - CARTE NUTS0
+        # data_map2003_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_0.geojson", what = "sp")
+        # data_map2006_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2006_4326_LEVL_0.geojson", what = "sp")
+        # data_map2010_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2010_4326_LEVL_0.geojson", what = "sp")
+        # data_map2013_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2013_4326_LEVL_0.geojson", what = "sp")
+        # data_map2016_nuts0 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2016_4326_LEVL_0.geojson", what = "sp")
     }
     cat(green("[...] Terminé !\n"))
 } else {
@@ -240,9 +250,10 @@ if (importer_carte == 1){
 }
 
 
-###################################################################################################
+
+########################################################################################################
 # Importations des données enquêtes puis traitement
-###################################################################################################
+########################################################################################################
 
 # Création des dataframes vides pour accueillir les résultats finaux (mise à jour par itération (boucles))
 df_final_menage = data.frame()
@@ -264,8 +275,10 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     
     # Obtention de la liste des fichiers de données enquêtes (les fichiers zip - donc ne pas dezipper !)
     liste_nom_fichier = list.files(chemin_repertoire_donnees)
-    liste_nom_fichier = liste_nom_fichier[grep(annee_enquete, liste_nom_fichier)] # on recherche les fichiers qui contiennent l'année en cours
-    liste_nom_fichier = substr(liste_nom_fichier, 1, nchar(liste_nom_fichier)-4) # on enleve l'extension .zip des fichiers pour récupérer uniquement le nom de fichier
+    # on recherche les fichiers qui contiennent l'année en cours :
+    liste_nom_fichier = liste_nom_fichier[grep(annee_enquete, liste_nom_fichier)]
+    # on enleve l'extension .zip des fichiers pour récupérer uniquement le nom de fichier :
+    liste_nom_fichier = substr(liste_nom_fichier, 1, nchar(liste_nom_fichier)-4) 
     
     
     # Création des dataframes vide pour accueillir les importations (concaténation au fur et à mesure des itérations)
@@ -318,12 +331,12 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     
     
     
-    ###################################################################################################
+    ####################################################################################################
     # Jointures préliminaires 
-    ###################################################################################################
+    ####################################################################################################
     cat(blue("Jointure entre couples de fichiers (registre avec réponses enquête) [...]\n"))
     
-    # TRAITEMENTS PRÉLIMINAIRES POUR LE CÔTÉ MENAGES ==================================================
+    # TRAITEMENTS PRÉLIMINAIRES POUR LE CÔTÉ MENAGES ===================================================
     # Fusion table H avec table D à partir des identifiants
     # HB030 : HouseholdID / Fichier H <---> DB030 : HouseholdID / Fichier D
     # HB020 : Country / Fichier H <---> DB020 : Country / Fichier D
@@ -388,7 +401,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     cat(green("[...] Terminé !\n"))
     
     
-    # TRAITEMENTS PRÉLIMINAIRES POUR LE CÔTÉ INDIVIDUS ================================================
+    # TRAITEMENTS PRÉLIMINAIRES POUR LE CÔTÉ INDIVIDUS =================================================
     # Fusion table R avec table P à partir des identifiants
     # RB020 : Country / Fichier R  <---> PB020 : Country / Fichier P
     # RB020 : Personal ID / Fichier R  <---> PB030 : Personal ID / Fichier P
@@ -401,7 +414,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
                           "RB010" = "PB010"))
     cat(green("[...] Terminé !\n"))
     
-    # La logique du traitement est exactement la même que pour les ménages ............................
+    # La logique du traitement est exactement la même que pour les ménages .............................
     # FILTRAGE VARIABLES PRESENTES DANS L'ENQUETE EN COURS EN FONCTION DE CELLES RETENUES (DICTIONNAIRE)
     # FICHIER R ET P
     
@@ -569,6 +582,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             ungroup()
         cat(green("[...] Terminé !\n"))
         
+        
         ###################################################################################################
         # Récupération des régions de la carte ============================================================
         # Création du socle ordonné pour recevoir les données =============================================
@@ -594,6 +608,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         moyenne_region_personne = liste_ids %>%
             left_join(moy_region_personne, by = "REGION")
         cat(green("[...] Terminé !\n"))
+        
         
         ###################################################################################################
         # Gestion du cas de Londres en 2013 (2 valeurs pour 5 régions)
@@ -622,7 +637,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
                 ungroup() 
             # (1) : grâce au dictionnaire d'encodage, on n'a pas deux valeurs pour Londres mais qu'une seule
             #       par conséquent, il s'agit d'injecter cette unique ligne aux 5 régions constituant Londres
-            
+              
             # on duplique la liste des moyennes autant de fois qu'il y a de régions (polygones) pour Londres
             if (nrow(moyenne_londres) != 0){ 
                 moyenne_londres = moyenne_londres %>% 
@@ -645,6 +660,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             # (3) : On utilise le numéro des lignes pour positionner Londres (respectivement à l'ordre sur les cartes)
         }
         cat(green("[...] Terminé !\n"))
+        
         
         ###################################################################################################
         # Traitements finaux
@@ -703,6 +719,7 @@ df_final2_personne = df_annee_personne %>%
     select(PAYS, REGION, NOM_REGION, NUTS, ANNEE, everything()) %>%
     mutate_at(vars(contains("_na")), funs(round(./NB_OBS, 4)))
 cat(green("[...] Terminé !\n"))
+
 
 ###################################################################################################
 # Partie sur le traitement par périodes
@@ -789,6 +806,7 @@ for (i in c(1:length(liste_periode))){
 }
 
 
+
 ###################################################################################################
 # Préparations finales avant exportation de la base finale pour shiny
 ###################################################################################################
@@ -816,6 +834,7 @@ df_final3_tot = df_final3_menage %>%
 # (2) : on retire les colonnes d'identification pour éviter la redondance après jointure.
 cat(green("[...] Terminé !\n"))
 
+
 ###################################################################################################
 # Exportation table finale
 ###################################################################################################
@@ -833,6 +852,7 @@ cat(green("[...] Terminé !\n"))
 #           |      IDENTIFIANTS      |       MENAGES      |     INDIVIDUS       |
 #           |                        |    SELON PERIODE   |   SELON PERIODE     |
 #           |-------------------------------------------------------------------|
+
 
 # Exportation de la table finale qui servira de base de départ sur shiny
 cat(blue("Exportation de la table finale [...]\n"))
@@ -886,11 +906,13 @@ df_final3_tot_stat = df_final3_tot %>%
     rename(NOM_PAYS = label) %>% 
     select(PAYS, NOM_PAYS, REGION, NOM_REGION, NUTS, ANNEE, PERIODE, ANNEES_PRESENTES, NB_MENAGE, NB_PERSONNE, everything())
 
+
 # les régions sont harmonisées en fonction du temps maintenant, la base est opérationnelle pour shiny.
 write.csv(df_final3_tot_stat,
           file = "./data/finaux/donnees_stats.csv",
           row.names = F,
           fileEncoding = "UTF-8")
+
 
 # On récupère la liste des régions afin d'alimenter les listes déroulantes de l'UI de l'application.
 liste_nuts0_stat = df_final3_tot_stat %>% 
@@ -915,6 +937,7 @@ liste_nuts2_stat = df_final3_tot_stat %>%
     mutate(NOM_REGION = paste("[", substr(REGION, 1, 2), "] ", NOM_REGION, sep = "")) %>% 
     arrange(NOM_REGION)
 
+# exportation des 3 listes créées
 write.csv(liste_nuts0_stat,
           file = "./data/finaux/liste_nuts0_stat.csv",
           row.names = F,
