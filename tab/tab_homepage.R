@@ -3,5 +3,53 @@
 #      OUTPUT : Élément de l'interface renvoyé par le coté serveur selon les inputs
 #      PANEL : Élément de l'interface accueillant les inputs ou les outputs.
 
-tab_homepage <- tabPanel("") # Chaine vide pour éviter un pop-up inutile lorsque le curseur est dans le body.
-                      
+tab_homepage <- tabPanel("",
+                         fluidRow(
+                             tags$div(id = "homepage_contents", 
+                                      
+                                      box(
+                                          width = 12,
+                                          solidHeader = TRUE,
+                                          status = "primary",
+                                          
+                                          column(width = 8,
+                                                 
+                                                 htmlOutput("presentation_homepage")),
+                                          column(width = 4,
+                                                 
+                                                 # fluidRow(
+                                                 htmlOutput("presentation_homepage_eusilc_titre"),
+                                                 htmlOutput("presentation_homepage_img"),
+                                                 # ),
+                                                 fluidRow(
+                                                     valueBox(value = 2003, 
+                                                              subtitle = "Creation date", 
+                                                              icon = icon("calendar-alt"),
+                                                              color = "yellow",
+                                                              width = 6),
+                                                     valueBox(value = 35, 
+                                                              subtitle = "Countries surveyed", 
+                                                              icon = icon("globe"),
+                                                              color = "orange",
+                                                              width = 6)
+                                                 ),
+                                                 
+                                                 fluidRow(
+                                                     valueBox(value = "> 130,000",
+                                                              subtitle = "Households surveyed", 
+                                                              icon = icon("home"),
+                                                              color = "blue",
+                                                              width = 6),
+                                                     valueBox(value = "> 270,000", 
+                                                              subtitle = "People surveyed", 
+                                                              icon = icon("user"),
+                                                              color = "purple",
+                                                              width = 6)
+                                                 ),
+                                                 htmlOutput("presentation_homepage_survey_text")
+                                                 
+                                          )
+                                      )
+                             )
+                         )
+)

@@ -182,3 +182,14 @@
 .inner.open {
   max-height: 300px !important;
 }
+
+#homepage_contents {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+/*.content-wrapper {
+  min-height: 1300px !important;
+}*/
