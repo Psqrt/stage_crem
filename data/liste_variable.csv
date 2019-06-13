@@ -18,12 +18,9 @@ RB031,Year of immigration
 PB140,Year of birth
 PB150,Sex
 PB190,Marital status
-PB220A,Citizenship 1
-PB220B,Citizenship 2
 PE010,Current education activity
 PE020,ISCED level currently attended
 PE040,Highest ISCED level attained
-HC010T4,Food at home
 RB170,Main activity status during the incoming reference period
 RB210,Basic activity status
 PL015,Wheter person has ever worked
@@ -36,5 +33,3 @@ PL160,Change of job since last year
 PL200,Number of years spent in paid work
 HY010,Total household gross income
 HY020,Total disposable household income
-PC040T4,Personal Regular savings (in a typical month)
-HC050T4,Household Regular savings (in a typical month)

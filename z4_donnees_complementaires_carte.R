@@ -28,6 +28,8 @@ dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre
 dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte, 
                                         dico_enquete_entre_2010_2013$code_enquete)
 
+# CODEBOOK-REFERENCE03 : importer les nouveaux dictionnaires et faire un setNames comme montré plus haut ici
+
 donnees_finale = read.csv(file =  "./data/finaux/donnees.csv",
                           sep = ",",
                           header = T,
@@ -230,14 +232,16 @@ df_final_entre_2010_2013 = df_final %>%
     filter(ANNEE >= 2010 & ANNEE < 2013) %>% 
     mutate(REGION = recode(REGION, !!!dico_enquete_entre_2010_2013))
 
-# récupération des lignes après 2013 pour la concaténation
-df_final_ap2013 = df_final %>% 
-    filter(ANNEE >= 2013)
+# récupération des lignes après 2013 et avant 2016 pour la concaténation
+df_final_2013_2016 = df_final %>% 
+    filter(ANNEE >= 2013 & ANNEE < 2016) 
+
+# CODEBOOK-REFERENCE01 : refaire le df juste en haut pour 2016-...
 
 # concaténation
 df_final_corrige = df_final_av2010 %>% 
     bind_rows(df_final_entre_2010_2013) %>% 
-    bind_rows(df_final_ap2013)
+    bind_rows(df_final_2013_2016) # CODEBOOK-REFERENCE01 : ajouter les nouveaux df (ex : df_final_2016_2020)
 
 
 # jointure avec la base totale des moyennes

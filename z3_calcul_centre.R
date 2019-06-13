@@ -33,7 +33,7 @@ for (nuts in c(0:2)){
             annee_carte = 2010
         } else if (annee_enquete >= 2013 & annee_enquete < 2016){
             annee_carte = 2013
-        } else {
+        } else { # CODEBOOK-REFERENCE01 : transformer le else en if else si nécessaire pour les prochaines normes
             annee_carte = 2016
         }
         choix_carte = paste0("data_map", annee_carte, "_nuts", nuts, sep = "")

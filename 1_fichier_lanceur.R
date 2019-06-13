@@ -1,6 +1,6 @@
 options(encoding = "UTF-8")
 if (Sys.info()[1] == "Windows"){
-    Sys.setlocale("LC_ALL","English")
+    Sys.setlocale("LC_ALL","Greek")
 }
 
 source('2_importations.R', encoding = "UTF-8")

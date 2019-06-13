@@ -27,7 +27,7 @@ if (Sys.info()[1] == "Windows"){
 
 # Si on ne lance pas depuis le fichier pilote, executer ceci :
 if (!exists("execution_pilote")){
-    importer_carte = 1 # choix : 0 ou 1
+    importer_carte = 0 # choix : 0 ou 1
     precision = 60 # choix : 1 ou 60 # /!\ L'option precision = 1 n'est plus disponible
     chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif vers les données de l'enquête
     date_premiere_enquete = 2004
@@ -92,6 +92,8 @@ dico_enquete_entre_2010_2013 = read.csv(file = "./data/dictionnaire_codage_entre
 dico_enquete_entre_2010_2013 = setNames(dico_enquete_entre_2010_2013$code_carte, 
                                         dico_enquete_entre_2010_2013$code_enquete)
 
+# CODEBOOK-REFERENCE03 : importer les nouveaux dictionnaires et faire un setNames comme montré plus haut ici
+
 # Importation du dictionnaire - codage Croatie après 2010
 # permet de corriger le cas de la Croatie
 dico_enquete_croatie_apres_2010 = read.csv(file = "./data/dictionnaire_codage_croatie_apres_2010.csv",
@@ -151,10 +153,10 @@ liste_variable_quali = read.csv(file = "./data/liste_variable_quali.csv",
 
 # liste des pays (code et nom complet)
 dico_nom_pays = read.csv(file =  "./data/dico_pays_stats.csv",
-                          sep = ",",
-                          header = T,
-                          stringsAsFactors = F,
-                          fileEncoding = "UTF-8")
+                         sep = ",",
+                         header = T,
+                         stringsAsFactors = F,
+                         fileEncoding = "UTF-8")
 cat(green("[...] Terminé !\n"))
 
 # DONNEES - CARTES =====================================================================================
@@ -168,22 +170,25 @@ if (importer_carte == 1){
         data_map2010_nuts2 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2010_4326_LEVL_2.geojson", what = "sp")
         data_map2013_nuts2 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2013_4326_LEVL_2.geojson", what = "sp")
         data_map2016_nuts2 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2016_4326_LEVL_2.geojson", what = "sp")
+        # CODEBOOK-REFERENCE02 : ajouter le fichier des polygones (RG) en NUTS 2 pour la nouvelle norme
         # DONNEES - CARTE NUTS1
         data_map2003_nuts1 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_20M_2003_4326_LEVL_1.geojson", what = "sp")
         data_map2006_nuts1 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2006_4326_LEVL_1.geojson", what = "sp")
         data_map2010_nuts1 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2010_4326_LEVL_1.geojson", what = "sp")
         data_map2013_nuts1 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2013_4326_LEVL_1.geojson", what = "sp")
         data_map2016_nuts1 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2016_4326_LEVL_1.geojson", what = "sp")
+        # CODEBOOK-REFERENCE02 : ajouter le fichier des polygones (RG) en NUTS 1 pour la nouvelle norme
         # DONNEES - CARTE NUTS0
         data_map2003_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_20M_2003_4326_LEVL_0.geojson", what = "sp")
         data_map2006_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2006_4326_LEVL_0.geojson", what = "sp")
         data_map2010_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2016_4326_LEVL_0.geojson", what = "sp")
-
-
-
-
+        # CODEBOOK-REFERENCE02 : ajouter le fichier des polygones (RG) en NUTS 0 pour la nouvelle norme
+        
+        
+        
+        
         
         liste_carte = ls()[grep("data_map", ls())]
         
@@ -196,7 +201,7 @@ if (importer_carte == 1){
                 return(carte)
             }
         }
-
+        
         data_map2003_nuts0 = recodage_cartes(data_map2003_nuts0)
         data_map2003_nuts1 = recodage_cartes(data_map2003_nuts1)
         data_map2003_nuts2 = recodage_cartes(data_map2003_nuts2)
@@ -216,7 +221,9 @@ if (importer_carte == 1){
         data_map2016_nuts0 = recodage_cartes(data_map2016_nuts0)
         data_map2016_nuts1 = recodage_cartes(data_map2016_nuts1)
         data_map2016_nuts2 = recodage_cartes(data_map2016_nuts2)
-
+        
+        # CODEBOOK-REFERENCE02 : appliquer le bloc des 3 lignes pour la nouvelle norme
+        
         
         # FRONTIERES (remarque : les frontires sont inutiles pour ce fichier, mais au moins on évite d'importer manuellement depuis shiny)
         data_map2003_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_20M_2003_4326_LEVL_0.geojson", what = "sp")
@@ -224,6 +231,7 @@ if (importer_carte == 1){
         data_map2010_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2010_4326_LEVL_0.geojson", what = "sp")
         data_map2013_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2013_4326_LEVL_0.geojson", what = "sp")
         data_map2016_nuts0_front = geojsonio::geojson_read("./data/map1_60/NUTS_BN_60M_2016_4326_LEVL_0.geojson", what = "sp")
+        # CODEBOOK-REFERENCE02 : ajouter le fichier des frontières (BN) pour la nouvelle norme
     } else if (precision == 1){ # /!\ Fonctionnalité non maintenue car inutile (la précision 60 est largement correcte)
         # # DONNEES - CARTE NUTS2
         # data_map2003_nuts2 = geojsonio::geojson_read("./data/map1_1/NUTS_RG_01M_2003_4326_LEVL_2.geojson", what = "sp")
@@ -371,8 +379,10 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     liste_variable_binaire_hd_presente = intersect(colnames(df_menage_t), liste_variable_binaire_hd)
     liste_variable_quali_hd_presente = intersect(colnames(df_menage_t), liste_variable_quali_hd)
     
+    
+    
     # SUPPRESSION DES VALEURS PARASITES PUIS RECODAGE DES MODALITES
-    cat(blue("Nettoyage de la base restrainte (valeurs parasites sans signification) [...]\n"))
+    cat(blue("Nettoyage de la base restreinte (valeurs parasites sans signification) [...]\n"))
     df_menage_t = df_menage_t %>% 
         # Remarque : sera appelée variable binaire, une variable issue d'une question amenant à répondre OUI ou NON uniquement.
         #            Ainsi, la variable Sexe sera considérée comme qualitative, bien qu'elle ne prenne que deux modalités.
@@ -389,6 +399,20 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     #                  Par conséquent, les 0 apparus dans la transformation juste en haut ne sont pas concernés ici.
     #                  Le 0 n'a pas de sens pour les variables qualitatives (les modalités commençent à partir de 1).
     cat(green("[...] Terminé !\n"))
+    
+    
+    # bac à sable
+    for (variable in liste_variable_quali_hd_presente){
+        if (sum(is.na(df_menage_t[, variable])) == nrow(df_menage_t)){
+            liste_variable_quali_hd_presente = liste_variable_quali_hd_presente[liste_variable_quali_hd_presente != variable]
+        }
+    }
+    for (variable in liste_variable_binaire_hd_presente){
+        if (sum(is.na(df_menage_t[, variable])) == nrow(df_menage_t)){
+            liste_variable_binaire_hd_presente = liste_variable_binaire_hd_presente[liste_variable_binaire_hd_presente != variable]
+        }
+    }
+    # fin bac à sable
     
     cat(blue("Tableau disjonctif complet [...]\n"))
     # CREATION ET RAJOUT DU TABLEAU DISJONCTIF DANS LA BASE INITIALE (en [2]) 
@@ -441,6 +465,22 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         mutate(PE040 = as.character(as.numeric(PE040) - 1))
     cat(green("[...] Terminé !\n"))
     
+    
+    # bac à sable
+    for (variable in liste_variable_quali_rp_presente){
+        if (sum(is.na(df_personne_t[, variable])) == nrow(df_personne_t)){
+            liste_variable_quali_rp_presente = liste_variable_quali_rp_presente[liste_variable_quali_rp_presente != variable]
+        }
+    }
+    for (variable in liste_variable_binaire_rp_presente){
+        if (sum(is.na(df_personne_t[, variable])) == nrow(df_personne_t)){
+            liste_variable_binaire_rp_presente = liste_variable_binaire_rp_presente[liste_variable_binaire_rp_presente != variable]
+        }
+    }
+    # fin bac à sable
+    
+    
+    
     cat(blue("Tableau disjonctif complet [...]\n"))
     # CREATION ET RAJOUT DU TABLEAU DISJONCTIF DANS LA BASE INITIALE EN SUPPRIMANT LES VARIABLES QUALITATIVES CORRESPONDANTES AVANT DISJONCTION
     df_personne_t = df_personne_t %>% 
@@ -467,7 +507,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             annee_carte = 2010
         } else if (annee_enquete >= 2013 & annee_enquete < 2016){
             annee_carte = 2013
-        } else {
+        } else { # CODEBOOK-REFERENCE01 : transformer le else en else if pour les nouvelles normes
             annee_carte = 2016
         }
         
@@ -499,16 +539,18 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         }
         
         # Recodage des regions pour etre conforme a la norme en vigueur ===================================
-        # Cas spécial ou il ne s'agit pas simplement d'un problème de code, mais plutôt un nombre
+        # Cas spécial où il ne s'agit pas simplement d'un problème de code, mais plutôt un nombre
         # différent entre l'enquête et les données de la carte. Ce problème ne concerne que (actuellement)
         # la Croatie et le Royaume-Uni (deux régions dans les enquêtes alors que la carte n'en a qu'une). 
         if (nuts == 2){
-            if (annee_carte >= 2010){ #NUTS 2 CROATIE
-                cat(blue("Recodage des régions pour le cas des NUTS2 après 2010 de la Croatie [...]\n"))
+            if (annee_carte >= 2010 & annee_carte < 2016){ #NUTS 2 CROATIE
+                # CODEBOOK-REFERENCE01 : vérifier si ce correctif doit s'appliquer avec la norme de 2016, et les suivantes
+                cat(blue("Recodage des régions pour le cas des NUTS2 après 2010 et avant 2016 de la Croatie [...]\n"))
                 df_menage_t_copie$REGION = recode(df_menage_t_copie$REGION, !!!dico_enquete_croatie_apres_2010)
                 cat(green("[...] Terminé !\n"))
             }
-            if (annee_carte >= 2013){ #NUTS 2 ROYAUME UNI
+            if (annee_carte >= 2013 & annee_carte < 2016){ #NUTS 2 ROYAUME UNI
+                # CODEBOOK-REFERENCE01 : vérifier si ce correctif doit s'appliquer avec la norme de 2016, et les suivantes
                 cat(blue("Recodage des régions pour le cas NUTS2 après 2013 du Royaume-Uni [...]\n"))
                 df_menage_t_copie$REGION = recode(df_menage_t_copie$REGION, !!!dico_enquete_uk_apres_2013)
                 cat(green("[...] Terminé !\n"))
@@ -516,7 +558,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         }
         
         # Recodage des regions pour etre conforme a la norme en vigueur ===================================
-        # Cas ou il s'agit de recoder une région pour corriger le problème.
+        # Cas où il s'agit de recoder une région pour corriger le problème.
         if (annee_carte < 2010){
             cat(blue("Recodage des régions pour avant 2010 [...]\n"))
             df_menage_t_copie = df_menage_t_copie %>%
@@ -533,7 +575,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             df_personne_t_copie = df_personne_t_copie %>%
                 mutate(REGION = recode(REGION, !!!dico_enquete_entre_2010_2013))
             cat(green("[...] Terminé !\n"))
-        } else {
+        } else { # CODEBOOK-REFERENCE01 : transformer le else en else if pour les nouvelles normes
             # peut-être du nouveau pour 2016
         }
         
@@ -614,8 +656,9 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         # Gestion du cas de Londres en 2013 (2 valeurs pour 5 régions)
         ###################################################################################################
         
-        cat(blue("Gestion du cas particulier de Londres après 2013 [...]\n"))
-        if (nuts == 2 & annee_carte >= 2010){ # le cas de Londres n'arrive qu'après 2010
+        cat(blue("Gestion du cas particulier de Londres après 2010 [...]\n"))
+        # CODEBOOK-REFERENCE01 : vérifier si ce correctif doit s'appliquer avec la norme de 2016, et les suivantes
+        if (nuts == 2 & annee_carte >= 2010 & annee_carte < 2016){ # le cas de Londres n'arrive qu'après 2010
             liste_ids_londres = liste_ids %>% 
                 data.frame %>% 
                 rownames_to_column() %>% # (1)
@@ -637,7 +680,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
                 ungroup() 
             # (1) : grâce au dictionnaire d'encodage, on n'a pas deux valeurs pour Londres mais qu'une seule
             #       par conséquent, il s'agit d'injecter cette unique ligne aux 5 régions constituant Londres
-              
+            
             # on duplique la liste des moyennes autant de fois qu'il y a de régions (polygones) pour Londres
             if (nrow(moyenne_londres) != 0){ 
                 moyenne_londres = moyenne_londres %>% 
@@ -685,11 +728,11 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
         cat(green("[...] Terminé !\n"))
         
         # mise a jour de la base finale par simple concaténation verticale.
-        df_annee_menage <<- df_annee_menage %>% 
+        df_annee_menage <- df_annee_menage %>% 
             bind_rows(moyenne_region_menage)
         cat(green("La base centrale des ménages (annee) a été correctement mise à jour !\n"))
         
-        df_annee_personne <<- df_annee_personne %>% 
+        df_annee_personne <- df_annee_personne %>% 
             bind_rows(moyenne_region_personne)
         cat(green("La base centrale des individus (annee) a été correctement mise à jour !\n"))
     } # puis on passe au prochain NUTS, sinon [...]

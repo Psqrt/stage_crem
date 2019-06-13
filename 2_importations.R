@@ -129,7 +129,7 @@ liste_tout_nuts_stat = c(liste_nuts0_stat, liste_nuts1_stat, liste_nuts2_stat)
 ### Cartes ###
 
 
-if (1 == 0){
+if (1 == 0){ # CODEBOOK-REFERENCE02 : importer les nouvelles cartes
     # DONNEES - CARTE NUTS2
     data_map2003_nuts2 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_20M_2003_4326_LEVL_2.geojson", what = "sp")
     data_map2006_nuts2 = geojsonio::geojson_read("./data/map1_60/NUTS_RG_60M_2006_4326_LEVL_2.geojson", what = "sp")

@@ -27,10 +27,11 @@ L'application est divisée en plusieurs modules. On reviendra en détail sur le 
 
 ### Documentations
 
-* Principes des fichiers : https://docs.google.com/document/d/1UeIhfIV38mr4K_PZTa-xjOKXBe6fFifRs1FfoNluJQU/edit?
+* Principes des fichiers : https://docs.google.com/document/d/1UeIhfIV38mr4K_PZTa-xjOKXBe6fFifRs1FfoNluJQU/edit
 * Interfaces : à venir
-* Réactivité : https://docs.google.com/document/d/1R8AMLcA9KS600azbpev7uwxHTUvyO0Xn3mJUlZBkdyg/edit?
+* Réactivité : https://docs.google.com/document/d/1R8AMLcA9KS600azbpev7uwxHTUvyO0Xn3mJUlZBkdyg/edit
 * Illustrations : https://github.com/Psqrt/stage_crem/tree/master/rapports/documentation
+* Mise à jour de la BDD : https://docs.google.com/document/d/1THSaKY_Q7RekLYWIXQsuSpedLni99NUl7MwZrjDPXzw/edit
 ## Données
 * Données de l'enquête : https://ec.europa.eu/eurostat/fr/web/microdata/statistics-on-income-and-living-conditions
 * Données GIS : https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts
