@@ -28,7 +28,7 @@ tab_homepage <- tabPanel("",
                                                               color = "yellow",
                                                               width = 6),
                                                      valueBox(value = 35, 
-                                                              subtitle = "Countries surveyed", 
+                                                              subtitle = "Countries surveyed in 2019", 
                                                               icon = icon("globe"),
                                                               color = "orange",
                                                               width = 6)
