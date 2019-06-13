@@ -19,7 +19,7 @@
 # Setup global
 ########################################################################################################
 execution_pilote = 1         # indicateur pour distinguer si on lance depuis le fichier pilote ou non
-verification_packages = 0    # vérifier ou non les packages installés sur l'ordinateur
+verification_packages = 1    # vérifier ou non les packages installés sur l'ordinateur
 importer_carte = 1           # choix : 0 ou 1
 precision = 60               # choix : 1 ou 60 (l'option 1 n'est plus disponible, ne pas changer 60)
 chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif vers les données de l'enquête
