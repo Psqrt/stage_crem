@@ -11,4 +11,3 @@ shinyApp(
     ui = contenu_UI,
     server = contenu_server
 )
-
