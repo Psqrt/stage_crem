@@ -77,12 +77,15 @@ liste_dico_pays_stats = setNames(dico_pays_stats$code,
 
 # Liste de toutes les variables retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 0
 source("./extra/liste_deroulante_map.R")$values
-liste_reduite = liste_deroulante_map[names(liste_deroulante_map) %>% substr(2, 2) == "H"]
+
+# On retire les variables qui n'existent pas dans la base de données
+liste_deroulante_map = liste_deroulante_map[substr(names(liste_deroulante_map), 2, 6) %in% substr(names(moyenne_region), 1, 5)]
 
 # Liste de toutes les variables H retenues (avec leurs labels) pour alimenter les listes déroulantes en NUTS 1 ou 2
 # car les variables R et P ne sont pas renseignées pour les régions NUTS 1 et 2
 # c'est-à-dire qu'on ne connait pas la région d'un individu (contrairement à la région d'un ménage qui est renseignée)
-liste_deroulante_map_reduite = liste_deroulante_map[names(liste_deroulante_map) %>% substr(2, 2) == "H"]
+liste_reduite = liste_deroulante_map[names(liste_deroulante_map) %>% substr(2, 2) == "H"]
+
 
 
 # Applatissement de la liste (càd transformer la liste de listes en une liste uniquement (pas de profondeur))

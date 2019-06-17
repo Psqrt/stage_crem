@@ -19,7 +19,6 @@ tab_homepage <- tabPanel("",
                                                  
                                                  # fluidRow(
                                                  htmlOutput("presentation_homepage_eusilc_titre"),
-                                                 htmlOutput("presentation_homepage_img"),
                                                  # ),
                                                  fluidRow(
                                                      valueBox(value = 2003, 
@@ -46,6 +45,8 @@ tab_homepage <- tabPanel("",
                                                               color = "purple",
                                                               width = 6)
                                                  ),
+                                                 
+                                                 # htmlOutput("presentation_homepage_img"),
                                                  htmlOutput("presentation_homepage_survey_text")
                                                  
                                           )

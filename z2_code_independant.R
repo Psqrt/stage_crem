@@ -407,6 +407,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             liste_variable_quali_hd_presente = liste_variable_quali_hd_presente[liste_variable_quali_hd_presente != variable]
         }
     }
+    
     for (variable in liste_variable_binaire_hd_presente){
         if (sum(is.na(df_menage_t[, variable])) == nrow(df_menage_t)){
             liste_variable_binaire_hd_presente = liste_variable_binaire_hd_presente[liste_variable_binaire_hd_presente != variable]
@@ -472,6 +473,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
             liste_variable_quali_rp_presente = liste_variable_quali_rp_presente[liste_variable_quali_rp_presente != variable]
         }
     }
+    
     for (variable in liste_variable_binaire_rp_presente){
         if (sum(is.na(df_personne_t[, variable])) == nrow(df_personne_t)){
             liste_variable_binaire_rp_presente = liste_variable_binaire_rp_presente[liste_variable_binaire_rp_presente != variable]
@@ -876,6 +878,19 @@ df_final3_tot = df_final3_menage %>%
 #       jointure est en fait une concaténation horizontale (jointure sur le numéro de ligne)
 # (2) : on retire les colonnes d'identification pour éviter la redondance après jointure.
 cat(green("[...] Terminé !\n"))
+
+
+# on retire les variables qui ne présentent que des NA comme moyenne # BAC À SABLE
+
+disparu = df_final3_tot %>% 
+    select_if(function(col) sum(is.na(col)) == nrow(df_final3_tot))
+
+disparu = paste(str_remove_all(names(disparu), "_moy"), "_na", sep = "")
+
+df_final3_tot = df_final3_tot %>%
+    select_if(function(col) sum(is.na(col)) != nrow(df_final3_tot)) %>% 
+    select(-!!disparu)
+
 
 
 ###################################################################################################
