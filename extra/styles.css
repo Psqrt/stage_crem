@@ -6,7 +6,12 @@
 	bottom: -15px;
 	right: 0px;
   width: 100%;
-	overflow: hidden;
+  height: 50vh
+	overflow: hidden !important;
+}
+
+.leaflet-container {
+  overflow: hidden;
 }
 
 .leaflet-top .leaflet-left {
@@ -134,12 +139,7 @@
 }
 
 #deuxieme_fluidrow_stat {
-  margin-right: 15px;
-}
-
-#parametre_ts_stat {
-  padding-top : 30px;
-  padding-left : 5px;
+  margin-left: -15px;
 }
 
 #box_plotly_ts {
@@ -158,10 +158,16 @@
 
 #panel_pdf1_stats_comparison {
   margin-top: -5px;
+  display: inline;
+  float: left;
+  margin-left: 15px;
 }
 
 #panel_pdf2_stats_comparison {
   margin-top: -5px;
+  float: left;
+  display: inline;
+  margin-left: 15px;
 }
 
 .fa.fa-database {
@@ -183,6 +189,7 @@
 
 .inner.open {
   max-height: 300px !important;
+  overflow: hidden;
 }
 
 #homepage_contents {
@@ -192,6 +199,47 @@
   padding-right: 15px;
 }
 
-/*.content-wrapper {
-  min-height: 1300px !important;
-}*/
+
+#presentation_contents {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+.content-wrapper {
+  min-height: 95vh !important;
+}
+
+#instructions_map {
+  width: 200px;
+}
+
+
+#params_comp_region1 {
+  border: 1px solid #1d89ff;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 15px;
+}
+
+#params_comp_region2 {
+  border: 1px solid #1d89ff;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.box.box-solid.box-primary {
+  border: solid 3px #354e8a;
+}
+
+.box-header {
+  background-color: #354e8a !important;
+  background: #354e8a !important;
+}
+
+#shiny-tab-tab_carto {
+  overflow: hidden !important;
+}

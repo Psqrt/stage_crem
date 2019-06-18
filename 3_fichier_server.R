@@ -7,5 +7,16 @@ contenu_server = shinyServer(
         for (fichier in fichiers_source){
             source(fichier, local = T, encoding = "UTF-8")$value
         }
+        
+        
+        # BAC À SABLE
+        observeEvent(input$sidebar, {
+            shinyjs::toggleClass(selector = "body", class = "one",
+                                 condition = (input$sidebar == 'tab_carto'))
+            
+            shinyjs::toggleClass(selector = "body", class = "two",
+                                 condition = (input$sidebar != 'tab_carto'))
+        })
     }
+    
 )

@@ -10,7 +10,7 @@ subtab_stats_scatter_plot = tabPanel("", # Chaine vide pour éviter un pop-up in
                                        # PANEL : Fenêtre acceuillant le graphique scatter plot =========
                                        box(
                                            width = 12,
-                                           height = "900px",
+                                           height = "90vh",
                                            title = "SCATTER PLOT",
                                            solidHeader = TRUE,
                                            status = "primary",
@@ -88,7 +88,7 @@ subtab_stats_scatter_plot = tabPanel("", # Chaine vide pour éviter un pop-up in
                                            
                                            # OUTPUT : Graphique Scatter plot ===========================
                                            plotlyOutput("plotly_scatter",
-                                                        height = "800px")
+                                                        height = "75vh")
                                        )
                                        
                               )

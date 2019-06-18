@@ -141,6 +141,7 @@ fond = "//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
 # 4. Render de la carte
 # 4.1. Paramètres globaux
 output$map <- renderLeaflet({
+  
   leaflet(options = leafletOptions(zoomControl = FALSE)) %>%
     addTiles(urlTemplate = fond) %>%
     setView(lng = lng_init, lat = lat_init, zoom = 5)
@@ -302,4 +303,19 @@ observeEvent(input$map_shape_click, {
     output$panel_droite_map_titre2 = renderUI({titre2})
     output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
   }
+})
+
+
+
+observeEvent(input$instructions_map, {
+  showModal(modalDialog(
+    title = "Information",
+    HTML("This map displays averages of variables per region. 
+    <br>
+    Feel free to click on a region to show more details about the values shown. 
+    Moreover, the button in the bottom right-hand corner contains socio-economic data about the selected region.
+    <br><br>
+    Each period available in the list is constructed according to the evolution of the NUTS classification (<a href = 'https://ec.europa.eu/eurostat/web/nuts/history'>link</a>)."),
+    easyClose = T
+  ))
 })

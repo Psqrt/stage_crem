@@ -60,8 +60,8 @@ tab_carto <- tabPanel("", # Chaine vide pour éviter un pop-up inutile lorsque l
                           class = "panel panel-default",
                           width = "auto",
                           height = "auto",
-                          bottom = "0px",
                           right = "15px",
+                          bottom = "0px",
                           draggable = FALSE,
                           
                           # INPUT : Bouton ouvrant ou fermant la fenêtre contenant les données supplémentaires

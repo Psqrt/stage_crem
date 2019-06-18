@@ -10,7 +10,7 @@ subtab_stats_time_series = tabPanel("", # Chaine vide pour éviter un pop-up inu
                                        # PANEL : Fenêtre accueillant le graphique time series ==========
                                        box(
                                            width = 12,
-                                           height = "900px",
+                                           height = "90vh",
                                            title = "TIME SERIES",
                                            solidHeader = TRUE,
                                            status = "primary",
@@ -50,11 +50,11 @@ subtab_stats_time_series = tabPanel("", # Chaine vide pour éviter un pop-up inu
                                            
                                            conditionalPanel("input.choix_nuts_stats_time_series == 'NUTS 0'",
                                                             # OUTPUT : Graphique si on est à l'échelle des pays
-                                                            plotlyOutput("plotly_ts_nuts0",height = "800px")
+                                                            plotlyOutput("plotly_ts_nuts0",height = "75vh")
                                            ),
                                            conditionalPanel("input.choix_nuts_stats_time_series != 'NUTS 0'",
                                                             # OUTPUT : Graphique si on n'est pas à l'échelle des pays
-                                                            plotlyOutput("plotly_ts_nuts12",height = "800px")
+                                                            plotlyOutput("plotly_ts_nuts12",height = "75vh")
                                            )
                                        )
                               )

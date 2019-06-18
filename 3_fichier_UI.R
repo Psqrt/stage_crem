@@ -21,13 +21,25 @@ contenu_UI <- shinyUI(
                 icon("fas fa-home"))
         ),
         
-        
+#         tags$script("
+# $(document).on('shiny:conditional', function(event) {
+#   if (event.name === 'map') {
+#     // on récupère l'élément
+# var elmt = document.getElementById('body');
+# // on modifie son style
+# elmt.style.overFlow = 'none';
+#   }
+# "),
         
         # ==============================================================================
         # Barre de navigation latérale =================================================
         # ==============================================================================
         dashboardSidebar(
             sidebarMenu(id = "sidebar",
+                        menuItem("PRESENTATION",
+                                 tabName = "tab_presentation",
+                                 icon = icon("user-friends")
+                        ),
                         menuItem("HOME PAGE",
                                  tabName = "tab_homepage",
                                  icon = icon("home")
@@ -155,6 +167,17 @@ contenu_UI <- shinyUI(
                                                                           "2010-2012",
                                                                           "2013-2015")
                                                           )
+                                         ),
+                                         
+                                         # INPUT : Bouton donnant les instructions à l'utilisateur pour la carte
+                                         actionBttn(
+                                             inputId = "instructions_map",
+                                             label = "Information", 
+                                             style = "bordered",
+                                             color = "primary",
+                                             icon = icon("info-circle"),
+                                             size = "sm",
+                                             block = T
                                          )
                                          
                                          
@@ -277,7 +300,7 @@ contenu_UI <- shinyUI(
                                                               inputId = "choix_annee_scatter_plot",
                                                               label = "YEARS",
                                                               choices= unique(na.omit(moyenne_region$ANNEE)),
-                                                              selected = NA,
+                                                              selected = unique(na.omit(moyenne_region$ANNEE)),
                                                               multiple = TRUE,
                                                               options = list(
                                                                   'actions-box' = TRUE)
@@ -295,13 +318,178 @@ contenu_UI <- shinyUI(
                                          materialSwitch(
                                              inputId = "animation_frame_stats_scatter_plot",
                                              label = "TIMELAPSE", 
-                                             value = FALSE,
+                                             value = TRUE,
                                              right = TRUE,
                                              status = "success"
                                          )
-                        )
+                        ),
+                        
+                        
+                        # ==============================================================================
+                        # Ensemble des inputs utilisateurs pour l'onglet Comparison ====================
+                        # ==============================================================================
+                        conditionalPanel("input.sidebar == 'subtab_stats_comparison'",
+                                         
+                                         fluidRow(
+                                             column(width = 6,
+                                                    # INPUT : Représenter ou non une 2nde variable
+                                                    materialSwitch(
+                                                        inputId = "switch_variable_stats_comparison",
+                                                        label = "Variable 2",
+                                                        value = FALSE,
+                                                        right = TRUE,
+                                                        status = "success"
+                                                    )
+                                             ),
+                                             column(width = 6,
+                                                    
+                                                    # INPUT : Représenter ou non une 2nde région
+                                                    materialSwitch(
+                                                        inputId = "switch_region_stats_comparison",
+                                                        label = "Region 2",
+                                                        value = FALSE,
+                                                        right = TRUE,
+                                                        status = "success"
+                                                    )
+                                             )
+                                         ),
+                                         
+                                         
+                                         # INPUT : Choix de la variable 1 ===============
+                                         selectInput(
+                                             inputId = "choix_var_ts1",
+                                             label = "VARIABLE 1",
+                                             choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                                             selected = "XXXX",
+                                             width = "635px"
+                                         ),
+                                         
+                                         conditionalPanel("input.switch_variable_stats_comparison == 1",
+                                                          
+                                                          # INPUT : Choix de la variable 2
+                                                          selectInput(
+                                                              inputId = "choix_var_ts2",
+                                                              label = "VARIABLE 2",
+                                                              choices = c("Select a variable" = "XXXX", liste_deroulante_map),
+                                                              selected = "XXXX",
+                                                              width = "635px"
+                                                          )
+                                         ),
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         tags$div(id = "params_comp_region1",
+                                                  
+                                                  # INPUT : Choix du niveau NUTS pour la 1ere région
+                                                  radioGroupButtons(
+                                                      inputId = "choix_nuts_ts1",
+                                                      label = "NUTS LEVEL",
+                                                      choices = c('0' = "NUTS 0",
+                                                                  '1' = "NUTS 1",
+                                                                  '2' = "NUTS 2"),
+                                                      selected = "NUTS 0",
+                                                      checkIcon = list(
+                                                          yes = tags$i(class = "fa fa-circle",
+                                                                       style = "color: steelblue"),
+                                                          no = tags$i(class = "fa fa-circle-o",
+                                                                      style = "color: steelblue"))
+                                                  ),
+                                                  
+                                                  conditionalPanel("input.choix_nuts_ts1 == 'NUTS 0'",
+                                                                   
+                                                                   # INPUT : Choix de la région NUTS 0 (1ere region)
+                                                                   selectInput(
+                                                                       inputId = "choix_region_ts1a",
+                                                                       label = "REGION 1",
+                                                                       choices = c("Select a country" = "XXXX", liste_nuts0_stat),
+                                                                       width = "410px"
+                                                                   )
+                                                  ),
+                                                  conditionalPanel("input.choix_nuts_ts1 == 'NUTS 1'",
+                                                                   
+                                                                   # INPUT : Choix de la région NUTS 1 (1ere region)
+                                                                   selectInput(
+                                                                       inputId = "choix_region_ts1b",
+                                                                       label = "REGION 1",
+                                                                       choices = c("Select a region" = "XXXX", liste_nuts1_stat),
+                                                                       width = "410px"
+                                                                   )
+                                                  ),
+                                                  conditionalPanel("input.choix_nuts_ts1 == 'NUTS 2'",
+                                                                   
+                                                                   # INPUT : Choix de la région NUTS 2 (1ere region)
+                                                                   selectInput(
+                                                                       inputId = "choix_region_ts1c",
+                                                                       label = "REGION 1",
+                                                                       choices = c("Select a region" = "XXXX", liste_nuts2_stat),
+                                                                       width = "410px"
+                                                                   )
+                                                  )
+                                         ),
+                                         
+                                         
+                                         
+                                         
+                                         conditionalPanel("input.switch_region_stats_comparison == 1",
+                                                          
+                                                          tags$div(id = "params_comp_region2",
+                                                                   
+                                                                   # INPUT : Choix du niveau NUTS pour la 2nde région
+                                                                   radioGroupButtons(
+                                                                       inputId = "choix_nuts_ts2",
+                                                                       label = "NUTS LEVEL",
+                                                                       choices = c("0" = "NUTS 0",
+                                                                                   "1" = "NUTS 1",
+                                                                                   "2" = "NUTS 2"),
+                                                                       selected = "NUTS 0",
+                                                                       checkIcon = list(
+                                                                           yes = tags$i(class = "fa fa-circle",
+                                                                                        style = "color: steelblue"),
+                                                                           no = tags$i(class = "fa fa-circle-o",
+                                                                                       style = "color: steelblue"))
+                                                                   ),
+                                                                   
+                                                                   conditionalPanel("input.choix_nuts_ts2 == 'NUTS 0'",
+                                                                                    
+                                                                                    # INPUT : Choix de la région NUTS 0 (2nde région)
+                                                                                    selectInput(
+                                                                                        inputId = "choix_region_ts2a",
+                                                                                        label = "REGION 2",
+                                                                                        choices = c("Select a country" = "XXXX", liste_nuts0_stat),
+                                                                                        width = "410px"
+                                                                                    )
+                                                                   ),
+                                                                   conditionalPanel("input.choix_nuts_ts2 == 'NUTS 1'",
+                                                                                    
+                                                                                    # INPUT : Choix de la région NUTS 1 (2nde région)
+                                                                                    selectInput(
+                                                                                        inputId = "choix_region_ts2b",
+                                                                                        label = "REGION 2",
+                                                                                        choices = c("Select a region" = "XXXX", liste_nuts1_stat),
+                                                                                        width = "410px"
+                                                                                    )
+                                                                   ),
+                                                                   conditionalPanel("input.choix_nuts_ts2 == 'NUTS 2'",
+                                                                                    
+                                                                                    # INPUT : Choix de la région NUTS 2 (2nde région)
+                                                                                    selectInput(
+                                                                                        inputId = "choix_region_ts2c",
+                                                                                        label = "REGION 2",
+                                                                                        choices = c("Select a region" = "XXXX", liste_nuts2_stat),
+                                                                                        width = "410px"
+                                                                                    )
+                                                                   )
+                                                          )
+                                         )
+                        )    
             )
         ),
+        
+        
         
         
         # ==============================================================================
@@ -309,8 +497,16 @@ contenu_UI <- shinyUI(
         # ==============================================================================
         dashboardBody(
             useShinyjs(), # Extensions pour shiny
+            
+            # BAC À SABLE
+            tags$style(HTML(".class_pour_map {overflow: hidden;}")),
+            tags$style(HTML(".class_autre_map {overflow: auto}")),
+            
             includeCSS("./extra/styles.css", encoding = "UTF-8"), # Feuille CSS
             tabItems(
+                tabItem(
+                    tabName = "tab_presentation",
+                    tab_presentation), # ./tab/tab_presentation.R
                 tabItem(
                     tabName = "tab_homepage",
                     tab_homepage), # ./tab/tab_homepage.R

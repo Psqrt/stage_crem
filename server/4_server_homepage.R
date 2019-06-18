@@ -6,12 +6,7 @@ A second issue of the definition is the difference between fuel poverty and ener
 In a report for the European Commission <i>(Energy poverty and vulnerable consumers in the energy sector across the EU: analysis of policies and measures, INSIGHT_E (2012))</i>, three driving factors of energy poverty are identified: high energy bills, low income, and poor energy efficiency.  As of today, the European Commission (through Eurostat data set) estimates that 54 million people are unable to keep their house comfortably warm. A similar number are not able to pay their energy bills on time or present poor housing conditions. Overall, studies find that between 50 million and 125 million people suffer from fuel poverty in the European Union.<br><br>
 The data used here to illustrate and explain fuel poverty comes from the Eurostat data base. This enables to take in consideration a large range of indicators in most European countries in a relevant period of time. Indeed, economists and organisation agree to say that fuel poverty can be caused by three factors <i>(Healy and Clinch (2004), Thomson and Snell (2013), Buzarvoski... (2012))</i>, therefore it is interesting to study any socio-economic or socio-demographic data that could be linked to those factors and to fuel poverty. This explains that this data base contains many factors from income to the number of rooms per houses surveyed. This data was collected through the EU-SILC surveys. Although not always adapted for studies about poverty <i>(Thomson and Snell 2013)</i>, the EU-SILC metric is the best metric for now to guarantee similar survey in all the countries and therefore comparable data from one country to another. <br><br>
 
-This app enables an easy visualisation of all the data that could be linked to fuel poverty. Indeed, this app displays through an interactive map the different statistics of each European countries in different variables, all of which could be a factor of fuel poverty, and enables comparison between regions of different scales and at different times.</p>
-<hr>
-<h3 style = "font-family: Garamond;"> <strong>Source</strong></h2>
-<p> More information about the EU-SILC survey : <a href = "https://ec.europa.eu/eurostat/en/web/microdata/european-union-statistics-on-income-and-living-conditions">https://ec.europa.eu/eurostat/en/web/microdata/european-union-statistics-on-income-and-living-conditions</a></p>
-<p> Survey public microdata : <a href = "https://ec.europa.eu/eurostat/en/web/microdata/statistics-on-income-and-living-conditions">https://ec.europa.eu/eurostat/en/web/microdata/statistics-on-income-and-living-conditions</a></p>
-<p> Geo-datafiles : <a href = "https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts">https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts</a></p>
+This app enables an easy visualisation of all the data that could be linked to fuel poverty. Indeed, this app displays through an interactive map the average of each European regions or countries in different variables, all of which could be a factor of fuel poverty, and enables comparison between regions of different scales and at different times.</p>
 ')
   )
 })
@@ -33,13 +28,12 @@ The EU-SILC survey (EU statistics on income and living Conditions) is a Europe -
 <li><p style = "font-size: 17px; text-align: justify;">individual data (activity, resources, well-being, health…).</p></li>
 </ul>
 <p style = "font-size: 17px; text-align: justify;">The number of participating countries in the study grows every year. In 2003, 7 countries including 6 members of the EU were the first to poll their population. In 2019, the EU-SILC survey applies to 35 countries with the integration of the Montenegro this year.</p><hr>
-<center><img src = "logo_crem.png" height = 172px width = 220px></center>
-<center><p style = "text-decoration: underline;"><strong>Internship supervisors</p></strong></center>
-<p><strong>Isabelle CADORET</strong>, Full Professor of Economics, University of Rennes 1 and Research Fellow, CREM.</p>
-<p><strong>Véronique THÉLEN</strong>, Assistant Professor University of Rennes 1 and Research Fellow, CREM.</p>
-<center><p style = "text-decoration: underline;"><strong>Trainees</p></strong></center>
-<p><strong>Yohann TRAN</strong>, Master 1 Applied Mathematics, Statistics, University of Rennes 1.</p>
-<p><strong>Guy TSANG</strong>, Master 1 Applied Mathematics, Statistics, University of Rennes 1.</p>             
-<p><strong>Alexia MARSAL</strong>, First year at École Normale Supérieure Rennes.</p>             
+<p>Written by <strong>Alexia MARSAL</strong>, First year at École Normale Supérieure Rennes.</p>
+<hr>
+<h3 style = "font-family: Garamond;"> <strong>Source</strong></h3>
+<p> More information about the EU-SILC survey : <a href = "https://ec.europa.eu/eurostat/en/web/microdata/european-union-statistics-on-income-and-living-conditions">https://ec.europa.eu/eurostat/en/web/microdata/european-union-statistics-on-income-and-living-conditions</a></p>
+<p> Survey public microdata : <a href = "https://ec.europa.eu/eurostat/en/web/microdata/statistics-on-income-and-living-conditions">https://ec.europa.eu/eurostat/en/web/microdata/statistics-on-income-and-living-conditions</a></p>
+<p> Geo-datafiles : <a href = "https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts">https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/nuts</a></p>
+<p> Code available in Github : <a href = "https://github.com/Psqrt/stage_crem">https://github.com/Psqrt/stage_crem</a></p>
              '))
 })
