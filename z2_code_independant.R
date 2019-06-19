@@ -894,8 +894,7 @@ cat(green("[...] Terminé !\n"))
 
 # on retire les variables qui ne présentent que des NA comme moyenne # BAC À SABLE
 
-disparu = df_final3_tot %>% 
-    # select(-PERIODE, -ANNEES_PRESENTES) %>% # BAC À SABLE - KORRIGO
+disparu = df_final3_tot %>%
     select_if(function(col) sum(is.na(col)) == nrow(df_final3_tot))
 
 # BAC À SABLE : nouvelle condition : s'il y a une colonne qui présente que des NA, on l'a supprime
