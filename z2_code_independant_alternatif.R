@@ -281,6 +281,7 @@ type_fichier = c("D", "H", "P", "R")
 # 1. Première boucle for : l'idée est de faire un traitement individuel pour chaque année
 for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     
+    # On récupère la liste des pays disponibles (peu importe l'année)
     fichier_pays = list.files(chemin_repertoire_donnees)
     
     
@@ -291,16 +292,23 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     df_r = data.frame()
     
     for (pays in fichier_pays){
+        # Pour chaque pays, on rentre dans l'année en cours
         direction = paste(chemin_repertoire_donnees, pays, "/", annee_enquete,
                           sep = "")
+        
+        # Puis on importe les 4 types de fichiers
         for (type in type_fichier){
+            # direction contient le début du chemin : ./data/enquete/FR/2012
+            # on rentre dans le répertoire pour chercher les 4 fichiers csv (UDB_cXXYYT.csv)
+                # avec XX le pays
+                # YY l'année
+                # T le type de fichier (H, D, P, R)
             direction_csv = paste(direction, "/", "UDB_c", pays, annee_enquete-2000, type, ".csv",
                                   sep = "")
             
-            
             # lecture du fichier .csv, qu'on place dans une variable provisoire avant d'en déduire son appartenance pour ensuite
             # le concaténer avec le bon fichier type (df_h, df_d, ...)
-            provisoire = read.csv(file = direction_csv, # (1)
+            provisoire = read.csv(file = direction_csv,
                                   header = T,
                                   sep = ",",
                                   stringsAsFactors = F,
@@ -878,8 +886,7 @@ cat(green("[...] Terminé !\n"))
 
 # on retire les variables qui ne présentent que des NA comme moyenne # BAC À SABLE
 
-disparu = df_final3_tot %>% 
-    # select(-PERIODE, -ANNEES_PRESENTES) %>% # BAC À SABLE - KORRIGO
+disparu = df_final3_tot %>%
     select_if(function(col) sum(is.na(col)) == nrow(df_final3_tot))
 
 # BAC À SABLE : nouvelle condition : s'il y a une colonne qui présente que des NA, on l'a supprime

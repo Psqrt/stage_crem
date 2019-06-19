@@ -18,20 +18,18 @@
 ########################################################################################################
 # Setup global
 ########################################################################################################
-donnees_publiques = 0        # Provenance des données (les données confidientielles  : donnees_publiques = 0)
+donnees_publiques = 1        # Provenance des données (les données confidientielles  : donnees_publiques = 0)
 execution_pilote = 1         # indicateur pour distinguer si on lance depuis le fichier pilote ou non
 verification_packages = 0    # vérifier ou non les packages installés sur l'ordinateur
 importer_carte = 0           # choix : 0 ou 1
 precision = 60               # choix : 1 ou 60 (l'option 1 n'est plus disponible, ne pas changer 60)
-chemin_repertoire_donnees = "./data/enquete2/" # en chemin relatif vers les données de l'enquête
-date_premiere_enquete = 2012 # année en YYYY de la première enquête à importer
+chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif vers les données de l'enquête
+date_premiere_enquete = 2004 # année en YYYY de la première enquête à importer
 date_derniere_enquete = 2013 # année en YYYY de la dernière enquête à importer
 nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1 # ne pas toucher
 liste_periode = list(c(2004:2005),
                      c(2006:2009),
                      c(2010:2012),
-                     c(2013:2015)) 
-liste_periode = list(c(2010:2012),
                      c(2013:2015))
 # les périodes sont en fonction des années de modification de la norme NUTS.
 
@@ -48,9 +46,9 @@ if (verification_packages == 1){
 }
 
 # on construit d'abord la base des moyennes ... ########################################################
-if (donnees_publiques == 0){
+if (donnees_publiques == 0){ # Si on utilise les vraies données ...
     source("z2_code_independant_alternatif.R", encoding = "UTF-8", echo = T)
-} else {
+} else { # Si on utilise les données publiques ...
     source("z2_code_independant.R", encoding = "UTF-8", echo = T)
 }
 

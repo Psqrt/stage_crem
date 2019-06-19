@@ -157,7 +157,7 @@ observe({
   
   if (input$choix_variable_1_map != "XXXX"){
     if (input$choix_variable_2_map == "XXXX"){ # CAS VAR 1 OK VAR 2 PAS OK
-      if (nrow(moyenne_region_filtre()) != 0){
+      if (nrow(moyenne_region_filtre()) != 0){ # Construire un popup s'il y a des données
         contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
@@ -167,7 +167,7 @@ observe({
                                 format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
                                 round(moyenne_region_filtre()[, variable_1_choisie], 2),
                                 moyenne_region_filtre()[, variable_1_choisie_na])
-      } else {
+      } else { # Alerter s'il n'y a pas de données sinon
         contenu_popup = sprintf("NO DATA THIS YEAR")
         
         sendSweetAlert(
@@ -178,7 +178,7 @@ observe({
         )
       }
     } else {
-      if (nrow(moyenne_region_filtre()) != 0){
+      if (nrow(moyenne_region_filtre()) != 0){  # Construire un popup s'il y a des données
         contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
@@ -191,7 +191,7 @@ observe({
                                 moyenne_region_filtre()[, variable_1_choisie_na],
                                 round(moyenne_region_filtre()[, variable_2_choisie], 2),
                                 moyenne_region_filtre()[, variable_2_choisie_na])
-      } else {
+      } else { # Alerter s'il n'y a pas de données sinon
         contenu_popup = sprintf("NO DATA THIS YEAR")
         
         sendSweetAlert(
@@ -231,7 +231,7 @@ observe({
                 na.label = "NA")
   } else {
     if (input$choix_variable_2_map != "XXXX"){
-      if (nrow(moyenne_region_filtre()) != 0){
+      if (nrow(moyenne_region_filtre()) != 0){  # Construire un popup s'il y a des données
         contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
@@ -241,7 +241,7 @@ observe({
                                 format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
                                 round(moyenne_region_filtre()[, variable_2_choisie], 2),
                                 moyenne_region_filtre()[, variable_2_choisie_na])
-      } else {
+      } else { # Alerter s'il n'y a pas de données sinon
         contenu_popup = sprintf("NO DATA THIS YEAR")
         
         sendSweetAlert(
@@ -329,9 +329,8 @@ observeEvent(input$map_shape_click, {
   
   # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
   info_click <- input$map_shape_click
-  print(info_click)
   
-  if (nrow(moyenne_region_filtre()) != 0){
+  if (nrow(moyenne_region_filtre()) != 0){  # Construire un popup s'il y a des données
     source("./extra/shiny_contenu_panel_map.R", local = T, encoding = "UTF-8")
     
     if(exists("titre1")){
