@@ -9,12 +9,12 @@ contenu_server = shinyServer(
         }
         
         
-        # BAC À SABLE
+        
         observeEvent(input$sidebar, {
-            shinyjs::toggleClass(selector = "body", class = "one",
+            shinyjs::toggleClass(selector = "body", class = "css_carto",
                                  condition = (input$sidebar == 'tab_carto'))
             
-            shinyjs::toggleClass(selector = "body", class = "two",
+            shinyjs::toggleClass(selector = "body", class = "css_autre",
                                  condition = (input$sidebar != 'tab_carto'))
         })
     }

@@ -29,9 +29,9 @@ if (Sys.info()[1] == "Windows"){
 if (!exists("execution_pilote")){
     importer_carte = 0 # choix : 0 ou 1
     precision = 60 # choix : 1 ou 60 # /!\ L'option precision = 1 n'est plus disponible
-    chemin_repertoire_donnees = "./data/enquete/" # en chemin relatif vers les données de l'enquête
-    date_premiere_enquete = 2004
-    date_derniere_enquete = 2013
+    chemin_repertoire_donnees = "./data/enquete2/" # en chemin relatif vers les données de l'enquête
+    date_premiere_enquete = 2012
+    date_derniere_enquete = 2012
     nombre_enquete = date_derniere_enquete - date_premiere_enquete + 1 # ne pas toucher
     
     # une période ne doit pas chevaucher une modification de la norme NUTS
@@ -271,22 +271,17 @@ df_annee_menage = data.frame()
 df_annee_personne = data.frame()
 
 # Types des bases à importer
-type_fichier = c("h", "d", "p", "r")
-# fichier h : household data
-# fichier d : household register
-# fichier p : personal data
-# fichier r : personal register
+type_fichier = c("D", "H", "P", "R")
+# fichier H : household data
+# fichier D : household register
+# fichier P : personal data
+# fichier R : personal register
 
 
 # 1. Première boucle for : l'idée est de faire un traitement individuel pour chaque année
 for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     
-    # Obtention de la liste des fichiers de données enquêtes (les fichiers zip - donc ne pas dezipper !)
-    liste_nom_fichier = list.files(chemin_repertoire_donnees)
-    # on recherche les fichiers qui contiennent l'année en cours :
-    liste_nom_fichier = liste_nom_fichier[grep(annee_enquete, liste_nom_fichier)]
-    # on enleve l'extension .zip des fichiers pour récupérer uniquement le nom de fichier :
-    liste_nom_fichier = substr(liste_nom_fichier, 1, nchar(liste_nom_fichier)-4) 
+    fichier_pays = list.files(chemin_repertoire_donnees)
     
     
     # Création des dataframes vide pour accueillir les importations (concaténation au fur et à mesure des itérations)
@@ -295,48 +290,37 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     df_p = data.frame()
     df_r = data.frame()
     
-    # 2. Deuxième boucle for : logique d'importation : rentrer dans l'archive zip d'un pays pour l'année donnée
-    for (fichier in liste_nom_fichier) { # traitement d'un fichier zip de l'année en cours
-        cat(blue("Importation de :", fichier, "\n"))
-        dir_zip = paste0(chemin_repertoire_donnees, fichier, ".zip", sep = "")
-        # 3. Troisième boucle for : s'intéresser à chacun des 4 fichiers contenus dans le fichier zip ouvert
-        for (type in type_fichier) {
-            cat(blue("    * Importation du fichier du type :", type, "\n"))
-            # le nom des fichiers / composé de 7 caractères, puis du type (p, r, d, h) puis de la fin du fichier avec l'extension
-            # Exemple : AT_2004p_EUSILC.csv --- Il s'agit donc de glisser une lettre (type) à l'intérieur du nom du fichier de données.
-            dir_csv = paste0(substr(fichier, 1, 7), type, substr(fichier, 8, nchar(fichier)), ".csv", sep = "") 
+    for (pays in fichier_pays){
+        direction = paste(chemin_repertoire_donnees, pays, "/", annee_enquete,
+                          sep = "")
+        for (type in type_fichier){
+            direction_csv = paste(direction, "/", "UDB_c", pays, annee_enquete-2000, type, ".csv",
+                                  sep = "")
+            
+            
             # lecture du fichier .csv, qu'on place dans une variable provisoire avant d'en déduire son appartenance pour ensuite
             # le concaténer avec le bon fichier type (df_h, df_d, ...)
-            provisoire = read.csv(con <- unz(dir_zip, dir_csv), # (1)
+            provisoire = read.csv(file = direction_csv, # (1)
                                   header = T,
                                   sep = ",",
                                   stringsAsFactors = F,
                                   colClasses = c("character"),
-                                  fileEncoding = "UTF-8") # (2)
-            # (1) : La fonction unz permet de lire le contenu d'un fichier zip sans dezipper.
-            # (2) : Toutes les variables sont importées en type character pour son aspect générique ouvert (on peut toujours ramener quelconque type
-            # à un type character mais pas l'inverse). Ceci permet d'éviter des problèmes liés aux données. Par exemple, si à la première
-            # itération, la variable X est de type numérique, le dataframe qui est régulièrement mis à jour aura la variable X comme numérique.
-            # Mais si à la prochaine itération, la même variable X est de type character (à cause d'une valeur parasite dans les données),
-            # la concaténation ne pourra pas se faire (les données qui s'ajoutent doivent s'ajuster aux données déjà présentes : donc il s'agit
-            # de passer d'une variable type character en type numérique, ce qui échoue en existence de valeurs parasites, ce qui est le cas dans
-            # les données d'enquête. Ainsi, l'idée est de commencer par un type large (character), traiter les parasites puis passer en numérique.
+                                  fileEncoding = "UTF-8")
             
             # Concaténation verticale (les colonnes ne trouvant pas d'association renvoient des NA dans les lignes correspondantes)
-            if (type == "h"){
+            if (type == "H"){
                 df_h = bind_rows(df_h, provisoire)
-            } else if (type == "d") {
+            } else if (type == "D") {
                 df_d = bind_rows(df_d, provisoire)
-            } else if (type == "p") {
+            } else if (type == "P") {
                 df_p = bind_rows(df_p, provisoire)
-            } else if (type == "r") {
+            } else if (type == "R") {
                 df_r = bind_rows(df_r, provisoire)
             }
         }
         cat(white("***************************************************************************\n"))
     }
     cat(blue("L'importation des données enquête est terminée !\n"))
-    
     
     
     ####################################################################################################
@@ -399,7 +383,7 @@ for (annee_enquete in c(date_premiere_enquete:date_derniere_enquete)) {
     #                  Par conséquent, les 0 apparus dans la transformation juste en haut ne sont pas concernés ici.
     #                  Le 0 n'a pas de sens pour les variables qualitatives (les modalités commençent à partir de 1).
     cat(green("[...] Terminé !\n"))
-    
+
     
     # bac à sable
     for (variable in liste_variable_quali_hd_presente){

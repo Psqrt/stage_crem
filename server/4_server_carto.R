@@ -154,30 +154,53 @@ observe({
   variable_1_choisie_na = str_replace(variable_1_choisie, "_moy", "_na")
   variable_2_choisie_na = str_replace(variable_2_choisie, "_moy", "_na")
   
+  
   if (input$choix_variable_1_map != "XXXX"){
     if (input$choix_variable_2_map == "XXXX"){ # CAS VAR 1 OK VAR 2 PAS OK
-      contenu_popup = sprintf("<center><b> %s </b></center><br>
+      if (nrow(moyenne_region_filtre()) != 0){
+        contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
                               <b>Variable 1 : </b> %s (%1.2f%% NA)",
-                              moyenne_region_filtre()$NOM_REGION,
-                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
-                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
-                              round(moyenne_region_filtre()[, variable_1_choisie], 2),
-                              moyenne_region_filtre()[, variable_1_choisie_na])
+                                moyenne_region_filtre()$NOM_REGION,
+                                format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                                format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
+                                round(moyenne_region_filtre()[, variable_1_choisie], 2),
+                                moyenne_region_filtre()[, variable_1_choisie_na])
+      } else {
+        contenu_popup = sprintf("NO DATA THIS YEAR")
+        
+        sendSweetAlert(
+          session = session,
+          title = "Error",
+          text = "There was no survey this year!",
+          type = "error"
+        )
+      }
     } else {
-      contenu_popup = sprintf("<center><b> %s </b></center><br>
+      if (nrow(moyenne_region_filtre()) != 0){
+        contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
                               <b>Variable 1 : </b> %s (%1.2f%% NA)<br>
                               <b>Variable 2 : </b> %s (%1.2f%% NA)", 
-                              moyenne_region_filtre()$NOM_REGION,
-                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
-                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
-                              round(moyenne_region_filtre()[, variable_1_choisie], 2),
-                              moyenne_region_filtre()[, variable_1_choisie_na],
-                              round(moyenne_region_filtre()[, variable_2_choisie], 2),
-                              moyenne_region_filtre()[, variable_2_choisie_na])
+                                moyenne_region_filtre()$NOM_REGION,
+                                format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                                format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
+                                round(moyenne_region_filtre()[, variable_1_choisie], 2),
+                                moyenne_region_filtre()[, variable_1_choisie_na],
+                                round(moyenne_region_filtre()[, variable_2_choisie], 2),
+                                moyenne_region_filtre()[, variable_2_choisie_na])
+      } else {
+        contenu_popup = sprintf("NO DATA THIS YEAR")
+        
+        sendSweetAlert(
+          session = session,
+          title = "Error",
+          text = "There was no survey this year!",
+          type = "error"
+        )
+      }
     }
     
     leafletProxy('map') %>% 
@@ -208,18 +231,31 @@ observe({
                 na.label = "NA")
   } else {
     if (input$choix_variable_2_map != "XXXX"){
-      contenu_popup = sprintf("<center><b> %s </b></center><br>
+      if (nrow(moyenne_region_filtre()) != 0){
+        contenu_popup = sprintf("<center><b> %s </b></center><br>
                               <b>Surveyed Households :</b> %s<br>
                               <b>Surveyed People :</b> %s<br>
                               <b>Variable 2 : </b> %s (%1.2f%% NA)",
-                              moyenne_region_filtre()$NOM_REGION,
-                              format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
-                              format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
-                              round(moyenne_region_filtre()[, variable_2_choisie], 2),
-                              moyenne_region_filtre()[, variable_2_choisie_na])
+                                moyenne_region_filtre()$NOM_REGION,
+                                format(moyenne_region_filtre()$NB_MENAGE, big.mark = ","),
+                                format(moyenne_region_filtre()$NB_PERSONNE, big.mark = ","),
+                                round(moyenne_region_filtre()[, variable_2_choisie], 2),
+                                moyenne_region_filtre()[, variable_2_choisie_na])
+      } else {
+        contenu_popup = sprintf("NO DATA THIS YEAR")
+        
+        sendSweetAlert(
+          session = session,
+          title = "Error",
+          text = "There was no survey this year!",
+          type = "error"
+        )
+        
+      }
     } else {
-      contenu_popup = ""
+        contenu_popup = sprintf("")
     }
+    
     leafletProxy('map') %>% 
       clearShapes() %>% # on supprime les anciens tracés ...
       clearMarkers() %>% # on supprime les anciens cercles (2nde variable) ...
@@ -293,15 +329,18 @@ observeEvent(input$map_shape_click, {
   
   # 1. Récupération de l'information du clic : quelle région a été pointée par l'utilisateur
   info_click <- input$map_shape_click
+  print(info_click)
   
-  source("./extra/shiny_contenu_panel_map.R", local = T, encoding = "UTF-8")
-  
-  if(exists("titre1")){
-    # 4. Les sorties ... cas sélection région
-    output$panel_droite_map_titre1 = renderUI({titre1})
-    output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
-    output$panel_droite_map_titre2 = renderUI({titre2})
-    output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
+  if (nrow(moyenne_region_filtre()) != 0){
+    source("./extra/shiny_contenu_panel_map.R", local = T, encoding = "UTF-8")
+    
+    if(exists("titre1")){
+      # 4. Les sorties ... cas sélection région
+      output$panel_droite_map_titre1 = renderUI({titre1})
+      output$panel_droite_map_contenu1 = renderUI({HTML(texte1)})
+      output$panel_droite_map_titre2 = renderUI({titre2})
+      output$panel_droite_map_contenu2 = renderUI({HTML(texte2)})
+    }
   }
 })
 

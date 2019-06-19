@@ -498,9 +498,8 @@ contenu_UI <- shinyUI(
         dashboardBody(
             useShinyjs(), # Extensions pour shiny
             
-            # BAC À SABLE
-            tags$style(HTML(".class_pour_map {overflow: hidden;}")),
-            tags$style(HTML(".class_autre_map {overflow: auto}")),
+            tags$style(HTML(".css_carto {overflow: hidden;}")),
+            tags$style(HTML(".css_autre {overflow: auto}")),
             
             includeCSS("./extra/styles.css", encoding = "UTF-8"), # Feuille CSS
             tabItems(
